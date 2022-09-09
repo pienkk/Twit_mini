@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "category": "대한민국",
+    "topic": "추석연휴",
+    "twitLength": "20293"
+  },
+  {
+    "id": 2,
+    "category": "뮤직",
+    "topic": "에스파카리나",
+    "twitLength": "17322"
+  },
+  {
+    "id": 3,
+    "category": "테크놀로지",
+    "topic": "애플워치",
+    "twitLength": "15002"
+  },
+  {
+    "id": 4,
+    "category": "Only on Twitter",
+    "topic": "#NCTDREAM_THEDREAMSHOW2",
+    "twitLength": "9382"
+  },
+  {
+    "id": 5,
+    "category": "대한민국",
+    "topic": "좀비 종말론",
+    "twitLength": "1927"
+  }
+]

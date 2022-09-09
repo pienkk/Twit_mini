@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nickname": "Jason Lee",
+    "userid": "@guittamooi",
+    "profleImg": "https://images.unsplash.com/photo-1662355701652-2f5350d9d022?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE4fEZ6bzN6dU9ITjZ3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "time": "2시간",
+    "twit": "이번 애플이벤트 요약: 애플워치 8, SE2, 울트라 공개 에어팟 프로 2 공개아이폰 14, 14프로 공개"
+  },
+  {
+    "id": 2,
+    "nickname": "해팔",
+    "userid": "@ant_ddunddun",
+    "profleImg": "https://images.unsplash.com/photo-1660023170324-931253bcca41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI1fEZ6bzN6dU9ITjZ3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+    "time": "7시간",
+    "twit": "ALL NEW 주둥이 군단에게이번 추석 소원을 말해봐 📣즐거움이 뻥🎉 터지는 #정직한후보2 는9월 28일 극장 대개봉😎"
+  },
+  {
+    "id": 3,
+    "nickname": "ᴄʜᴀɴ",
+    "userid": "@hausisak",
+    "profleImg": "https://images.unsplash.com/photo-1662413915495-ff4a9f53f650?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDV8Q0R3dXdYSkFiRXd8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+    "time": "10시간",
+    "twit": "이번 추석에는 멤버들 모두 휴식시간을 가질 예정이래 🥺"
+  },
+  {
+    "id": 4,
+    "nickname": "bawui",
+    "userid": "@b_awui",
+    "profleImg": "https://images.unsplash.com/photo-1662338571362-5ad7a300074a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
+    "time": "10시간",
+    "twit": "이번 추석 일러에 원년 마도대전 조 등장하면 좋겠다는 트친님의 의견이 너무 좋다관짝 들어가신 온달 조상님의 선물최고령 시프 어르신의 선물복덕방 할아버지 브랜든의 선물마도대전조 델리만쥬 라르곤의 선물"
+  },
+  {
+    "id": 5,
+    "nickname": "현달🌟",
+    "userid": "@TourovDuty",
+    "profleImg": "https://images.unsplash.com/photo-1662228733182-97cc2d15f358?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8X2hiLWRsNFEtNFV8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+    "time": "19시간",
+    "twit": "아 제발 실트에 크라임씬 나오면 냅다 심장부터 뛰는 사람 나야 나,,, 다시 돌아오지 않을 걸 알면서도 기대하고 실망하고"
+  }
+]
