@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import MainTrend from "../pages/kimdaeho/MainTest/MainTrend";
 
 function Main() {
   return (
     <div>
-      <h1>메인 최종</h1>
+      <MainTrend></MainTrend>
     </div>
   );
 }
