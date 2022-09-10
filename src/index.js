@@ -1,10 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import LoginDaeho from "./pages/kimdaeho/LoginTest/LoginDaeho";
+import Router from "./Router";
+import "./styles/reset.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <LoginDaeho />
-  </React.StrictMode>
-);
+root.render(<Router />);
