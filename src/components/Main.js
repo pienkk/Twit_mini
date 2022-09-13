@@ -1,5 +1,5 @@
 // import React, { useState } from "react";
-import MainTrend from "../pages/kimdaeho/MainTest/MainTrend";
+import MainTrend from '../pages/kimdaeho/MainTest/MainTrend';
 
 function Main() {
   return (

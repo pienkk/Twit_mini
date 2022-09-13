@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import "./LoginModal.scss";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import './LoginModal.scss';
 
 function LoginModal() {
   const [userInput, setUserInput] = useState({
-    userId: "",
-    userPw: "",
+    userId: '',
+    userPw: '',
   });
 
   const { userId, userPw } = userInput;
 
-  const LoginInput = (e) => {
+  const LoginInput = e => {
     setUserInput({ ...userInput, [e.target.name]: e.target.value });
   };
 
@@ -29,18 +29,18 @@ function LoginModal() {
   // }, []);
 
   let LoginBtn = () => {
-    fetch("http://10.58.0.28:3000/auth/signin", {
-      method: "POST",
-      headers: { "Content-Type": "application/json;charset=utf-8" },
+    fetch('http://10.58.0.28:3000/auth/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({ email: userId, password: userPw }),
     })
-      .then((response) => response.json())
-      .then((result) => {
+      .then(response => response.json())
+      .then(result => {
         try {
-          if (result.message === "login success") {
-            console.log("로그인 정보가 일치합니다");
+          if (result.message === 'login success') {
+            console.log('로그인 정보가 일치합니다');
           } else {
-            console.log("로그인 정보가 다릅니다");
+            console.log('로그인 정보가 다릅니다');
           }
         } catch (error) {
           console.error(error);
@@ -60,11 +60,11 @@ function LoginModal() {
 
   let SignUpBtn = () => {
     axios
-      .post("http://10.58.0.28:3000/auth/signup", {
+      .post('http://10.58.0.28:3000/auth/signup', {
         email: userId,
         password: userPw,
       })
-      .then((response) => console.log("회원가입테스트", response.data));
+      .then(response => console.log('회원가입테스트', response.data));
 
     // try {
     //   if (userInfo[0].email === userId && userInfo[0].password === userPw) {

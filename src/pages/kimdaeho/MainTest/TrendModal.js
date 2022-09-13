@@ -1,5 +1,5 @@
-import React from "react";
-import "./TrendModal.scss";
+import React from 'react';
+import './TrendModal.scss';
 
 function TrendModal() {
   return (
