@@ -12,7 +12,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(routes);
 app.use((err, req, res, next)=> {
-  console.log(err)
+  console.log("====app.js에서의에러컨트롤",err)
   res.status(err.statusCode || 500).json({ message: err.message });
 })
 

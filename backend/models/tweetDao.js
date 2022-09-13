@@ -6,7 +6,7 @@ const tweetPost = async (
   content,
   content_img,
   reply_at,
-  
+  tweet_for
 ) => {
   try {
     return await database.query(
@@ -17,16 +17,12 @@ const tweetPost = async (
             content_img,
             reply_at,
             tweet_for
-        ) VALUES (?, ?, ?, ?, ?, "IPAD");
+        ) VALUES (?, ?, ?, ?, ?, ? );
 		`,
-      [user_id,replyTF,content,content_img,reply_at]
+      [user_id, replyTF, content, content_img, reply_at, tweet_for]
     );
-    
-
   } catch (err) {
-    
     const error = new Error("INVALID_DATA_INPUT");
-    console.log(err)
     error.statusCode = 500;
     throw error;
   }

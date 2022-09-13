@@ -12,7 +12,6 @@ const accessToken = async (req, res, next) => {
       return await next();
     }
   } catch (err) {
-    console.log(err);
     return res
       .status(err.statusCode || 400)
       .json({ message: "DO_NOT_HAVE_TOKEN" });

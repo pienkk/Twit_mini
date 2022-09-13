@@ -9,4 +9,5 @@ function asyncWrap(asyncController) {
     };
 }
 
-module.exports = asyncWrap;
+
+module.exports = asyncWrap
