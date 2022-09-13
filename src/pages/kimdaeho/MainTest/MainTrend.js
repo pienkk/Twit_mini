@@ -1,13 +1,13 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import TrendModal from "./TrendModal";
-import "./MainTrend.scss";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import TrendModal from './TrendModal';
+import './MainTrend.scss';
 
 function MainTrend() {
   useEffect(() => {
-    fetch("/data/trend.json")
-      .then((Response) => Response.json())
-      .then((result) => setTrendData(result));
+    fetch('/data/trend.json')
+      .then(Response => Response.json())
+      .then(result => setTrendData(result));
   }, []);
 
   const [trerndData, setTrendData] = useState([]);
@@ -29,7 +29,7 @@ function MainTrend() {
         {suchModal === true ? <TrendModal /> : null}
         <div className="TrendFeed">
           <h3>나를 위한 트랜드</h3>
-          {trerndData.map((item) => {
+          {trerndData.map(item => {
             return (
               <div className="FeedBox" key={item.id}>
                 <p>

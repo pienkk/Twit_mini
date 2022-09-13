@@ -1,5 +1,5 @@
-import React from "react";
-import "./LoginInfo.scss";
+import React from 'react';
+import './LoginInfo.scss';
 
 function LoginInfo({ ModalOpen }) {
   return (
@@ -28,7 +28,7 @@ function LoginInfo({ ModalOpen }) {
           <a href="#!">휴대폰 번호나 이메일 주소로 가입하기</a>
         </div>
         <p className="Explanation">
-          가입하시려면 <span>쿠키 사용</span>을 포함해 <span>이용약관</span>과{" "}
+          가입하시려면 <span>쿠키 사용</span>을 포함해 <span>이용약관</span>과{' '}
           <span>개인정보 처리방침</span>에 동의해야 합니다.
         </p>
         <h3>이미 트위터에 가입하셨나요?</h3>
