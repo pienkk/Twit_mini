@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import LoginInfo from "./LoginInfo";
-import "./LoginDaeho.scss";
-import LoginModal from "./LoginModal";
+import React, { useState } from 'react';
+import LoginInfo from './LoginInfo';
+import './LoginDaeho.scss';
+import LoginModal from './LoginModal';
 
 function LoginDaeho() {
   const [loginModal, setLoginModal] = useState(false);

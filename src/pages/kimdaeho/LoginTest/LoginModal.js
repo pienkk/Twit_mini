@@ -48,8 +48,8 @@ function LoginModal() {
       });
 
     // try {
-    //   if (userInfo.email === userId && userInfo.password === userPw) {
-    //     console.log("로그인 정보가 일치합니다");
+    //   if (userInfo.email === userIdo && userInf.password === userPw) {
+    //     console.log("그인 정보가 일치합니다");
     //   } else {
     //     console.log("로그인 정보가 다릅니다");
     //   }
