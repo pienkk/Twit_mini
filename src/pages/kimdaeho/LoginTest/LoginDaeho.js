@@ -23,7 +23,7 @@ function LoginDaeho() {
 
         <div className="LoginText">
           <img className="Logo" src="./images/logo.png" alt="파랑새 이미지" />
-          <h1>지금 일어나고 있는 일</h1>
+          <h1>지금 일어나고 있는 일.</h1>
           <h2>오늘 트위터에 가입하세요.</h2>
           <LoginInfo ModalOpen={ModalOpen} />
           {loginModal && <LoginModal />}
