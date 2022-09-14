@@ -1,0 +1,111 @@
+.sideBarNav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 270px;
+  margin-left: 300px;
+  height: 940px;
+  border-right: 1px solid #eaeaea;
+}
+.sideBarWrap {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  height: 600px;
+  font-size: 20px;
+  justify-content: space-around;
+}
+
+img {
+  object-fit: fill;
+  width: 25px;
+  height: 25px;
+}
+span {
+  display: block;
+}
+
+.categories {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 50px;
+  padding: 10px;
+  width: 120px;
+}
+.birdImage {
+  padding-left: 10px;
+}
+.home {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 50px;
+  padding: 10px;
+  width: 80px;
+}
+.categoriesWord {
+  margin-top: 5px;
+}
+
+.twit {
+  width: 200px;
+  padding: 15px 0px;
+  text-align: center;
+  color: white;
+  border-radius: 50px;
+  background-color: rgb(29, 155, 240);
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.twit:hover {
+  background-color: #318cd8;
+  transition: 0.3s;
+}
+.introduce {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 230px;
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 10px;
+}
+.introduce:hover {
+  position: relative;
+  background-color: #eaeaea;
+  transition: 0.3s;
+}
+
+.profileImage {
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+}
+.userWrap {
+  position: absolute;
+  left: 50px;
+  font-size: 15px;
+
+  p {
+    padding: 2px;
+    margin-left: 10px;
+  }
+}
+.ptag1 {
+  font-weight: bold;
+}
+.ptag2 {
+  color: #909aa2;
+}
+.categories:hover {
+  background-color: #eaeaea;
+
+  transition: 0.3s;
+}
