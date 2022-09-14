@@ -1,9 +1,9 @@
 import React from 'react';
-import './overay.scss';
-function Overay({ setModal }) {
+import './overap.scss';
+function Overap({ setModal }) {
   return (
     <div
-      className="overlay"
+      className="overlap"
       onClick={() => {
         setModal(false);
       }}
@@ -11,4 +11,4 @@ function Overay({ setModal }) {
   );
 }
 
-export default Overay;
+export default Overap;

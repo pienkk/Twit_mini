@@ -1,7 +1,7 @@
 import { click } from '@testing-library/user-event/dist/click';
 import React, { useState } from 'react';
 import Modal from './modal';
-import Overay from './overay';
+
 function Profile({ profile, nickname, userid, profleImg }) {
   const [modal, setModal] = useState(false);
 
