@@ -24,7 +24,7 @@ const signIn = async ( id, password ) => {
 }
 
 const signUp = async ( id, password, birthday ) => {
-    const user = await userDao.findUser(id);
+    const user = await userDao.findUserToFrofileId(id);
     if(user){
         const err = new Error('이미 가입된 아이디 입니다.')
         err.statusCode = 400;
