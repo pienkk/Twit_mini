@@ -41,4 +41,12 @@ const tweetDel = asyncWrap(async (req, res) => {
   res.status(201).json({ message: "tweetDeleted" });
 });
 
-module.exports = { tweetPost, tweetDel };
+const tweetsList = asyncWrap(async (req,res)=> {
+  
+    const result = await tweetService.tweetsList();
+    return await res.status(201).json(result);
+  
+});
+  
+
+module.exports = { tweetPost, tweetDel, tweetsList, };

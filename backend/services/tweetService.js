@@ -41,7 +41,11 @@ const tweetDel = async (user_id, tweet_id) => {
   }
 };
 
+const tweetsList = async() => {
+  return await tweetDao.tweetsList();
+}
 module.exports = {
   tweetPost,
   tweetDel,
+  tweetsList,
 };

@@ -36,7 +36,6 @@ const tweetEx = async (tweet_id) => {
 return await tweetEx;
 }
 
-
 const tweetDel = async (
   user_id,
   tweet_id
@@ -56,5 +55,25 @@ const tweetDel = async (
   }
 };
 
+const tweetsList = async () => {
+  try {
+    return await database.query(
+      `SELECT tweets.user_id,
+                tweets.id,
+                tweets.replyTF,
+                tweets.content,
+                tweets.content_img,
+                tweets.reply_at,
+                tweets.create_at,
+                tweets.tweet_for
+         FROM users JOIN tweets ON users.id = tweets.user_id`
+    );
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+};
 
-module.exports = { tweetPost, tweetDel, tweetEx };
+
+module.exports = { tweetPost, tweetDel, tweetEx, tweetsList };
