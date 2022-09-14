@@ -41,20 +41,14 @@ const tweetDel = async (
   user_id,
   tweet_id
 ) => {
-    let tweetDel = await database.query(
-    `SELECT user_id 
-      FROM tweets WHERE tweets.id =?
-      `,
-    [tweet_id]
-  )
-  try {
+    try {
      let result = await database.query(
       `DELETE FROM tweets
       WHERE id = ? AND user_id= ?;
 		`,
       [tweet_id, user_id]
     );
-    return await tweetDel
+    return result;
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");
     error.statusCode = 500;
