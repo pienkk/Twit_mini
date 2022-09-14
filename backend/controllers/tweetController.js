@@ -58,4 +58,9 @@ const tweetReply = asyncWrap(async (req, res) => {
   res.status(201).json({ message: "replyCreated" });
 });
 
-module.exports = { tweetPost, tweetDel, tweetsList, tweetReply };
+const tweetTrend = asyncWrap(async (req, res) => {
+  const result = await tweetService.tweetTrend();
+  return res.status(200).json({ result })
+})
+
+module.exports = { tweetPost, tweetDel, tweetsList, tweetReply, tweetTrend };

@@ -53,9 +53,19 @@ const tweetReply = async (
   return tweetReply;
 };
 
+const tweetTrend = async() => {
+  const tweet = await tweetDao.tweetHashTag()
+  const result = tweet.reduce((accu, curr) => {
+    accu[curr.hash] = (accu[curr.hash] || 0) + 1;
+    return accu;
+  }, {})
+  return result
+}
+
 module.exports = {
   tweetPost,
   tweetDel,
   tweetsList,
   tweetReply,
+  tweetTrend
 };

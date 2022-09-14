@@ -6,7 +6,7 @@ const {dmController} = require("../controllers");
 router.get("/", dmController.dmList);
 router.get("/:profileId", dmController.showDm);
 router.post("/:profileId", dmController.postDm);
-// router.delete("/:dmId", dmController.deleteDm)
+router.delete("/:dmId", dmController.deleteDm)
 
 
 module.exports = router

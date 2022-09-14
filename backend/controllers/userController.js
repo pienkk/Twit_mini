@@ -3,24 +3,24 @@ const asyncWrap = require("../middleware/async-wrap");
 
 
 const signIn = asyncWrap(async (req, res) => {
-    const { id, password } = req.body;
-    if ( !id || !password ) {
+    const { user_id, password } = req.body;
+    if ( !user_id || !password ) {
         const err = new Error("KEY_ERROR");
         err.statusCode = 400;
         throw err
     }
-    const result = await userService.signIn( id, password );
+    const result = await userService.signIn( user_id, password );
     return res.status(200).json({ accessToken: result })
 })
 
 const signUp = asyncWrap(async (req, res) => {
-    const { id, password, birthday } = req.body;
-    if( !id || !password || !birthday ) {
+    const { user_id, password, birthday } = req.body;
+    if( !user_id || !password || !birthday ) {
         const err = new Error("KEY_ERROR");
         err.statusCode = 400;
         throw err
     }
-    await userService.signUp( id, password, birthday );
+    await userService.signUp( user_id, password, birthday );
     return res.status(201).json({ message: "userCreated" });
 })
 
