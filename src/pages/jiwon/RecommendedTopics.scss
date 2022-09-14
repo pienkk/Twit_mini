@@ -1,0 +1,43 @@
+
+
+.RecommendedTopics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 20px;
+    height: 30px;
+    width: 120px;
+    background-color: white;
+    border : 1px solid #eaeaea;
+
+
+
+    img {
+        width :14px;
+        height: 14px;
+    }
+
+    .RecommendedTopicsLeft {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        height: 100%;
+        width: 70%;
+
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: inherit;
+
+        img {
+            width: 16px;
+            height: 16px;
+        }
+
+    &:hover {
+        background-color: aliceblue;
+    }
+
+    }
+}
