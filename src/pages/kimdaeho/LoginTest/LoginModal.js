@@ -29,22 +29,23 @@ function LoginModal() {
   // }, []);
 
   let LoginBtn = () => {
-    fetch('http://10.58.0.28:3000/auth/signin', {
+    fetch('http://10.58.4.180:3000/users/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
-      body: JSON.stringify({ email: userId, password: userPw }),
+      body: JSON.stringify({ id: userId, password: userPw }),
     })
       .then(response => response.json())
       .then(result => {
-        try {
-          if (result.message === 'login success') {
-            console.log('로그인 정보가 일치합니다');
-          } else {
-            console.log('로그인 정보가 다릅니다');
-          }
-        } catch (error) {
-          console.error(error);
-        }
+        console.log(result);
+        // try {
+        //   if (result.ok === true) {
+        //     console.log('로그인 정보가 일치합니다');
+        //   } else {
+        //     console.log('로그인 정보가 다릅니다');
+        //   }
+        // } catch (error) {
+        //   console.error(error);
+        // }
       });
 
     // try {
@@ -78,7 +79,7 @@ function LoginModal() {
   };
 
   return (
-    <>
+    <div>
       <div className="LoginModalBody">
         <img src="./images/logo.png" alt="LoginMdalImg" />
         <input
@@ -97,8 +98,11 @@ function LoginModal() {
           type="password"
           placeholder="패스워드"
         />
-        <button onClick={LoginBtn}>로그인</button>
-        <button onClick={SignUpBtn}>회원가입</button>
+        <button className="NextBtn" onClick={LoginBtn}>
+          다음
+        </button>
+        <button className="PasswordBtn">비밀번호를 잊으셨나요?</button>
+        {/* <button onClick={SignUpBtn}>회원가입</button> */}
         <p>
           계정이 없으신가요?
           <span>
@@ -106,7 +110,7 @@ function LoginModal() {
           </span>
         </p>
       </div>
-    </>
+    </div>
   );
 }
 
