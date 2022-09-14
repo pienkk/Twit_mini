@@ -1,4 +1,4 @@
-.LoginModalBody {
+.JoinModalBody {
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -9,7 +9,7 @@
   border: 1px solid rgb(192, 192, 192);
   border-radius: 10px;
   width: 550px;
-  height: 500px;
+  height: 550px;
 
   img {
     margin-top: 20px;
@@ -17,8 +17,16 @@
     height: 30px;
   }
 
-  .LoginInput {
-    width: 350px;
+  h4 {
+    position: absolute;
+    top: 80px;
+    left: 85px;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .JoinInput {
+    width: 370px;
     height: 50px;
     margin-top: 80px;
     padding-left: 10px;
@@ -26,8 +34,8 @@
     border-radius: 10px;
   }
 
-  .PwInput {
-    width: 350px;
+  .JoinPwInput {
+    width: 370px;
     height: 50px;
     margin-top: 10px;
     padding-left: 10px;
@@ -35,7 +43,15 @@
     border-radius: 10px;
   }
 
+  span {
+    margin: 15px 0 0 250px;
+  }
+
   button {
+    position: absolute;
+    bottom: 30px;
+    background: #000;
+    color: white;
     margin-top: 20px;
     width: 350px;
     height: 40px;
@@ -43,22 +59,30 @@
     border-radius: 20px;
   }
 
-  .NextBtn {
-    background: #000;
-    color: white;
-  }
-
-  .PasswordBtn {
-    background: rgb(255, 255, 255);
-    border: 1px solid rgb(192, 192, 192);
-  }
-
-  p {
-    position: absolute;
-    bottom: 30px;
-  }
   a {
     text-decoration: none;
     color: rgb(108, 156, 215);
+  }
+
+  h5 {
+    margin: 20px 0 0 -320px;
+  }
+
+  p {
+    margin-top: 5px;
+    width: 68%;
+    font-size: 13px;
+  }
+
+  .JoinBirthday {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-top: 20px;
+
+    input {
+      width: 100px;
+      height: 40px;
+    }
   }
 }
