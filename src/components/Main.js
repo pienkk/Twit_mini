@@ -1,10 +1,13 @@
 // import React, { useState } from "react";
 import MainTrend from '../pages/kimdaeho/MainTest/MainTrend';
+import MainFeed from '../pages/seunghoon/MainFeed/MainFeed';
+import './Main.scss';
 
 function Main() {
   return (
-    <div>
-      <MainTrend></MainTrend>
+    <div className="main">
+      <MainFeed />
+      {/* <MainTrend /> */}
     </div>
   );
 }

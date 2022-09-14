@@ -1,0 +1,222 @@
+.mainFeed {
+  width: 600px;
+  height: 100%;
+  // border-left: 1px solid #f1f2f3;
+  // border-right: 1px solid #f1f2f3;
+  border-left: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+
+  .twitHome {
+    .homeContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 53px;
+      padding: 0px 16px;
+      margin-top: 12px;
+      background-color: white;
+
+      .text {
+        font-size: 30px;
+        color: rgb(15, 20, 25);
+        font-weight: 700;
+      }
+
+      .img {
+        display: flex;
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .twitInput {
+    height: 189px;
+    display: flex;
+    padding: 0px 16px;
+    margin-top: 5px;
+    border-bottom: 1px solid #e2e2e2;
+
+    .writerProfileImg {
+      img {
+        height: 53px;
+        width: 53px;
+        padding: 3px;
+        margin-top: 25px;
+        border-radius: 50px;
+        border: 1px solid black;
+      }
+    }
+
+    .inputContent {
+      margin-left: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+
+      .inputText {
+        margin-top: 25px;
+
+        input {
+          font-size: 30px;
+          height: 55px;
+          width: 90%;
+          border: none;
+        }
+
+        input:focus {
+          outline: none;
+        }
+      }
+
+      .inputFooter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 35px;
+
+        .uploadContents {
+          display: flex;
+
+          .uploadImg {
+            height: 36px;
+            width: 36px;
+            padding: 6px;
+            filter: opacity(0.4) drop-shadow(0 0 0 blue);
+          }
+          .uploadGIF {
+            height: 36px;
+            width: 36px;
+            padding: 3.3px;
+            margin-left: 7px;
+            filter: opacity(0.4) drop-shadow(0 0 0 blue);
+          }
+          .uploadEmogi {
+            height: 36px;
+            width: 36px;
+            padding: 4.4px;
+            margin-left: 7px;
+            filter: opacity(0.4) drop-shadow(0 0 0 blue);
+          }
+          .uploadLocation {
+            height: 36px;
+            width: 36px;
+            padding: 5px;
+            filter: opacity(0.4) drop-shadow(0 0 0 blue);
+          }
+        }
+
+        .twitBtn {
+          margin-top: 10px;
+          font-size: 15px;
+          color: white;
+          height: 34px;
+          width: 75px;
+          background-color: #99cff8;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 45px;
+        }
+      }
+    }
+  }
+
+  .twitFeeds {
+    margin-right: 15px;
+    margin-left: 10px;
+
+    .twitList {
+      display: flex;
+      margin-top: 15px;
+      border-bottom: 1px solid #e2e2e2;
+
+      .profileImg {
+        img {
+          margin-top: 5px;
+          height: 53px;
+          width: 53px;
+          border-radius: 50px;
+        }
+      }
+
+      .twitContent {
+        width: 100%;
+        margin-left: 15px;
+
+        .userInfo {
+          display: flex;
+          margin-bottom: 15px;
+
+          .nickname {
+            font-weight: 700;
+            margin-right: 5px;
+          }
+
+          .userid {
+            color: gray;
+            margin-right: 5px;
+          }
+
+          .time {
+            color: gray;
+          }
+        }
+
+        .twitImg {
+          img {
+            width: 90%;
+          }
+        }
+
+        .twit {
+          margin-bottom: 15px;
+          line-height: 130%;
+        }
+
+        .twitFooter {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 25px;
+          margin-bottom: 15px;
+
+          .comment {
+            display: flex;
+            align-items: center;
+
+            .commentImg {
+              width: 20px;
+              height: 20px;
+            }
+
+            .commentCount {
+              margin-left: 6px;
+            }
+          }
+
+          .retweet {
+            display: flex;
+            align-items: center;
+
+            .retweetImg {
+              width: 20px;
+              height: 20px;
+            }
+
+            .retweetCount {
+              margin-left: 7px;
+            }
+          }
+
+          .like {
+            img {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
