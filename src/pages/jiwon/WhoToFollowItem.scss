@@ -1,0 +1,52 @@
+.WhoToFollowItem {
+  display: flex;
+  position: relative;
+
+  align-items: center;
+
+  padding: 10px;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: #eaeaea;
+    transition: 0.3s;
+  }
+  
+
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+
+  .WhoToFollowItemUserInfo{
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+  }
+  
+  span:nth-child(1) {
+    font-weight: 700;
+  }
+
+  span:nth-child(2) {
+    font-size: 14px;
+  }
+
+  button{
+    all: unset;
+    position: absolute;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+
+    cursor: pointer;
+  }
+
+}
