@@ -20,25 +20,20 @@ const tweetPost = async (
   return tweetPost;
 };
 
-const tweetDel = async (
-  user_id,
-  tweet_id
-) => {
-  const [tweetEx] = await tweetDao.tweetEx(tweet_id)
-  console.log(await tweetEx)
+const tweetDel = async (user_id, tweet_id) => {
+  const [tweetEx] = await tweetDao.tweetEx(tweet_id);
+  console.log(await tweetEx);
   if (!tweetEx) {
     const err = new Error(`TWEET_NOT_EXIST`);
     err.statusCode = 400;
     throw err;
-}
-  const [tweetDel] = await tweetDao.tweetDel(
-    user_id,
-    tweet_id
-  )
+  }
+
   try {
-    if (user_id==tweetEx.user_id)
-    return tweetDel;
-    else {err}
+    if (user_id == tweetEx.user_id) return tweetEx;
+    else {
+      err;
+    }
   } catch (err) {
     const error = new Error("NOT_YOUR_POST");
     error.statusCode = 400;
@@ -47,5 +42,6 @@ const tweetDel = async (
 };
 
 module.exports = {
-  tweetPost, tweetDel, 
-}
+  tweetPost,
+  tweetDel,
+};
