@@ -2,6 +2,7 @@
 import MainTrend from '../pages/kimdaeho/MainTest/MainTrend';
 import LeftSideBar from '../pages/hyosung/leftSideBar';
 import { useState, useEffect } from 'react';
+import Profile from '../pages/jiwon/Profile';
 
 function Main() {
   useEffect(() => {
@@ -18,6 +19,7 @@ function Main() {
   return (
     <div className="main">
       <MainTrend></MainTrend>
+      <Profile />
       <LeftSideBar profile={profile} />
     </div>
   );
