@@ -2,21 +2,16 @@ const { tweetDao } = require("../models");
 
 const tweetPost = async (
   user_id,
-  replyTF,
   content,
   content_img,
-  reply_at,
   tweet_for
 ) => {
   const tweetPost = await tweetDao.tweetPost(
     user_id,
-    replyTF,
     content,
     content_img,
-    reply_at,
     tweet_for
   );
-
   return tweetPost;
 };
 
@@ -41,11 +36,32 @@ const tweetDel = async (user_id, tweet_id) => {
   }
 };
 
-const tweetsList = async() => {
+const tweetsList = async () => {
   return await tweetDao.tweetsList();
-}
+};
+
+const tweetReply = async (
+  user_id,
+  content,
+  content_img,
+  tweet_for,
+  reply_at
+) => {
+  const tweetReply = await tweetDao.tweetReply(
+    user_id,
+    content,
+    content_img,
+    tweet_for,
+    reply_at
+  );
+  return tweetReply;
+};
+
+
+
 module.exports = {
   tweetPost,
   tweetDel,
   tweetsList,
+  tweetReply
 };
