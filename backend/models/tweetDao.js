@@ -33,12 +33,24 @@ const tweetEx = async (tweet_id) => {
 return await tweetEx;
 }
 
+const initReply = async (tweet_id) => {
+  let initReply = await database.query(
+    `UPDATE tweets
+    SET reply_at = NULL, replyTF="0"
+    WHERE reply_at=?;
+    `,
+    [tweet_id]
+   )
+return await initReply;
+}
+
+
 const tweetDel = async (
   user_id,
   tweet_id
 ) => {
     try {
-     let result = await database.query(
+      let result = await database.query(
       `DELETE FROM tweets
       WHERE id = ? AND user_id= ?;
 		`,
@@ -99,4 +111,4 @@ const tweetReply = async (
   }
 };
 
-module.exports = { tweetPost, tweetDel, tweetEx, tweetsList, tweetReply, };
+module.exports = { tweetPost, tweetDel, tweetEx, tweetsList, tweetReply, initReply,};

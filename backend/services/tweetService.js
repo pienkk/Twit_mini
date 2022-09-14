@@ -1,11 +1,6 @@
 const { tweetDao } = require("../models");
 
-const tweetPost = async (
-  user_id,
-  content,
-  content_img,
-  tweet_for
-) => {
+const tweetPost = async (user_id, content, content_img, tweet_for) => {
   const tweetPost = await tweetDao.tweetPost(
     user_id,
     content,
@@ -17,7 +12,6 @@ const tweetPost = async (
 
 const tweetDel = async (user_id, tweet_id) => {
   const [tweetEx] = await tweetDao.tweetEx(tweet_id);
-  console.log(await tweetEx);
   if (!tweetEx) {
     const err = new Error(`TWEET_NOT_EXIST`);
     err.statusCode = 400;
@@ -25,8 +19,10 @@ const tweetDel = async (user_id, tweet_id) => {
   }
 
   try {
-    if (user_id == tweetEx.user_id) return tweetEx;
-    else {
+    if (user_id == tweetEx.user_id) {
+      await tweetDao.initReply(tweet_id);
+      return await tweetDao.tweetDel(user_id, tweet_id);
+    } else {
       err;
     }
   } catch (err) {
@@ -57,11 +53,9 @@ const tweetReply = async (
   return tweetReply;
 };
 
-
-
 module.exports = {
   tweetPost,
   tweetDel,
   tweetsList,
-  tweetReply
+  tweetReply,
 };
