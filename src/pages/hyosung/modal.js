@@ -1,10 +1,10 @@
 import React from 'react';
-import Overay from './overay';
+import Overap from './overap';
 import './modal.scss';
 function Modal({ profleImg, nickname, userid, setModal }) {
   return (
     <>
-      <Overay setModal={setModal} />
+      <Overap setModal={setModal} />
       <div className="modalWrapAll">
         <div className="modalWrap">
           <img className="modalImage" src={profleImg} />
