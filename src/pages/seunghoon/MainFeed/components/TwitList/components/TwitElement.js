@@ -11,6 +11,7 @@ function TwitElement({
     twitImg,
     likeEx,
     likeCount,
+    create_at,
   },
   commentHandler,
   isModal,
@@ -26,7 +27,7 @@ function TwitElement({
         <div className="userInfo">
           <div className="nickname">{nickname}</div>
           <div className="userid">{userid} ·</div>
-          <div className="time">{time}</div>
+          <div className="time">{create_at}</div>
         </div>
         <div className="twit">{twit}</div>
 

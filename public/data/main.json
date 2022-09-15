@@ -2,7 +2,7 @@
   {
     "id": 1,
     "nickname": "Jason Lee",
-    "user_id": "@guittamooi",
+    "userid": "@guittamooi",
     "replyTF": false,
     "profileImg": "https://images.unsplash.com/photo-1662355701652-2f5350d9d022?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE4fEZ6bzN6dU9ITjZ3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     "create_at": "2022-09-14T05:10:32.000Z",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "nickname": "해팔",
-    "user_id": "@ant_ddunddun",
+    "userid": "@ant_ddunddun",
     "replyTF": false,
     "profileImg": "https://images.unsplash.com/photo-1660023170324-931253bcca41?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDI1fEZ6bzN6dU9ITjZ3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
     "create_at": "2022-09-14T05:10:32.000Z",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "nickname": "ᴄʜᴀɴ",
-    "user_id": "@hausisak",
+    "userid": "@hausisak",
     "replyTF": false,
     "profileImg": "https://images.unsplash.com/photo-1662413915495-ff4a9f53f650?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDV8Q0R3dXdYSkFiRXd8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
     "create_at": "2022-09-14T05:10:32.000Z간",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "nickname": "bawui",
-    "user_id": "@b_awui",
+    "userid": "@b_awui",
     "replyTF": false,
     "profileImg": "https://images.unsplash.com/photo-1662338571362-5ad7a300074a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80",
     "create_at": "2022-09-14T05:10:32.000Z간",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "nickname": "현달🌟",
-    "user_id": "@TourovDuty",
+    "userid": "@TourovDuty",
     "replyTF": false,
     "profileImg": "https://images.unsplash.com/photo-1662228733182-97cc2d15f358?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8X2hiLWRsNFEtNFV8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
     "create_at": "2022-09-14T05:10:32.000Z간",
