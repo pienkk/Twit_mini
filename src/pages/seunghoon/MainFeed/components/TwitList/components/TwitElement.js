@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function TwitElement({
   feed: {
     id,
     nickname,
-    userid,
+    user_id,
     profileImg,
     time,
-    twit,
-    twitImg,
+    content,
+    content_img,
     likeEx,
     likeCount,
     create_at,
@@ -16,8 +16,28 @@ function TwitElement({
   commentHandler,
   isModal,
   reTwitHandler,
-  likeHandler,
 }) {
+  const [likeStatus, setLikeStatus] = useState(likeEx);
+
+  const likeHandler = event => {
+    fetch('http://10.58.0.33:3000/like', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE2NjMxOTk5NTV9.0iucwihABtSuKh08YuuRPR2H0S7I8hCg2P3uzmmLjv4',
+      },
+      body: JSON.stringify({
+        tweet_id: id,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+
+    setLikeStatus(likeStatus === 0 ? 1 : 0);
+    console.log(likeStatus);
+  };
+
   return (
     <div className="twitList" id={id}>
       <div className="profileImg">
@@ -26,16 +46,19 @@ function TwitElement({
       <div className="twitContent">
         <div className="userInfo">
           <div className="nickname">{nickname}</div>
-          <div className="userid">{userid} ·</div>
+          <div className="userid">{user_id} ·</div>
           <div className="time">{create_at}</div>
         </div>
-        <div className="twitText">{twit}</div>
+        <div className="twitText">{content}</div>
 
         {!isModal && (
           <>
-            <div className="twitImg">
-              <img src={twitImg} />
-            </div>
+            {content_img === '' ? null : (
+              <div className="twitImg">
+                <img src={content_img} />
+              </div>
+            )}
+
             <div className="twitFooter">
               <div className="comment">
                 <img
@@ -60,7 +83,7 @@ function TwitElement({
               </div>
 
               <div className="like" onClick={likeHandler}>
-                {likeEx === true ? (
+                {likeStatus === 1 ? (
                   <img
                     className="like"
                     src="./images/like.png"

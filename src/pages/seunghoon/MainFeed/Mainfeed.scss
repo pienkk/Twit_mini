@@ -84,6 +84,10 @@
             width: 36px;
             padding: 6px;
             filter: opacity(0.4) drop-shadow(0 0 0 blue);
+
+            .inputForImg {
+              display: none;
+            }
           }
           .uploadGIF {
             height: 36px;
@@ -117,6 +121,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          border: none;
           border-radius: 45px;
         }
       }
@@ -134,7 +139,7 @@
 
       .profileImg {
         img {
-          margin-top: 5px;
+          margin-top: 13px;
           height: 53px;
           width: 53px;
           border-radius: 50px;

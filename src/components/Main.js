@@ -22,9 +22,9 @@ function Main() {
   return (
     <div className="main">
       <LeftSideBar profile={profile} />
-      {/* <MainFeed /> */}
-      <MainTrend />
-      <Profile />
+      <MainFeed />
+      {/* <MainTrend /> */}
+      {/* <Profile /> */}
     </div>
   );
 }
