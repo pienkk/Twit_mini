@@ -1,8 +1,12 @@
 // import React, { useState } from "react";
 import MainTrend from '../pages/kimdaeho/MainTest/MainTrend';
+
+import MainFeed from '../pages/seunghoon/MainFeed/MainFeed';
+import './Main.scss';
 import LeftSideBar from '../pages/hyosung/leftSideBar';
 import { useState, useEffect } from 'react';
 import Profile from '../pages/jiwon/Profile';
+
 
 function Main() {
   useEffect(() => {
@@ -18,9 +22,12 @@ function Main() {
   console.log(profile);
   return (
     <div className="main">
+      <MainFeed />
+      <MainTrend />
       <MainTrend></MainTrend>
       <Profile />
       <LeftSideBar profile={profile} />
+
     </div>
   );
 }
