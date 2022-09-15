@@ -1,0 +1,29 @@
+.moreLookBack {
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+}
+.moreLookWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: fixed;
+  background-color: white;
+  width: 180px;
+  height: 590px;
+  top: 0;
+  margin-left: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 2px #e3e7ea;
+  left: 354px;
+  z-index: 100;
+}
+
+.moreLookContent {
+  padding: 20px;
+}
+.moreLookContent:hover {
+  background-color: #f7f9f9;
+  transition: 0.5s;
+}

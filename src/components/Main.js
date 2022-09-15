@@ -8,20 +8,9 @@ import { useState, useEffect } from 'react';
 import Profile from '../pages/jiwon/Profile';
 
 function Main() {
-  useEffect(() => {
-    fetch('/data/profile.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setProfile(...data);
-      });
-  }, []);
-  const [profile, setProfile] = useState({});
-  // console.log(profile);
   return (
     <div className="main">
-      <LeftSideBar profile={profile} />
+      <LeftSideBar />
       {/* <MainFeed /> */}
       <MainTrend />
       <Profile />
