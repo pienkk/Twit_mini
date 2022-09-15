@@ -2,6 +2,8 @@ import React from 'react';
 
 import './ProfileMedia.scss';
 
+import TwitList from '../seunghoon/MainFeed/components/TwitList/TwitList';
+
 const ProfileMedia = () => {
   return (
     <div className="profile-media">
