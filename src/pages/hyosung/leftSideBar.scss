@@ -8,6 +8,10 @@
   height: 100vh;
   border-right: 1px solid #eaeaea;
 }
+.linkTag {
+  color: black;
+  text-decoration: none;
+}
 .sideBarWrap {
   display: flex;
   flex-direction: column;
@@ -16,21 +20,17 @@
   font-size: 20px;
   justify-content: space-around;
 }
-
 img {
   object-fit: fill;
   width: 25px;
   height: 25px;
 }
-
 .birdImage {
   width: 35px;
 }
-
 span {
   display: block;
 }
-
 .categories {
   display: flex;
   align-items: center;
@@ -54,7 +54,6 @@ span {
 .categoriesWord {
   margin-top: 5px;
 }
-
 .twit {
   width: 200px;
   padding: 15px 0px;
@@ -89,7 +88,6 @@ span {
   background-color: #eaeaea;
   transition: 0.3s;
 }
-
 .profileImage {
   object-fit: cover;
   width: 40px;
@@ -100,7 +98,6 @@ span {
   position: absolute;
   left: 50px;
   font-size: 15px;
-
   p {
     padding: 2px;
     margin-left: 10px;
