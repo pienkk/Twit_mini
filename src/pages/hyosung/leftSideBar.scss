@@ -1,15 +1,17 @@
 .sideBarNav {
   display: flex;
   position: fixed;
-  left: 354px;
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
   height: 100vh;
+  left: 20%;
+  top: 20px;
 }
 .linkTag {
   color: black;
   text-decoration: none;
+  width: 140px;
 }
 .sideBarWrap {
   display: flex;

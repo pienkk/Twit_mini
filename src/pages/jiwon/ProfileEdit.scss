@@ -2,32 +2,25 @@
   background-color: rgba(0, 0, 0, 0.5);
   width: 100vw;
   height: 100vh;
-
   position: fixed;
   z-index: 15;
-
   top: 0;
   left: 0;
 }
-
 .ProfileEdit {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white;
-
   z-index: 120;
   position: fixed;
-
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   width: 660px;
   height: 500px;
   border-radius: 10px;
-
   .ProfileEditTop {
     display: flex;
     justify-content: space-between;
@@ -36,53 +29,51 @@
     top: 0;
     width: 100%;
     height: 40px;
-
     .profile-edit-x-button {
       all: unset;
       height: 30px;
       width: 30px;
       border-radius: 15px;
-
       display: flex;
       justify-content: center;
       align-items: center;
-
       margin-left: 5px;
-
       cursor: pointer;
-
       &:hover {
         background-color: #eaeaea;
       }
     }
-
     .profile-edit-save-button {
       all: unset;
-
       padding: 8px 16px;
       border-radius: 30px;
-
       background-color: black;
       color: white;
       font-size: 12px;
-
       display: flex;
       justify-content: center;
       align-items: center;
-
       margin-right: 10px;
-
       cursor: pointer;
     }
   }
-
   .profileEditBackground {
     width: 100%;
     height: 200px;
     display: flex;
     position: relative;
-    cursor: pointer;
-
+    .fileUploader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 30;
+      width: 100px;
+      height: 100px;
+      z-index: 90;
+      opacity: 0;
+      cursor: pointer;
+    }
     .profileEditOverlay {
       background-color: black;
       opacity: 0.5;
@@ -91,18 +82,18 @@
       width: inherit;
       height: 200px;
     }
-
     .profileImageEditCamera {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 30;
-
       width: 70px;
       height: 70px;
+      &:hover {
+        transform: scale(1.2);
+      }
     }
-
     .profileEditBackgroundImg {
       width: 100%;
       height: 100%;
@@ -110,14 +101,21 @@
       position: absolute;
     }
   }
-
   .profileEditProfile {
     display: flex;
     position: absolute;
     top: 0;
     left: 10px;
-    cursor: pointer;
-
+    .fileUploader2 {
+      width: 50px;
+      height: 50px;
+      background-color: blueviolet;
+      opacity: 0;
+      position: fixed;
+      top: 42%;
+      left: 8.5%;
+      z-index: 80;
+    }
     .profileEditOverlay {
       background-color: black;
       opacity: 0.5;
@@ -131,16 +129,18 @@
       border-radius: 55px;
       border: 3px solid white;
     }
-
     .profileImageEditCamera2 {
       position: fixed;
-      top: 42%;
-      left: 8.5%;
+      top: 43%;
+      left: 10%;
       z-index: 80;
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
-
     .profileEditProfileImg {
       width: 100px;
       height: 100px;
@@ -153,41 +153,34 @@
       top: 180px;
     }
   }
-
   .profile-edit {
     margin-top: 60px;
     width: 100%;
   }
-
   .profile-edit-input-wrap {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     margin-bottom: 10px;
-
     span {
       position: absolute;
       top: 6px;
       left: 34px;
       font-size: 14px;
     }
-
     input {
       all: unset;
       border: 1px solid #eaeaea;
       border-radius: 5px;
       width: 90%;
       padding: 20px 5px 5px 5px;
-
       &:focus {
         border: 2px solid #1c9bf0;
       }
     }
-
     textarea {
       all: unset;
       border: 1px solid #eaeaea;
@@ -199,20 +192,17 @@
       }
     }
   }
-
   .birthday {
     display: flex;
     flex-direction: column;
     position: relative;
     margin-bottom: 20px;
-
     .birthdayTitle {
       position: absolute;
       top: 6px;
       left: 30px;
       font-size: 12px;
     }
-
     .birthdayInfo {
       position: absolute;
       top: 20px;
