@@ -1,6 +1,5 @@
 // import React, { useState } from "react";
 import MainTrend from '../pages/kimdaeho/MainTest/MainTrend';
-
 import MainFeed from '../pages/seunghoon/MainFeed/MainFeed';
 import './Main.scss';
 import LeftSideBar from '../pages/hyosung/leftSideBar';

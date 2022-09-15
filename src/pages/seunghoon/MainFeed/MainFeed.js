@@ -16,20 +16,20 @@ const MainFeed = () => {
 
   console.log(feeds);
 
-  useEffect(() => {
-    fetch('http://10.58.0.49:3000/main', {
-      method: 'GET',
-      headers: {
-        authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
-      },
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-        setFeeds(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://10.58.0.49:3000/main', {
+  //     method: 'GET',
+  //     headers: {
+  //       authorization:
+  //         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
+  //     },
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log(data);
+  //       setFeeds(data);
+  //     });
+  // }, []);
 
   const imgImport = event => {
     imgInput.click();

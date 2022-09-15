@@ -1,12 +1,9 @@
 .sideBarNav {
   display: flex;
-  position: fixed;
   flex-direction: column;
   justify-content: space-between;
   width: 300px;
   height: 100vh;
-  left: 20%;
-  top: 20px;
 }
 .linkTag {
   color: black;
