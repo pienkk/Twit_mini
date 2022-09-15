@@ -15,7 +15,7 @@ function MainTrend() {
   const [suchModal, setSuchModal] = useState(false);
 
   return (
-    <div>
+    <div className="MainRight">
       <div className="MainTrend">
         <div className="TrendSuch">
           <input
