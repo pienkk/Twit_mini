@@ -1,9 +1,21 @@
 import React from 'react';
 
 function TwitElement({
-  feed: { id, nickname, userid, profileImg, time, twit, twitImg },
+  feed: {
+    id,
+    nickname,
+    userid,
+    profileImg,
+    time,
+    twit,
+    twitImg,
+    likeEx,
+    likeCount,
+  },
   commentHandler,
   isModal,
+  reTwitHandler,
+  likeHandler,
 }) {
   return (
     <div className="twitList" id={id}>
@@ -41,21 +53,26 @@ function TwitElement({
                   className="retweetImg"
                   src="./images/retweet.png"
                   alt="리트윗이미지"
+                  onClick={reTwitHandler}
                 />
                 <div className="retweetCount">10</div>
               </div>
 
-              <div className="like">
-                <img
-                  className="unlike"
-                  src="./images/dislike.png"
-                  alt="좋아요누르기전이미지"
-                />
-                <img
-                  className="like hidden"
-                  src="./images/like.png"
-                  alt="좋아요누른후이미지"
-                />
+              <div className="like" onClick={likeHandler}>
+                {likeEx === true ? (
+                  <img
+                    className="like"
+                    src="./images/like.png"
+                    alt="좋아요누른후이미지"
+                  />
+                ) : (
+                  <img
+                    className="unlike"
+                    src="./images/dislike.png"
+                    alt="좋아요누르기전이미지"
+                  />
+                )}
+                <div className="likeCount">{likeCount}</div>
               </div>
             </div>
           </>

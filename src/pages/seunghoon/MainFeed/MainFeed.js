@@ -14,7 +14,10 @@ const MainFeed = () => {
   useEffect(() => {
     fetch('./data/main.json')
       .then(response => response.json())
-      .then(data => setFeeds(data));
+      .then(data => {
+        console.log(data);
+        setFeeds(data);
+      });
   }, []);
 
   const commentHandler = event => {
@@ -34,12 +37,48 @@ const MainFeed = () => {
     console.log(event);
   };
 
+  const reTwitHandler = event => {
+    const id = event.nativeEvent.path[4].id;
+    fetch('주소주소', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        twitId: { id },
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+  };
+
+  const likeHandler = event => {
+    const id = event.nativeEvent.path[4].id;
+    console.log(id);
+    fetch('주소주소', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        twitId: { id },
+      }),
+    })
+      .then(response => response.json())
+      .then(data => console.log(data));
+  };
+
   return (
     <div className="mainFeed">
       <TwitHome />
       <TwitInput isModal={false} />
       <div className="twitFeeds">
-        <TwitList feeds={feeds} commentHandler={commentHandler} />
+        <TwitList
+          feeds={feeds}
+          commentHandler={commentHandler}
+          reTwitHandler={reTwitHandler}
+          likeHandler={likeHandler}
+        />
       </div>
       <ModalPortal>
         {modalOn && (
