@@ -22,4 +22,4 @@ const mainFeed = async () => {
     }
   };
   
-  module.exports = { mainFeed};
+  module.exports = { mainFeed };
