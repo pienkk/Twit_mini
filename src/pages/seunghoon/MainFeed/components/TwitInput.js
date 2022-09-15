@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
-function TwitInput({ isModal }) {
+function TwitInput({ isModal, feeds, setFeeds, twitSubmit, imgImport }) {
   return (
-    <article className="twitInput">
+    <form className="twitInput" onSubmit={twitSubmit} id="twitForm">
       <div className="writerProfileImg">
         <img src="./images/boy.png" alt="프로필이미지" />
       </div>
@@ -13,15 +13,26 @@ function TwitInput({ isModal }) {
             placeholder={
               isModal === true ? 'Tweet Your reply' : `What's happening?`
             }
+            name="text"
           />
         </div>
         <div className="inputFooter">
           <div className="uploadContents">
-            <img
-              className="uploadImg img"
-              src="./images/image.png"
-              alt="업로드이미지"
-            />
+            <div className="uploadImg">
+              <img
+                src="./images/image.png"
+                alt="업로드이미지"
+                onClick={imgImport}
+              />
+              <input
+                type="file"
+                className="inputForImg"
+                onClick={event => console.log(event)}
+                id="imgImportInput"
+                name="image"
+              />
+            </div>
+
             <img
               className="uploadGIF img"
               src="./images/gif.png"
@@ -38,12 +49,12 @@ function TwitInput({ isModal }) {
               alt="업로드위치"
             />
           </div>
-          <div className="twitBtn">
+          <button className="twitBtn">
             <div>{isModal === true ? 'Reply' : 'Tweet'}</div>
-          </div>
+          </button>
         </div>
       </div>
-    </article>
+    </form>
   );
 }
 

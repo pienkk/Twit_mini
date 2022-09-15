@@ -10,6 +10,11 @@ import Profile from '../pages/jiwon/Profile';
 function Main() {
   return (
     <div className="main">
+ twit/seunghoon/mainFeed
+      <LeftSideBar profile={profile} />
+      <MainFeed />
+      {/* <MainTrend /> */}
+      {/* <Profile /> */}
       <LeftSideBar />
       {/* <MainFeed /> */}
       <MainTrend />
