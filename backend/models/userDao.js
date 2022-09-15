@@ -1,5 +1,23 @@
 const appDataSource = require("./orm");
 
+
+const findUserToFrofileId = async ( id ) => {
+    try {
+        const [user] = await appDataSource.query(`
+            SELECT 
+                *
+            FROM users
+            WHERE profile_id = ? `,
+            [id]
+        )
+        return user
+    } catch (err) {
+        const error = new Error(`INVALID_DATA_INPUT`);
+        error.statusCode = 500;
+        throw error;
+    }
+}
+
 const signIn = async ( id ) => {
     try {
         const [user] = await appDataSource.query(
@@ -18,22 +36,6 @@ const signIn = async ( id ) => {
     }
 }
 
-const findUser = async ( id ) => {
-    try {
-        const [user] = await appDataSource.query(`
-            SELECT 
-                *
-            FROM users
-            WHERE profile_id = ? `,
-            [id]
-        )
-        return user
-    } catch (err) {
-        const error = new Error(`INVALID_DATA_INPUT`);
-        error.statusCode = 500;
-        throw error;
-    }
-}
 
 const createUser = async ( id, password, birthday) => {
     try {
@@ -55,6 +57,6 @@ const createUser = async ( id, password, birthday) => {
 
 module.exports = {
     signIn,
-    findUser,
+    findUserToFrofileId,
     createUser
 }
