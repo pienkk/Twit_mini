@@ -1,6 +1,17 @@
 const { tweetService } = require("../services");
 const asyncWrap = require("../middleware/async-wrap");
 
+const idSearch = asyncWrap(async (req, res) => {
+  const { id } = req.body;
+  if ( !id ) {
+    const err = new Error("KEY_ERROR");
+    err.statusCode = 400;
+    throw err;
+  }
+  const users = await tweetService.idSearch( id );
+  return res.status(200).json({users});
+})
+
 const tweetPost = asyncWrap(async (req, res) => {
   let tweetPost = ({
     user_id,
@@ -63,4 +74,4 @@ const tweetTrend = asyncWrap(async (req, res) => {
   return res.status(200).json({ result })
 })
 
-module.exports = { tweetPost, tweetDel, tweetsList, tweetReply, tweetTrend };
+module.exports = { idSearch, tweetPost, tweetDel, tweetsList, tweetReply, tweetTrend };

@@ -1,6 +1,15 @@
 const {followDao} = require("../models");
 const {userDao} = require("../models");
 
+const followList = async ( userId ) => {
+    const result = await followDao.followList( userId );
+    return result;
+}
+
+const followerList = async ( userId ) => {
+    const result = await followDao.followerList( userId );
+    return result;
+}
 
 const followUp = async ( id, profileId ) => {
     const receiveUser = await userDao.findUserToFrofileId( profileId );
@@ -35,6 +44,8 @@ const followDown = async ( id, profileId ) => {
 }
 
 module.exports = {
+    followList,
+    followerList,
     followUp,
     followDown
 }
