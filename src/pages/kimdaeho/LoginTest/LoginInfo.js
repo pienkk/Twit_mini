@@ -1,20 +1,28 @@
 import React from 'react';
 import './LoginInfo.scss';
 
-function LoginInfo({ ModalOpen }) {
+function LoginInfo({ LoginModalOpen }) {
   return (
     <div>
       <div className="LoginMain">
         <div className="LoginGmail group">
           <a href="#!">
-            <img src="./images/free-icon-spark-5436977.png" alt="img" />
+            <img
+              className="LoginImg1"
+              src="./images/free-icon-spark-5436977.png"
+              alt="img"
+            />
             <div className="Login-intro">
               <p>
                 <span>대호(으)로 로그인</span>
               </p>
               <p>eogh773@gmail.com</p>
             </div>
-            <img src="./images/free-icon-google-plus-3661396.png" alt="img" />
+            <img
+              className="LoginImg2"
+              src="./images/free-icon-google-plus-3661396.png"
+              alt="img"
+            />
           </a>
         </div>
         <div className="JoinApple group">
@@ -33,7 +41,7 @@ function LoginInfo({ ModalOpen }) {
         </p>
         <h3>이미 트위터에 가입하셨나요?</h3>
         <div className="group">
-          <a className="LoginBtn" href="#!" onClick={ModalOpen}>
+          <a className="LoginBtn" href="#!" onClick={LoginModalOpen}>
             로그인
           </a>
         </div>

@@ -1,0 +1,18 @@
+
+.ViewMore {
+  color: #1C9BF0;
+
+  height : 36px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  cursor: pointer;
+
+
+  &:hover {
+    background-color: #eaeaea;
+    transition: 0.3s;
+
+  }
+}

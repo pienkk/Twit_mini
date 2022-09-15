@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Footer.scss';
 
 function Footer() {
-  const [FooterList, setFooterList] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/login.json')
-      .then(Response => Response.json())
-      .then(result => setFooterList(result));
-  }, []);
-
   return (
     <div>
       <ul className="FooterList">
