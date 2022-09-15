@@ -1,6 +1,6 @@
 const database = require("./orm");
 
-const likeEx = async (user_id) => {
+const likeEx = async (user_id, post_id) => {
   try {
     return await database.query(
       `SELECT user_id,
