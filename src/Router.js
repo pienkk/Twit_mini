@@ -14,7 +14,6 @@ const Router = () => {
       <LeftSideBar />
       <MainTrend />
       <Routes>
-        <Route path="/Login" element={<Login />} />
         <Route path="/Main" element={<Main />} />
         <Route path="/LoginDaeho" element={<LoginDaeho />} />
         <Route path="/MainTrend" element={<MainTrend />} />
@@ -26,6 +25,11 @@ const Router = () => {
         <Route path="/list" element={<Profile />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
+      <switch>
+        <Routes>
+          <Route path="/Login" element={<Login />} />
+        </Routes>
+      </switch>
     </BrowserRouter>
   );
 };

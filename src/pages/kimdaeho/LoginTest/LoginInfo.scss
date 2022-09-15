@@ -60,7 +60,7 @@
   }
 
   .CenterLine {
-    margin: 20px 0;
+    margin: 40px 0;
     text-align: center;
     width: 300px;
   }
@@ -75,17 +75,18 @@
   }
 
   .Explanation {
-    margin-top: 2%;
-    width: 300px;
+    margin-top: 15px;
+    width: 500px;
     font-size: 13px;
 
     span {
+      display: inline;
       color: rgb(108, 156, 215);
     }
   }
 
   h3 {
-    margin-top: 15%;
+    margin-top: 150px;
     font-weight: 700;
   }
 
