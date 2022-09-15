@@ -13,6 +13,7 @@ const TopicsToFollow = () => {
       .then(res => res.json())
       .then(data => setTopic(...data));
   }, []);
+  console.log(topic);
 
   return (
     <div className="TopicsToFollow">

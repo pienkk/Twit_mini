@@ -3,6 +3,8 @@ import React from 'react';
 import WhoToFollow from './WhoToFollow';
 import TopicsToFollow from './TopicsToFollow';
 
+import TwitList from '../seunghoon/MainFeed/components/TwitList/TwitList';
+
 const ProfileTweetsAndReplies = () => {
   return (
     <div>

@@ -3,7 +3,7 @@ import TwitInput from './components/TwitInput';
 import TwitElement from './components/TwitList/components/TwitElement';
 import './Modal.scss';
 
-function Modal({ commentHandler, feedForModal }) {
+function Modal({ commentHandler, feedForModal, isComment }) {
   useEffect(() => {
     document.body.style.cssText = `
       position: fixed;
@@ -19,15 +19,19 @@ function Modal({ commentHandler, feedForModal }) {
     };
   });
 
-  console.log(feedForModal);
-
   return (
     <div className="modalContainer" onClick={commentHandler}>
       <div className="commentModal">
-        <TwitElement feed={feedForModal} isModal={true} />
-        <div className="replyingTo">
-          Replying to <span className="userId">{feedForModal.userid}</span>
-        </div>
+        {isComment && (
+          <>
+            {' '}
+            <TwitElement feed={feedForModal} isModal={true} />
+            <div className="replyingTo">
+              Replying to <span className="userId">{feedForModal.userid}</span>
+            </div>
+          </>
+        )}
+
         <TwitInput isModal={true} />
       </div>
     </div>

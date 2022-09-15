@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import './Profile.scss';
+import '../seunghoon/MainFeed/Mainfeed.scss';
 
 import ProfileTweets from './ProfileTweets';
 import ProfileTweetsAndReplies from './ProfileTweetsAndReplies';
@@ -8,10 +9,16 @@ import ProfileMedia from './ProfileMedia';
 import ProfileLikes from './ProfileLikes';
 import ProfileEdit from './ProfileEdit';
 
+import ModalPortal from '../seunghoon/MainFeed/Portal.js';
+
 const Profile = () => {
   const [user, setUser] = useState({});
 
   const [profileEditClicked, setProfileEditClicked] = useState(false);
+
+  const profileEditModalClose = () => {
+    setProfileEditClicked(false);
+  };
 
   const [menuClicked, setMenuClicked] = useState({
     tweets: true,
@@ -19,6 +26,42 @@ const Profile = () => {
     media: false,
     likes: false,
   });
+
+  const handleTweetsClick = () => {
+    setMenuClicked({
+      tweets: true,
+      tweetsreplies: false,
+      media: false,
+      likes: false,
+    });
+  };
+
+  const handleTweetsAndRepliesClick = () => {
+    setMenuClicked({
+      tweets: false,
+      tweetsreplies: true,
+      media: false,
+      likes: false,
+    });
+  };
+
+  const handleMediaClick = () => {
+    setMenuClicked({
+      tweets: false,
+      tweetsreplies: false,
+      media: true,
+      likes: false,
+    });
+  };
+
+  const handleLikesClick = () => {
+    setMenuClicked({
+      tweets: false,
+      tweetsreplies: false,
+      media: false,
+      likes: true,
+    });
+  };
 
   useEffect(() => {
     fetch('/data/profile.json')
@@ -65,23 +108,35 @@ const Profile = () => {
         </div>
       </div>
       <div className="profile-menu">
-        <div className="profile-menu-item">Tweets</div>
-        <div className="profile-menu-item">Tweets & replies</div>
-        <div className="profile-menu-item">Media</div>
-        <div className="profile-menu-item">Likes</div>
+        <div className="profile-menu-item" onClick={handleTweetsClick}>
+          Tweets
+        </div>
+        <div
+          className="profile-menu-item"
+          onClick={handleTweetsAndRepliesClick}
+        >
+          Tweets & replies
+        </div>
+        <div className="profile-menu-item" onClick={handleMediaClick}>
+          Media
+        </div>
+        <div className="profile-menu-item" onClick={handleLikesClick}>
+          Likes
+        </div>
       </div>
-      <ProfileTweets user={user} />
-      <ProfileTweetsAndReplies user={user} />
-      <ProfileMedia user={user} />
-      <ProfileLikes user={user} />
+      <ModalPortal>
+        {profileEditClicked && (
+          <ProfileEdit
+            user={user}
+            profileEditModalClose={profileEditModalClose}
+          />
+        )}
+      </ModalPortal>
 
-      {profileEditClicked && (
-        <ProfileEdit
-          user={user}
-          profileEditClicked={profileEditClicked}
-          setProfileEditClicked={setProfileEditClicked}
-        />
-      )}
+      {menuClicked.tweets && <ProfileTweets user={user} />}
+      {menuClicked.tweetsreplies && <ProfileTweetsAndReplies user={user} />}
+      {menuClicked.media && <ProfileMedia user={user} />}
+      {menuClicked.likes && <ProfileLikes user={user} />}
     </div>
   );
 };

@@ -1,13 +1,13 @@
 import React from 'react';
-import Overap from './overap';
+
 import './modal.scss';
-function Modal({ profleImg, nickname, userid, setModal }) {
+function Modal({ profileImg, nickname, userid, setModal, modalBackClick }) {
   return (
     <>
-      <Overap setModal={setModal} />
+      <div className="modalBack" onClick={modalBackClick}></div>
       <div className="modalWrapAll">
         <div className="modalWrap">
-          <img className="modalImage" src={profleImg} />
+          <img className="modalImage" src={profileImg} />
           <div className="modalUserWrap">
             <p className="ptag1">{nickname}</p>
             <p className="ptag2">{userid}</p>
