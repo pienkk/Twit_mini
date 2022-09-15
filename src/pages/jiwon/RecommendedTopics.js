@@ -2,11 +2,11 @@ import React from 'react';
 
 import './RecommendedTopics.scss';
 
-const RecommendedTopics = ({ topic }) => {
+const RecommendedTopics = ({ item }) => {
   return (
     <div className="RecommendedTopics">
       <div className="RecommendedTopicsLeft">
-        <span>{topic}</span>
+        <span>{item}</span>
         <img src="./images/Twitter_files/profile_icons/plus.png" />
       </div>
       <img src="./images/Twitter_files/profile_icons/x.png" />

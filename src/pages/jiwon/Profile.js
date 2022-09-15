@@ -50,13 +50,17 @@ const Profile = () => {
           <span className="profile-username">{user.nickname}</span>
           <span>{user.userid}</span>
           <span>{user.introduce}</span>
-          <span>
+          <span className="profile-joined-day">
             <img src={ICONS.calendar} width="15px" alt="달력 아이콘" />
             {'  '}가입일 : {user.joinDay}
           </span>
           <div className="profile-follow-info">
-            <span>{user.follow}</span> <span> Followings</span>
-            <span>{user.follower}</span> <span> Followers</span>
+            <span className="profile-follow-info-num">{user.follow}</span>{' '}
+            <span className="profile-follow-info-text"> Followings</span>
+            <span className="profile-follow-info-num">
+              {user.follower}
+            </span>{' '}
+            <span className="profile-follow-info-text"> Followers</span>
           </div>
         </div>
       </div>

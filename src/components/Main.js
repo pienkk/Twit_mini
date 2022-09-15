@@ -18,7 +18,7 @@ function Main() {
       });
   }, []);
   const [profile, setProfile] = useState({});
-  console.log(profile);
+  // console.log(profile);
   return (
     <div className="main">
       <LeftSideBar profile={profile} />
