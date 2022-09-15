@@ -13,8 +13,8 @@ const mainFeed = async (user_id) => {
       inner join follows on follows.follow_to = tweets.user_id 
       inner join users on tweets.user_id = users.id 
       left join likes on likes.tweet_id = tweets.id AND likes.user_id = ? WHERE follow_from = ?;
-      `,[user_id, user_id]
-
+      `,
+      [user_id, user_id]
     );
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");
@@ -24,16 +24,28 @@ const mainFeed = async (user_id) => {
 };
 
 const replyCount = async (user_id) => {
-  try{
+  try {
     return await database.query(`SELECT tweets.id
     from tweets WHERE replyTF=1
-    `
-    );
-  }catch (err) {
+    `);
+  } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");
     error.statusCode = 500;
     throw error;
   }
-} 
+};
 
-module.exports = { mainFeed, replyCount};
+
+const likeCount = async (user_id) => {
+  try {
+    return await database.query(`SELECT tweets.id
+    FROM tweets JOIN likes WHERE tweets.id=likes.tweet_id 
+    `);
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+};
+
+module.exports = { mainFeed, replyCount, likeCount };
