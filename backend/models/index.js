@@ -6,6 +6,8 @@ const followDao = require("./followDao")
 const mainDao = require("./mainDao");
 const dmDao = require("./dmDao");
 const followDao = require("./followDao")
+const profileDao = require("./profileDao")
+const retweetDao = require("./retweetDao")
 
 module.exports = {
     userDao,
@@ -15,5 +17,7 @@ module.exports = {
     followDao,
     mainDao,
     dmDao,
-    followDao
+    followDao,
+    profileDao,
+    retweetDao
 }

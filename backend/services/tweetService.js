@@ -1,4 +1,10 @@
 const { tweetDao } = require("../models");
+const { userDao } = require("../models");
+
+const idSearch = async ( id ) => {
+  const result = userDao.searchAnyId( id );
+  return result;
+}
 
 const tweetPost = async (user_id, content, content_img, tweet_for) => {
   const tweetPost = await tweetDao.tweetPost(
@@ -53,9 +59,30 @@ const tweetReply = async (
   return tweetReply;
 };
 
+const tweetTrend = async() => {
+  const tweet = await tweetDao.tweetHashTag()
+  const hashArray = [];
+  const hashObject = tweet.reduce((accu, curr) => {
+    accu[curr.hash] = (accu[curr.hash] || 0) + 1;
+    return accu;
+  }, {})
+  for(key in hashObject){
+    hashArray.push({tag : key, count : hashObject[key]})
+  }
+  hashArray.sort(function(a, b) {
+    return b.count - a.count;
+  })
+  if ( hashArray.length >5 ) {
+    hashArray.length = 5;
+  }
+  return hashArray
+}
+
 module.exports = {
+  idSearch,
   tweetPost,
   tweetDel,
   tweetsList,
   tweetReply,
+  tweetTrend
 };

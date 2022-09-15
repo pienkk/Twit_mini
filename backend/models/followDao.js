@@ -1,5 +1,75 @@
 const appDataSource = require("./orm");
 
+const followCount = async ( userId ) => {
+    try {
+        const [ follow ] = await appDataSource.query(
+            `SELECT COUNT(follow_from) as follow
+            FROM follows
+            WHERE follow_from = ? `,
+            [ userId ]
+        )
+        return follow
+    } catch (err) {
+        const error = new Error(`INVALID_DATA_INPUT`);
+        error.statusCode = 500;
+        throw error;
+    }
+}
+
+const followerCount = async ( userId ) => {
+    try {
+        const [ follower ] = await appDataSource.query(
+            `SELECT COUNT(follow_to) as follower
+            FROM follows
+            WHERE follow_to = ? `,
+            [ userId ]
+        )
+        return follower
+    } catch (err) {
+        const error = new Error(`INVALID_DATA_INPUT`);
+        error.statusCode = 500;
+        throw error;
+    }
+}
+
+const followList = async ( userId ) => {
+    try {
+        return await appDataSource.query(
+            `SELECT
+                users.profile_id as id,
+                users.profile_nickname as nickname,
+                users.comment
+            FROM users INNER JOIN 
+            follows on users.id = follows.follow_from
+            WHERE follows.follow_from = ? `,
+            [ userId ]
+        )
+    } catch (err) {
+        const error = new Error(`INVALID_DATA_INPUT`);
+        error.statusCode = 500;
+        throw error;
+    }
+}
+
+const followerList = async ( userId ) => {
+    try {
+        return await appDataSource.query(
+            `SELECT
+                users.profile_id as id,
+                users.profile_nickname as nickname,
+                users.comment
+            FROM users INNER JOIN 
+            follows on users.id = follows.follow_to
+            WHERE follows.follow_to = ? `,
+            [ userId ]
+        )
+    } catch (err) {
+        const error = new Error(`INVALID_DATA_INPUT`);
+        error.statusCode = 500;
+        throw error;
+    }
+}
+
 const findFollow = async ( id, receiveId ) => {
     try {
         return await appDataSource.query(
@@ -47,6 +117,10 @@ const followDown = async ( id, receiveId ) => {
 }
 
 module.exports = {
+    followCount,
+    followerCount,
+    followList,
+    followerList,
     findFollow,
     followUp,
     followDown

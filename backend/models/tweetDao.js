@@ -111,4 +111,35 @@ const tweetReply = async (
   }
 };
 
-module.exports = { tweetPost, tweetDel, tweetEx, tweetsList, tweetReply, initReply,};
+const tweetHashTag = async () => {
+  try {
+    return await database.query(
+      `SELECT 
+        SUBSTRING_INDEX(content, " ", -1) as hash
+      FROM tweets
+      WHERE content like "%#%"`
+    )
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+}
+
+const replyCount = async ( tweetId ) => {
+  try {
+    const [count] =  await database.query(
+      `SELECT COUNT(reply_at) as count
+      FROM tweets
+      WHERE reply_at = ?`,
+      [ tweetId ]
+    )
+    return count;
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+}
+
+module.exports = { tweetPost, tweetDel, tweetEx, tweetsList, tweetReply, initReply, tweetHashTag, replyCount};

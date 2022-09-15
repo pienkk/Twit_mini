@@ -1,15 +1,22 @@
 const { tweetService } = require("../services");
 const asyncWrap = require("../middleware/async-wrap");
 
-const tweetPost = asyncWrap(async (req, res) => {
-  let tweetPost = ({
-    user_id,
-    content,
-    content_img,
-    tweet_for,
-  } = req.body);
+const idSearch = asyncWrap(async (req, res) => {
+  const { id } = req.body;
+  if ( !id ) {
+    const err = new Error("KEY_ERROR");
+    err.statusCode = 400;
+    throw err;
+  }
+  const users = await tweetService.idSearch( id );
+  return res.status(200).json({users});
+})
 
-  if (!user_id || !content || !tweet_for) {
+const tweetPost = asyncWrap(async (req, res) => {
+  const {user_id,content,content_img, tweet_for} = req.body;
+
+  if (!user_id || !content ) {
+    console.log("err")
     return res.status(400).json({ message: "KEY_ERROR" });
   }
   await tweetService.tweetPost(
@@ -58,4 +65,9 @@ const tweetReply = asyncWrap(async (req, res) => {
   res.status(201).json({ message: "replyCreated" });
 });
 
-module.exports = { tweetPost, tweetDel, tweetsList, tweetReply };
+const tweetTrend = asyncWrap(async (req, res) => {
+  const result = await tweetService.tweetTrend();
+  return res.status(200).json({ result })
+})
+
+module.exports = { idSearch, tweetPost, tweetDel, tweetsList, tweetReply, tweetTrend };

@@ -34,4 +34,20 @@ const tweetLike = async (user_id, post_id) => {
   }
 };
 
-module.exports = { tweetLike, likeEx };
+const likeCount = async ( tweetId ) => {
+  try {
+    const [count] = await database.query(
+      `SELECT COUNT(tweet_id) as count
+      FROM likes
+      WHERE tweet_id = ?`,
+      [ tweetId ]
+    )
+    return count
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+}
+
+module.exports = { tweetLike, likeEx,likeCount };

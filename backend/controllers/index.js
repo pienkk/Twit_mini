@@ -6,6 +6,7 @@ const followController = require("./followController");
 const mainController = require("./mainController");
 const dmController = require("./dmController");
 const followController = require("./followController");
+const profileController = require("./profileController")
 
 
 module.exports = {
@@ -16,5 +17,6 @@ module.exports = {
     followController,
     mainController,
     dmController,
-    followController
+    followController,
+    profileController
 }

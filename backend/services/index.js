@@ -7,6 +7,7 @@ const followService = require("./followService")
 const mainService = require("./mainService");
 const dmService = require("./dmService")
 const followService = require("./followService")
+const profileService = require("./profileService");
 
 module.exports = {
     userService,
@@ -16,5 +17,6 @@ module.exports = {
     followService,
     mainService,
     dmService,
-    followService
+    followService,
+    profileService
 }
