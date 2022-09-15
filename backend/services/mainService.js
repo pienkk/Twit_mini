@@ -59,7 +59,7 @@ let [feedFilter] = AA.filter(
 result.push(feedFilter)
 //AA에서 메인피드에서 result로 보낸 값들을 필터링한뒤, feedFilter에서 id중복값들을 1개씩만 남기고 제거 후 result로 푸쉬
 
-  console.log(result);
+
   return result;
 };
 
