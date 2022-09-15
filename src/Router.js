@@ -12,6 +12,7 @@ const Router = () => {
   return (
     <BrowserRouter>
       <LeftSideBar />
+      <MainTrend />
       <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/Main" element={<Main />} />

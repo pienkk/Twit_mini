@@ -16,20 +16,20 @@ const MainFeed = () => {
 
   console.log(feeds);
 
-  // useEffect(() => {
-  //   fetch('http://10.58.0.33:3000/main', {
-  //     method: 'GET',
-  //     headers: {
-  //       authorization:
-  //         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE2NjMxOTk5NTV9.0iucwihABtSuKh08YuuRPR2H0S7I8hCg2P3uzmmLjv4',
-  //     },
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data);
-  //       setFeeds(data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch('http://10.58.0.49:3000/main', {
+      method: 'GET',
+      headers: {
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setFeeds(data);
+      });
+  }, []);
 
   const imgImport = event => {
     imgInput.click();
@@ -46,14 +46,14 @@ const MainFeed = () => {
     console.log(textValue);
     console.log(imgValue);
 
-    // fetch('http://10.58.0.49:3000/profile/test', {
-    //   method: 'POST',
-    //   headers: {
-    //     enctype: 'multipart/form-data',
-    //   },
-    //   body: new FormData(twitForm),
-    // }).then(response => console.log(response));
-    // // .then(data => console.log(data));
+    fetch('http://10.58.0.49:3000/profile/test2', {
+      method: 'POST',
+      headers: {
+        enctype: 'multipart/form-data',
+      },
+      body: new FormData(twitForm),
+    }).then(response => console.log(response));
+    // .then(data => console.log(data));
 
     const submitData = {
       id: 0,
