@@ -7,7 +7,6 @@ import LeftSideBar from '../pages/hyosung/leftSideBar';
 import { useState, useEffect } from 'react';
 import Profile from '../pages/jiwon/Profile';
 
-
 function Main() {
   useEffect(() => {
     fetch('/data/profile.json', {
@@ -22,12 +21,10 @@ function Main() {
   console.log(profile);
   return (
     <div className="main">
-      <MainFeed />
-      <MainTrend />
-      <MainTrend></MainTrend>
-      <Profile />
       <LeftSideBar profile={profile} />
-
+      {/* <MainFeed /> */}
+      <MainTrend />
+      <Profile />
     </div>
   );
 }

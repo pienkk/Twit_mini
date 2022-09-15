@@ -29,7 +29,7 @@ function TwitElement({
           <div className="userid">{userid} ·</div>
           <div className="time">{create_at}</div>
         </div>
-        <div className="twit">{twit}</div>
+        <div className="twitText">{twit}</div>
 
         {!isModal && (
           <>

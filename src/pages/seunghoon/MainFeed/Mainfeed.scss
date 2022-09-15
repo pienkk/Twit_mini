@@ -142,10 +142,10 @@
       }
 
       .twitContent {
-        width: 100%;
         margin-left: 15px;
 
         .userInfo {
+          width: 400px;
           display: flex;
           margin-bottom: 15px;
 
@@ -167,10 +167,11 @@
         .twitImg {
           img {
             width: 90%;
+            height: 300px;
           }
         }
 
-        .twit {
+        .twitText {
           margin-bottom: 15px;
           line-height: 130%;
         }
@@ -212,6 +213,7 @@
           .like {
             display: flex;
             align-items: center;
+            margin-right: 30px;
 
             img {
               width: 20px;
