@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import './Profile.scss';
+import '../seunghoon/MainFeed/Mainfeed.scss';
 
 import ProfileTweets from './ProfileTweets';
 import ProfileTweetsAndReplies from './ProfileTweetsAndReplies';
