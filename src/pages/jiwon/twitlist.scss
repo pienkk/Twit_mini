@@ -1,0 +1,98 @@
+.twitList {
+  display: flex;
+  margin-top: 15px;
+  border-bottom: 1px solid #e2e2e2;
+
+  .profileImg {
+    img {
+      margin-top: 5px;
+      height: 53px;
+      width: 53px;
+      border-radius: 50px;
+    }
+  }
+
+  .twitContent {
+    margin-left: 15px;
+
+    .userInfo {
+      width: 400px;
+      display: flex;
+      margin-bottom: 15px;
+
+      .nickname {
+        font-weight: 700;
+        margin-right: 5px;
+      }
+
+      .userid {
+        color: gray;
+        margin-right: 5px;
+      }
+
+      .time {
+        color: gray;
+      }
+    }
+
+    .twitImg {
+      img {
+        width: 90%;
+        height: 300px;
+      }
+    }
+
+    .twitText {
+      margin-bottom: 15px;
+      line-height: 130%;
+    }
+
+    .twitFooter {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+      margin-bottom: 15px;
+
+      .comment {
+        display: flex;
+        align-items: center;
+
+        .commentImg {
+          width: 20px;
+          height: 20px;
+        }
+
+        .commentCount {
+          margin-left: 6px;
+        }
+      }
+
+      .retweet {
+        display: flex;
+        align-items: center;
+
+        .retweetImg {
+          width: 20px;
+          height: 20px;
+        }
+
+        .retweetCount {
+          margin-left: 7px;
+        }
+      }
+
+      .like {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+
+        img {
+          width: 20px;
+          height: 20px;
+          margin-right: 5px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+}
