@@ -9,11 +9,12 @@ const mainFeed = asyncWrap(async (req, res) => {
     if (!user_id ) {
       return res.status(400).json({ message: "KEY_ERROR" });
     }
-    await mainService.mainFeed(
+    
+    let mainData = await mainService.mainFeed(
       user_id
      
     );
-    res.status(201).json({ message: "likeCreated" });
+    res.status(201).json(mainData);
   });
 
   module.exports = { mainFeed };

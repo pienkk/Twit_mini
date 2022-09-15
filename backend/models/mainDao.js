@@ -12,7 +12,7 @@ const mainFeed = async () => {
         tweets.create_at,
         tweets.tweet_for,
         likes.user_id AS "like"
- FROM users LEFT JOIN tweets ON users.id = tweets.user_id
+ FROM users JOIN tweets ON users.id = tweets.user_id
  LEFT JOIN likes ON tweets.id = likes.tweet_id;`
       );
     } catch (err) {
