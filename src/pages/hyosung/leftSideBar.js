@@ -1,9 +1,26 @@
 import React from 'react';
 import './leftSideBar.scss';
 import Profile from './profile';
-import Modal from './modal';
+// import Modal from './modal';
 import { Link } from 'react-router-dom';
-function LeftSideBar({ profile }) {
+import MoreLook from './moreLook';
+import { useEffect, useState } from 'react';
+import TwitModal from './twitModal';
+
+import Modal from '../seunghoon/MainFeed/Modal';
+import ModalPortal from '../seunghoon/MainFeed/Portal';
+
+function LeftSideBar({}) {
+  useEffect(() => {
+    fetch('/data/profile.json', {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setProfile(...data);
+      });
+  }, []);
+  const [profile, setProfile] = useState({});
   return (
     <>
       <div className="sideBarNav">
@@ -45,12 +62,12 @@ function LeftSideBar({ profile }) {
               <span className="categoriesWord">북마크</span>
             </div>
           </Link>
-          <Link className="linkTag" to={`/${profile.nickname}/lists`}>
-            <div className="categories">
-              <img src="./listicon.png" />
-              <span className="categoriesWord">리스트</span>
-            </div>
-          </Link>
+          {/* <Link className="linkTag" to={`/${profile.nickname}/lists`}> */}
+          <div className="categories">
+            <img src="./listicon.png" />
+            <span className="categoriesWord">리스트</span>
+          </div>
+          {/* </Link> */}
           <Link className="linkTag" to={'/profile'}>
             <div className="categories">
               <img src="./user-profileicon.png" />
@@ -58,12 +75,9 @@ function LeftSideBar({ profile }) {
             </div>
           </Link>
 
-          <div className="categories">
-            <img src="./moreicon.png" />
-            <span className="categoriesWord">더보기</span>
-          </div>
+          <MoreLook />
 
-          <div className="twit">트윗하기</div>
+          <TwitModal />
         </div>
 
         <Profile
@@ -71,7 +85,7 @@ function LeftSideBar({ profile }) {
           id={profile.id}
           nickname={profile.nickname}
           userid={profile.userid}
-          profleImg={profile.profleImg}
+          profileImg={profile.profileImg}
           joinDay={profile.joinDay}
           follow={profile.follow}
           follower={profile.follower}

@@ -11,6 +11,7 @@ import LeftSideBar from './pages/hyosung/leftSideBar';
 const Router = () => {
   return (
     <BrowserRouter>
+      <LeftSideBar />
       <Routes>
         <Route path="/Login" element={<Login />} />
         <Route path="/Main" element={<Main />} />
