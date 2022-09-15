@@ -126,4 +126,20 @@ const tweetHashTag = async () => {
   }
 }
 
-module.exports = { tweetPost, tweetDel, tweetEx, tweetsList, tweetReply, initReply, tweetHashTag};
+const replyCount = async ( tweetId ) => {
+  try {
+    const [count] =  await database.query(
+      `SELECT COUNT(reply_at) as count
+      FROM tweets
+      WHERE reply_at = ?`,
+      [ tweetId ]
+    )
+    return count;
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+}
+
+module.exports = { tweetPost, tweetDel, tweetEx, tweetsList, tweetReply, initReply, tweetHashTag, replyCount};

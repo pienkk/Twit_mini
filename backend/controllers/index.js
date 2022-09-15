@@ -4,6 +4,7 @@ const likeController = require("./likeController.js");
 const mainController = require("./mainController");
 const dmController = require("./dmController");
 const followController = require("./followController");
+const profileController = require("./profileController")
 
 
 module.exports = {
@@ -12,5 +13,6 @@ module.exports = {
     likeController,
     mainController,
     dmController,
-    followController
+    followController,
+    profileController
 }

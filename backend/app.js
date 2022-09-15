@@ -7,6 +7,7 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT;
 
+app.use("/img", express.static("uploads"))
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
