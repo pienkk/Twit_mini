@@ -21,5 +21,17 @@ const mainFeed = async () => {
       throw error;
     }
   };
+
+const findId = async (text) => {
+  try {
+    const result = await database.query(
+      `SELECT `
+    )
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+}
   
-  module.exports = { mainFeed };
+  module.exports = { mainFeed, findId};

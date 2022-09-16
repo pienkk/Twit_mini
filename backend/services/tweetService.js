@@ -1,18 +1,18 @@
 const { tweetDao } = require("../models");
 const { userDao } = require("../models");
+const HOST = process.env.HOST;
 
 const idSearch = async ( id ) => {
   const result = userDao.searchAnyId( id );
   return result;
 }
 
-const tweetPost = async (user_id, content, content_img, tweet_for) => {
-  const tweetPost = await tweetDao.tweetPost(
-    user_id,
-    content,
-    content_img,
-    tweet_for
-  );
+const tweetPost = async (user_id, content, contentImg) => {
+  let imageUrl = null;
+  if (contentImg != null) {
+    imageUrl = HOST+contentImg;
+  }
+  const tweetPost = await tweetDao.tweetPost(user_id,content,imageUrl);
   return tweetPost;
 };
 

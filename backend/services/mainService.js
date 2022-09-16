@@ -63,4 +63,11 @@ result.push(feedFilter)
   return result;
 };
 
-module.exports = { mainFeed };
+const mainSearch = async (text) => {
+  const findId = mainDao.findId(text);
+  const findNick = mainDao.findNickname(text);
+  const findTweets = mainDao.findTweets(text);
+}
+
+
+module.exports = { mainFeed ,mainSearch};

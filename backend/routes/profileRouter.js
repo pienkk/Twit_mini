@@ -6,6 +6,9 @@ const { upload } = require("../util/multer")
 
 router.get("/", accessToken, profileController.getProfile);
 router.get("/tweets", accessToken, profileController.getMyTweets);
+router.get("/reply", accessToken, profileController.getReplyTweets)
+router.get("/like", accessToken,profileController.getLikeTweets);
+router.get("/media", accessToken, profileController.getMediaTweets)
 
 
 router.post("/test", upload.single("image"), (req, res ) => {
@@ -14,9 +17,10 @@ router.post("/test", upload.single("image"), (req, res ) => {
     const image = req.file
     res.send(`http://10.58.0.49:3000/img/${image.filename}`)
 })
-router.post("/test2", upload.fields([{ name: "text"}, { name: "image" }]),
+router.patch("/test2", upload.fields([{ name: "text"}, { name: "image" }]),
 (req, res) => {
     console.log("fields",req.file, req.body);
+    console.log(req)
     const image = req.file
     res.send(`http://10.58.0.49:3000/img/${image.filename}`)
 })

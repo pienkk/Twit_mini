@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken');
 
 const KEY = process.env.KEY;
+const HOST = process.env.HOST;
 
 
 const signIn = async ( id, password ) => {
@@ -19,11 +20,20 @@ const signIn = async ( id, password ) => {
     const userId = {
         user_id : user.id
     }
+    if (user.profile_image != "null") {
+        user.profile_image = HOST+user.profile_image
+    }
     const jwtToken = jwt.sign(userId, KEY);
-    return jwtToken
+    const result = {
+        accessToken : jwtToken, 
+        userId : user.profile_id, 
+        userNickname : user.profile_nickname,
+        userProfileImg : user.profile_image
+    }
+    return result
 }
 
-const signUp = async ( id, password, birthday ) => {
+const signUp = async ( id, nickname, password, birthday ) => {
     const user = await userDao.findUserToFrofileId(id);
     if(user){
         const err = new Error('이미 가입된 아이디 입니다.')
@@ -53,6 +63,7 @@ const signUp = async ( id, password, birthday ) => {
 
     const createUser = await userDao.createUser(
         id,
+        nickname,
         hashPassword,
         birthday
     );
