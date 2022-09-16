@@ -1,7 +1,7 @@
 import React from 'react';
 import './LoginInfo.scss';
 
-function LoginInfo({ LoginModalOpen }) {
+function LoginInfo({ LoginModalOpen, JoinModalOnen }) {
   return (
     <div>
       <div className="LoginMain">
@@ -33,7 +33,9 @@ function LoginInfo({ LoginModalOpen }) {
         </div>
         <p className="CenterLine">또는</p>
         <div className="OtherJoin group">
-          <a href="#!">휴대폰 번호나 이메일 주소로 가입하기</a>
+          <a href="#!" onClick={JoinModalOnen}>
+            휴대폰 번호나 이메일 주소로 가입하기
+          </a>
         </div>
         <p className="Explanation">
           가입하시려면 <span>쿠키 사용</span>을 포함해 <span>이용약관</span>과{' '}

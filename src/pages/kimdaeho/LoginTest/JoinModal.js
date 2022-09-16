@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './JoinModal.scss';
 
-function JoinModal() {
+function JoinModal({ JoinModalClose }) {
   const [joinInput, setJoinInput] = useState({
     JoinUserNick: '',
     joinUserId: '',
@@ -18,6 +18,11 @@ function JoinModal() {
     setJoinInput({ ...joinInput, [e.target.name]: e.target.value });
   };
 
+  const loginSuceess = () => {
+    JoinModalClose(false);
+    alert('회원가입 성공');
+  };
+
   const JoinBtn = () => {
     fetch('http://10.58.0.33:3000/user/signup', {
       method: 'POST',
@@ -32,7 +37,7 @@ function JoinModal() {
       .then(Response => Response.json())
       .then(result =>
         result.message === 'userCreated'
-          ? alert('회원가입이 완료되었습니다.')
+          ? loginSuceess()
           : alert('이미 있는 계정이거나, 회원가입 양식이 틀렸습니다.')
       );
   };
