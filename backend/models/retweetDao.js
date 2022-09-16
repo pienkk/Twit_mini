@@ -1,25 +1,4 @@
-const { DataSource } = require("typeorm");
-
-const myDataSource = new DataSource({
-    type: process.env.TYPEORM_CONNECTION,
-    host: process.env.TYPEORM_HOST,
-    port: process.env.TYPEORM_PORT,
-    username: process.env.TYPEORM_USERNAME,
-    password: process.env.TYPEORM_PASSWORD,
-    database: process.env.TYPEORM_DATABASE
-})
-
-
-myDataSource.initialize()
-	.then(() => {
-		console.log("Data Source has been initialized!");
-	})
-	.catch((err) => {
-		console.error("Error occurred during Data Source initialization", err);
-		myDataSource.destroy();
-	});
-
-
+const appDataSource = require("./orm");
 
 const postRetweet = async (user_id, tweet_id) => {
     console.log(user_id, tweet_id)
@@ -76,7 +55,26 @@ const removeRetweet = async (user_id, tweet_id) => {
         throw error;
     }
 }
+
+
+const retweetCount = async ( tweetId ) => {
+    try {
+      const [count] =  await appDataSource.query(
+        `SELECT COUNT(tweet_id) as count
+        FROM retweet
+        WHERE tweet_id = ?`,
+        [ tweetId ]
+      )
+      return count;
+    } catch (err) {
+      const error = new Error("INVALID_DATA_INPUT");
+      error.statusCode = 500;
+      throw error;
+    }
+}
+
 module.exports = {
+    retweetCount,
     postRetweet,
     getDataRetweet,
     removeRetweet

@@ -7,10 +7,15 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT;
 
+app.use("/img", express.static("uploads"))
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(routes);
+app.use((err, req, res, next)=> {
+  console.log("====app.js에서의에러컨트롤",err)
+  res.status(err.statusCode || 500).json({ message: err.message });
+})
 
 app.get("/ping", (req,res) => {
   res.status(200).json({"message" : "pong"});

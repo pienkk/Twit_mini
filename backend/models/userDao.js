@@ -1,23 +1,4 @@
-const { DataSource } = require("typeorm");
-
-const myDataSource = new DataSource({
-    type: process.env.TYPEORM_CONNECTION,
-    host: process.env.TYPEORM_HOST,
-    port: process.env.TYPEORM_PORT,
-    username: process.env.TYPEORM_USERNAME,
-    password: process.env.TYPEORM_PASSWORD,
-    database: process.env.TYPEORM_DATABASE
-})
-
-myDataSource.initialize()
-	.then(() => {
-		console.log("Data Source has been initialized!");
-	})
-	.catch((err) => {
-		console.error("Error occurred during Data Source initialization", err);
-		myDataSource.destroy();
-	});
-
+const appDataSource = require("./orm");
 
 const postProfile = async(profile_nickname, profile_banner, profile_image, comment, users_id) => {
     try{
@@ -39,6 +20,83 @@ const postProfile = async(profile_nickname, profile_banner, profile_image, comme
     }
 }
 
+
+const findUserToFrofileId = async ( id ) => {
+    try {
+        const [user] = await appDataSource.query(`
+            SELECT 
+                *
+            FROM users
+            WHERE profile_id = ? `,
+            [id]
+        )
+        return user
+    } catch (err) {
+        const error = new Error(`INVALID_DATA_INPUT`);
+        error.statusCode = 500;
+        throw error;
+    }
+}
+
+const signIn = async ( id ) => {
+    try {
+        const [user] = await appDataSource.query(
+            `SELECT
+                id,
+                password
+            FROM users
+            WHERE profile_id = ? `,
+            [id]
+        );
+        return user;
+    } catch (err) {
+        const error = new Error(`INVALID_DATA_INPUT`);
+        error.statusCode = 500;
+        throw error;
+    }
+}
+
+
+const createUser = async ( id, password, birthday) => {
+    try {
+        return await appDataSource.query(
+            `INSERT INTO users(
+                profile_id,
+                password,
+                birthday
+            ) VALUES (?, ?, ?)
+            `,
+            [ id, password, birthday ]
+        );
+    } catch (err) {
+        const error = new Error(`INVALID_DATA_INPUT`);
+        error.statusCode = 500;
+        throw error;
+    }
+};
+
+const searchAnyId = async ( id ) => {
+    try {
+        return await appDataSource.query(
+            `SELECT
+                profile_id,
+                id,
+                comment
+            FROM users
+            WHERE profile_id LIKE "%?%"`,
+            [ id ]
+        )
+    } catch(err){
+        const error = new Error("INVALID_DATA_INPUT");
+        error.statusCode = 500;
+        throw error;
+    }
+}
+
 module.exports = {
-    postProfile
+    postProfile,
+    signIn,
+    findUserToFrofileId,
+    createUser,
+    searchAnyId
 }
