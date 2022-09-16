@@ -3,7 +3,7 @@ import React from 'react';
 import './ProfileEdit.scss';
 const ProfileEdit = ({ user, profileEditModalClose }) => {
   const profileEditSave = () => {
-    fetch('http://10.58.2.73:3000/profile/post', {
+    fetch('http://10.58.2.73:3000/profile/modfy', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
