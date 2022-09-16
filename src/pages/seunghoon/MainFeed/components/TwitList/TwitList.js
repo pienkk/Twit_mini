@@ -5,7 +5,7 @@ function TwitList({ feeds, commentHandler, reTwitHandler }) {
   return feeds.map(feed => {
     return (
       <TwitElement
-        key={feed.id}
+        key={Math.random()}
         feed={feed}
         commentHandler={commentHandler}
         reTwitHandler={reTwitHandler}

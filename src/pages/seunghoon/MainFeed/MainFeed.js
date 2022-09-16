@@ -16,7 +16,6 @@ const MainFeed = () => {
   const accessToken = localStorage.getItem('token');
 
   console.log(feeds);
-  console.log(feedForModal);
   useEffect(() => {
     fetch('http://10.58.0.33:3000/main', {
       method: 'GET',
@@ -56,15 +55,17 @@ const MainFeed = () => {
     // .then(data => console.log(data));
 
     const submitData = {
-      id: 0,
-      nickname: 'currentUserNickName',
-      user_id: 'currentUserId',
-      profileImg: 'currentUserProfileImg',
-      time: 'now',
       content: textValue,
       content_img: imgValue,
-      likeEx: 0,
+      id: 999999,
       likeCount: 0,
+      likeEx: 0,
+      profile_id: 'currentUserId',
+      profile_nickname: 'currentUserNickName',
+      profile_img: '',
+      replyCount: 0,
+      replyTF: 0,
+      rtCount: 0,
       create_at: 'now',
     };
 
