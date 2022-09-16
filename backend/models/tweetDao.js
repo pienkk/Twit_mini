@@ -2,9 +2,8 @@ const database = require("./orm");
 
 const tweetPost = async (
   user_id,
-  content,
-  content_img,
-  tweet_for
+  text
+  
 ) => {
   try {
     return await database.query(
@@ -14,9 +13,9 @@ const tweetPost = async (
             content,
             content_img,
             tweet_for
-        ) VALUES (?,"0", ?, ?, ?);
+        ) VALUES (?,"0", ?, "123.jpg", "IPAD");
 		`,
-      [user_id, content, content_img, tweet_for]
+      [user_id, text]
     );
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");
@@ -100,9 +99,9 @@ const tweetReply = async (
             content_img,
             tweet_for,
             reply_at
-        ) VALUES (?,"1", ?, ?, ?, ?);
+        ) VALUES (?,"1", ?, ?, "IPAD", ?);
 		`,
-      [user_id, content, content_img, tweet_for, reply_at]
+      [user_id, content, content_img, reply_at]
     );
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");

@@ -14,7 +14,5 @@ module.exports = {
     dmController,
     followController,
     mainController,
-    dmController,
-    followController,
     profileController
 }

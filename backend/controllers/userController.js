@@ -15,13 +15,13 @@ const signIn = asyncWrap(async (req, res) => {
 })
 
 const signUp = asyncWrap(async (req, res) => {
-    const { user_id, password, birthday } = req.body;
-    if( !user_id || !password || !birthday ) {
+    const { user_id, password, birthday, nickname } = req.body;
+    if( !user_id || !password || !birthday || !nickname ) {
         const err = new Error("KEY_ERROR");
         err.statusCode = 400;
         throw err
     }
-    await userService.signUp( user_id, password, birthday );
+    await userService.signUp( user_id, password, birthday, nickname );
     return res.status(201).json({ message: "userCreated" });
 })
 

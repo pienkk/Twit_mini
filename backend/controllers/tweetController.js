@@ -13,17 +13,15 @@ const idSearch = asyncWrap(async (req, res) => {
 })
 
 const tweetPost = asyncWrap(async (req, res) => {
-  const {user_id,content,content_img, tweet_for} = req.body;
+  const {user_id,text} = req.body;
 
-  if (!user_id || !content ) {
+  if (!user_id || !text ) {
     console.log("err")
     return res.status(400).json({ message: "KEY_ERROR" });
   }
   await tweetService.tweetPost(
     user_id,
-    content,
-    content_img,
-    tweet_for
+    text
   );
   res.status(201).json({ message: "tweetCreated" });
 });

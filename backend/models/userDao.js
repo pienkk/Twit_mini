@@ -37,16 +37,17 @@ const signIn = async ( id ) => {
 }
 
 
-const createUser = async ( id, password, birthday) => {
+const createUser = async (id,password,birthday,nickname) => {
     try {
         return await appDataSource.query(
             `INSERT INTO users(
                 profile_id,
                 password,
-                birthday
-            ) VALUES (?, ?, ?)
+                birthday,
+                profile_nickname
+            ) VALUES (?, ?, ?, ?)
             `,
-            [ id, password, birthday ]
+            [id,password,birthday,nickname]
         );
     } catch (err) {
         const error = new Error(`INVALID_DATA_INPUT`);

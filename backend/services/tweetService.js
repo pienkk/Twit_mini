@@ -6,12 +6,10 @@ const idSearch = async ( id ) => {
   return result;
 }
 
-const tweetPost = async (user_id, content, content_img, tweet_for) => {
+const tweetPost = async (user_id, text) => {
   const tweetPost = await tweetDao.tweetPost(
     user_id,
-    content,
-    content_img,
-    tweet_for
+    text
   );
   return tweetPost;
 };
@@ -19,7 +17,7 @@ const tweetPost = async (user_id, content, content_img, tweet_for) => {
 const tweetDel = async (user_id, tweet_id) => {
   const [tweetEx] = await tweetDao.tweetEx(tweet_id);
   if (!tweetEx) {
-    const err = new Error(`TWEET_NOT_EXIST`);
+    const err = new Error(`트윗이 존재하지않습니다`);
     err.statusCode = 400;
     throw err;
   }
@@ -32,7 +30,7 @@ const tweetDel = async (user_id, tweet_id) => {
       err;
     }
   } catch (err) {
-    const error = new Error("NOT_YOUR_POST");
+    const error = new Error("본인의 트윗만 삭제할 수 있습니다");
     error.statusCode = 400;
     throw error;
   }
