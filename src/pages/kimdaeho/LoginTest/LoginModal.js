@@ -36,7 +36,12 @@ function LoginModal() {
     })
       .then(response => response.json())
       .then(result => {
-        console.log(result);
+        if (result.accessToken) {
+          console.log('로그인성공');
+          localStorage.setItem('token', result.accessToken);
+        } else {
+          console.log('error');
+        }
         // try {
         //   if (result.ok === true) {
         //     console.log('로그인 정보가 일치합니다');

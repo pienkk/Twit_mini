@@ -17,7 +17,6 @@ const Router = () => {
       <Routes>
         <Route path="/Login" element={<Login />} />
       </Routes>
-
       {path === '/Login' ? null : (
         <>
           <LeftSideBar />

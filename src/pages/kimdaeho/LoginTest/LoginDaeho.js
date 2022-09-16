@@ -6,6 +6,15 @@ import JoinModal from './JoinModal';
 
 function LoginDaeho() {
   const [loginModal, setLoginModal] = useState(false);
+  const [joinModal, setJoinModal] = useState(false);
+
+  const JoinModalClose = () => {
+    setJoinModal(false);
+  };
+
+  const JoinModalOnen = () => {
+    setJoinModal(true);
+  };
 
   const ModalOpen = () => {
     setLoginModal(!loginModal);
@@ -19,14 +28,15 @@ function LoginDaeho() {
             className="LoginMainImg"
             src="./images/LoginMain.png"
             alt="Login-Main-Img"
+            onClick={JoinModalClose}
           />
         </div>
         <div className="LoginText">
           <img className="Logo" src="./images/logo.png" alt="파랑새 이미지" />
           <h1>지금 일어나고 있는 일.</h1>
           <h2>오늘 트위터에 가입하세요.</h2>
-          <JoinModal />
-          <LoginInfo LoginModalOpen={ModalOpen} />
+          {joinModal && <JoinModal JoinModalClose={JoinModalClose} />}
+          <LoginInfo LoginModalOpen={ModalOpen} JoinModalOnen={JoinModalOnen} />
           {loginModal && <LoginModal />}
         </div>
       </div>
