@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './LoginModal.scss';
 
@@ -8,28 +9,19 @@ function LoginModal() {
     userPw: '',
   });
 
+  const navigate = useNavigate();
+  const goToMain = () => {
+    navigate('/Main');
+  };
+
   const { userId, userPw } = userInput;
 
   const LoginInput = e => {
     setUserInput({ ...userInput, [e.target.name]: e.target.value });
   };
 
-  // const [userInfo, setUserInfo] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("/data/login.json")
-  //     .then((response) => response.json())
-  //     .then((result) => setUserInfo(result));
-  // }, []);
-
-  // useEffect(() => {
-  //   axios
-  //     .get("/data/login.json")
-  //     .then((response) => setUserInfo(response.data));
-  // }, []);
-
   let LoginBtn = () => {
-    fetch('http://10.58.0.33:3000/user/signin', {
+    fetch('http://10.58.3.34:3000/user/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({ user_id: userId, password: userPw }),
@@ -37,51 +29,17 @@ function LoginModal() {
       .then(response => response.json())
       .then(result => {
         if (result.accessToken) {
-          console.log('로그인성공');
+          console.log(result);
           localStorage.setItem('token', result.accessToken);
+          localStorage.setItem('userId', result.userId);
+          localStorage.setItem('userNickname', result.userNickname);
+          localStorage.setItem('userProfileImg', result.userProfileImg);
+          goToMain();
         } else {
           console.log('error');
         }
-        // try {
-        //   if (result.ok === true) {
-        //     console.log('로그인 정보가 일치합니다');
-        //   } else {
-        //     console.log('로그인 정보가 다릅니다');
-        //   }
-        // } catch (error) {
-        //   console.error(error);
-        // }
       });
-
-    // try {
-    //   if (userInfo.email === userIdo && userInf.password === userPw) {
-    //     console.log("그인 정보가 일치합니다");
-    //   } else {
-    //     console.log("로그인 정보가 다릅니다");
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    // }
   };
-
-  // let SignUpBtn = () => {
-  //   axios
-  //     .post('http://10.58.0.28:3000/auth/signup', {
-  //       email: userId,
-  //       password: userPw,
-  //     })
-  //     .then(response => console.log('회원가입테스트', response.data));
-
-  //   // try {
-  //   //   if (userInfo[0].email === userId && userInfo[0].password === userPw) {
-  //   //     console.log("로그인 정보가 일치합니다");
-  //   //   } else {
-  //   //     console.log("로그인 정보가 다릅니다");
-  //   //   }
-  //   // } catch (error) {
-  //   //   console.error(error);
-  //   // }
-  // };
 
   return (
     <div>

@@ -17,7 +17,7 @@ const Router = () => {
       <Routes>
         <Route path="/Login" element={<Login />} />
       </Routes>
-      {path === '/Login' ? null : (
+      {path === '/Login' || '/login' ? null : (
         <>
           <LeftSideBar />
           <MainTrend />

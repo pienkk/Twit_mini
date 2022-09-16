@@ -24,7 +24,7 @@ function JoinModal({ JoinModalClose }) {
   };
 
   const JoinBtn = () => {
-    fetch('http://10.58.0.33:3000/user/signup', {
+    fetch('http://10.58.3.34:3000/user/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({
