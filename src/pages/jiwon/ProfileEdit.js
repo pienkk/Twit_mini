@@ -1,8 +1,32 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import React from 'react';
 import './ProfileEdit.scss';
 const ProfileEdit = ({ user, profileEditModalClose }) => {
-  // const [profileImage, setProfileImage] = useState();
+  const profileEditSave = () => {
+    fetch('http://10.58.2.73:3000/profile/post', {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
+      },
+      body: JSON.stringify({
+        profile_nickname: textInput.nickname,
+        profile_banner: backgroundImage,
+        profile_image: profileImage,
+        comment: textInput.comment,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      });
+  };
+
+  useEffect(() => {
+    console.log(profileImage);
+  });
+
   const [bgFiles, setBgFiles] = useState();
   const [backgroundImage, setBackgroundImage] = useState(user.backgroundImg); // 기본 유저 이미지 넣기;
   const backgroundImgFileInput = useRef(null);
@@ -46,6 +70,16 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
   // const [backgroundImg, setBackgroundImg] = useState();
   // const [nickname, setNickname] = useState();
   // const [introduce, setIntroduce] = useState();
+
+  const [textInput, setTextInput] = useState({ nickname: '', comment: '' });
+
+  const handleTextInput = e => {
+    const { name, value } = e.target;
+    setTextInput({ ...textInput, [name]: value });
+  };
+
+  console.log(textInput);
+
   // const profileImgEdit = () => {};
   // const backgroundImgEdit = () => {};
   // const nicknameEdit = () => {};
@@ -54,6 +88,7 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
   const birthYear = birthday.getFullYear();
   const birthMonth = birthday.getMonth() + 1;
   const birthDate = birthday.getDate();
+
   return (
     <>
       {/* <Overlay setProfileEditClicked={setProfileEditClicked} /> */}
@@ -71,7 +106,12 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
             />
           </button>
           <div>프로필 수정</div>
-          <button className="profile-edit-save-button">저장</button>
+          <button
+            className="profile-edit-save-button"
+            onClick={profileEditSave}
+          >
+            저장
+          </button>
         </div>
         <div className="profileEditBackground">
           <div className="profileEditOverlay" />
@@ -124,11 +164,19 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
         <div className="profile-edit">
           <div className="profile-edit-input-wrap">
             <span>이름</span>
-            <input />
+            <input
+              name="nickname"
+              value={textInput.nickname}
+              onChange={handleTextInput}
+            />
           </div>
           <div className="profile-edit-input-wrap">
             <span>자기소개</span>
-            <textarea />
+            <textarea
+              name="comment"
+              value={textInput.comment}
+              onChange={handleTextInput}
+            />
           </div>
           <div className="birthday">
             <span className="birthdayTitle">생년월일</span>
