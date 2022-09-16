@@ -9,7 +9,7 @@ function TwitElement({
     likeEx,
     profile_id,
     profile_nickname,
-    profile_img,
+    profile_image,
     replyCount,
     replyTF,
     rtCount,
@@ -18,32 +18,53 @@ function TwitElement({
   commentHandler,
   isModal,
   reTwitHandler,
+  accessToken,
 }) {
   const [likeStatus, setLikeStatus] = useState(likeEx);
+  const [likeCountState, setLikeCountState] = useState(likeCount);
 
   const likeHandler = event => {
-    fetch('http://10.58.0.33:3000/like', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8',
-        authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE2NjMxOTk5NTV9.0iucwihABtSuKh08YuuRPR2H0S7I8hCg2P3uzmmLjv4',
-      },
-      body: JSON.stringify({
-        tweet_id: id,
-      }),
-    })
-      .then(response => response.json())
-      .then(data => console.log(data));
+    if (likeStatus === 0) {
+      fetch('http://10.58.0.33:3000/like', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          authorization: accessToken,
+        },
+        body: JSON.stringify({
+          tweet_id: id,
+        }),
+      })
+        .then(response => response.json())
+        .then(data => console.log(data));
+      setLikeCountState(current => current + 1);
+    } else if (likeStatus === 1) {
+      fetch('http://10.58.0.33:3000/like', {
+        method: 'delete',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          authorization: accessToken,
+        },
+        body: JSON.stringify({
+          tweet_id: id,
+        }),
+      })
+        .then(response => response.json())
+        .then(data => console.log(data));
+      setLikeCountState(current => current - 1);
+    }
 
     setLikeStatus(likeStatus === 0 ? 1 : 0);
-    console.log(likeStatus);
   };
 
   return (
     <div className="twitList" id={id}>
       <div className="profileImg">
-        <img src={profile_img} />
+        <img
+          src={
+            profile_image === null ? './user-profileicon.png' : profile_image
+          }
+        />
       </div>
       <div className="twitContent">
         <div className="userInfo">
@@ -98,7 +119,7 @@ function TwitElement({
                     alt="좋아요누르기전이미지"
                   />
                 )}
-                <div className="likeCount">{likeCount}</div>
+                <div className="likeCount">{likeCountState}</div>
               </div>
             </div>
           </>

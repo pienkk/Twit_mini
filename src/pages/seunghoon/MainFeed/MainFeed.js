@@ -13,7 +13,11 @@ const MainFeed = () => {
 
   const imgInput = document.getElementById('imgImportInput');
   const twitForm = document.getElementById('twitForm');
-  const accessToken = localStorage.getItem('token');
+  // const accessToken = localStorage.getItem('token');
+  const accessToken =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE2NjMxOTk5NTV9.0iucwihABtSuKh08YuuRPR2H0S7I8hCg2P3uzmmLjv4';
+  const userId = localStorage.getItem('user_id');
+  const userNickname = localStorage.getItem('user_nick');
 
   console.log(feeds);
   useEffect(() => {
@@ -41,9 +45,6 @@ const MainFeed = () => {
     const textValue = event.target[0].value;
     const imgValue = event.target[1].value;
 
-    console.log(textValue);
-    console.log(imgValue);
-
     fetch('http://10.58.0.33:3000/tweet', {
       method: 'POST',
       headers: {
@@ -60,8 +61,8 @@ const MainFeed = () => {
       id: 999999,
       likeCount: 0,
       likeEx: 0,
-      profile_id: 'currentUserId',
-      profile_nickname: 'currentUserNickName',
+      profile_id: userId,
+      profile_nickname: userNickname,
       profile_img: '',
       replyCount: 0,
       replyTF: 0,
@@ -118,6 +119,7 @@ const MainFeed = () => {
           feeds={feeds}
           commentHandler={commentHandler}
           reTwitHandler={reTwitHandler}
+          accessToken={accessToken}
         />
       </div>
       <ModalPortal>
