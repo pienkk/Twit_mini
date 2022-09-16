@@ -35,7 +35,7 @@ const ProfileTweets = ({ user }) => {
     <div>
       <TwitList feeds={feeds} />
       <WhoToFollow />
-      <TopicsToFollow />
+      {/* <TopicsToFollow /> */}
     </div>
   );
 };
