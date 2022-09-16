@@ -24,7 +24,7 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
   };
 
   useEffect(() => {
-    console.log(profileImage);
+    console.log(profileImage); ////////////
   });
 
   const [bgFiles, setBgFiles] = useState();
