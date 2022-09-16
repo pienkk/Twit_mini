@@ -13,9 +13,7 @@ const MainFeed = () => {
 
   const imgInput = document.getElementById('imgImportInput');
   const twitForm = document.getElementById('twitForm');
-  const token = localStorage.getItem('token');
-  const accessToken =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJpYXQiOjE2NjMxNDI2MzV9.BTwLhiu9NQcNNkLnqwYuHuNos5BpUHoZjNtkAEGPFkY';
+  const accessToken = localStorage.getItem('token');
 
   console.log(feeds);
   console.log(feedForModal);
