@@ -9,7 +9,7 @@ router.get("/tweets", accessToken, profileController.getMyTweets);
 router.get("/reply", accessToken, profileController.getReplyTweets)
 router.get("/like", accessToken,profileController.getLikeTweets);
 router.get("/media", accessToken, profileController.getMediaTweets)
-
+router.patch('/modify', profileController.postProfile);
 
 router.post("/test", upload.single("image"), (req, res ) => {
     console.log("single",req.file);

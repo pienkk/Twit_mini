@@ -83,10 +83,19 @@ const getMediaTweets = async ( user_id ) => {
     return result;
 }
 
+
+const postProfile = async (
+    profile_nickname, profile_banner, profile_image, comment, users_id ) => {
+    const postProfile = await profileDao.postProfile(
+        profile_nickname, profile_banner, profile_image, comment , users_id);
+    return postProfile;
+}  
+
 module.exports = {
     getProfile,
     getMyTweets,
     getReplyTweets,
     getLikeTweets,
-    getMediaTweets
+    getMediaTweets,
+    postProfile
 }

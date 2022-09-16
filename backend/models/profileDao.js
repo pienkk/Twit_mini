@@ -113,8 +113,27 @@ const getMediaTweets = async ( userId ) => {
             [ userId ]    
         )
         return tweets
-    } catch (err) {
-        const error = new Error(`INVALID_DATA_INPUT1`);
+    } catch(err){
+        const error = new Error("INVALID_DATA_INPUT");
+        error.statusCode = 500;
+        throw error;
+    }
+}
+
+const postProfile = async (profile_nickname, profile_banner, profile_image, comment, users_id) => {
+    try{
+        return await appDataSource.query(`
+            UPDATE users
+            SET
+            profile_nickname = ?,
+            profile_banner = ?,
+            profile_image = ?,
+            comment = ?
+            WHERE users.id = ${users_id}`,
+            [profile_nickname, profile_banner, profile_image, comment]
+        );
+    } catch(err){
+        const error = new Error("INVALID_DATA_INPUT");
         error.statusCode = 500;
         throw error;
     }
@@ -126,5 +145,6 @@ module.exports = {
     getMyTweets,
     getReplyTweets,
     getLikeTweets,
-    getMediaTweets
+    getMediaTweets,
+    postProfile
 }

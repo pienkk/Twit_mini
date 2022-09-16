@@ -6,6 +6,7 @@ const KEY = process.env.KEY;
 const HOST = process.env.HOST;
 
 
+
 const signIn = async ( id, password ) => {
     const user = await userDao.signIn(id);
     const checkHash = async (password, hashedPassword) => {
@@ -65,7 +66,8 @@ const signUp = async ( id, nickname, password, birthday ) => {
         id,
         nickname,
         hashPassword,
-        birthday
+        birthday,
+        nickname
     );
     return createUser;
 };
