@@ -1,7 +1,7 @@
 import React from 'react';
 import TwitElement from './components/TwitElement';
 
-function TwitList({ feeds, commentHandler, reTwitHandler }) {
+function TwitList({ feeds, commentHandler, reTwitHandler, accessToken }) {
   return feeds.map(feed => {
     return (
       <TwitElement
@@ -10,6 +10,7 @@ function TwitList({ feeds, commentHandler, reTwitHandler }) {
         commentHandler={commentHandler}
         reTwitHandler={reTwitHandler}
         isModal={false}
+        accessToken={accessToken}
       />
     );
   });
