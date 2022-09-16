@@ -67,8 +67,8 @@ const searchAnyId = async ( id ) => {
             WHERE profile_id LIKE "%?%"`,
             [ id ]
         )
-    } catch (err) {
-        const error = new Error(`INVALID_DATA_INPUT`);
+    } catch(err){
+        const error = new Error("INVALID_DATA_INPUT");
         error.statusCode = 500;
         throw error;
     }

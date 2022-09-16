@@ -31,7 +31,16 @@ const getMyTweets = async ( user_id ) => {
     return await bbb
 }
 
+
+const postProfile = async (
+    profile_nickname, profile_banner, profile_image, comment, users_id ) => {
+    const postProfile = await profileDao.postProfile(
+        profile_nickname, profile_banner, profile_image, comment , users_id);
+    return postProfile;
+}  
+
 module.exports = {
     getProfile,
-    getMyTweets
+    getMyTweets,
+    postProfile
 }

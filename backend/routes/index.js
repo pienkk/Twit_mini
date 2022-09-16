@@ -8,6 +8,7 @@ const followRouter = require("./followRouter")
 const dmRouter = require("./dmRouter");
 const mainRouter = require("./mainRouter");
 const profileRouter = require("./profileRouter")
+const retweetRouter = require("./retweetRouter");
 
 router.use("/user", userRouter);
 router.use("/tweet", tweetRouter);
@@ -15,6 +16,7 @@ router.use("/like", likeRouter);
 router.use("/follow", followRouter);
 router.use("/dm", dmRouter);
 router.use("/main", mainRouter);
+router.use("/retweet", retweetRouter);
 router.use("/profile", profileRouter);
 
 module.exports = router
