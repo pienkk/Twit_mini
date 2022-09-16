@@ -14,8 +14,6 @@ module.exports = {
     dmDao,
     followDao,
     mainDao,
-    dmDao,
-    followDao,
     profileDao,
     retweetDao
 }

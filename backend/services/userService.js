@@ -23,7 +23,7 @@ const signIn = async ( id, password ) => {
     return jwtToken
 }
 
-const signUp = async ( id, password, birthday ) => {
+const signUp = async ( id, password, birthday, nickname ) => {
     const user = await userDao.findUserToFrofileId(id);
     if(user){
         const err = new Error('이미 가입된 아이디 입니다.')
@@ -54,7 +54,8 @@ const signUp = async ( id, password, birthday ) => {
     const createUser = await userDao.createUser(
         id,
         hashPassword,
-        birthday
+        birthday,
+        nickname
     );
     return createUser;
 };
