@@ -4,8 +4,6 @@ const likeController = require("./likeController.js");
 const dmController = require("./dmController");
 const followController = require("./followController");
 const mainController = require("./mainController");
-const dmController = require("./dmController");
-const followController = require("./followController");
 const profileController = require("./profileController")
 
 

@@ -8,7 +8,9 @@ const postRetweet = async (req, res) => {
             return res.status(400).json({message : "리트윗할 게시글 확인이 필요합니다"});
         }
 
+    
         await retweetService.postRetweet(user_id, tweet_id);
+
         return res.status(201).json({
             message : '리트윗 완료'
         });
@@ -25,7 +27,7 @@ const removeRetweet = async (req, res) => {
         const {user_id, tweet_id} = req.body;
 
         if(!user_id || !tweet_id) {
-            return res.status(400).json({message : "삭제할 리트윗 게시글 확인이 필요합니다"});
+            return res.status(400).json({message : "user_id 와 tweet_id는 필수값입니다"});
         }
         await retweetService.removeRetweet(user_id, tweet_id);
 

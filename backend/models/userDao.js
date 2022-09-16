@@ -1,25 +1,5 @@
 const appDataSource = require("./orm");
 
-const postProfile = async(profile_nickname, profile_banner, profile_image, comment, users_id) => {
-    try{
-        return await myDataSource.query(`
-            UPDATE users
-            SET
-            profile_nickname = ?,
-            profile_banner = ?,
-            profile_image = ?,
-            comment = ?
-            WHERE users.id = ${users_id}`,
-            [profile_nickname, profile_banner, profile_image, comment]
-        );
-    }
-    catch(err){
-        const error = new Error("INVALID_DATA_INPUT");
-        error.statusCode = 500;
-        throw error;
-    }
-}
-
 
 const findUserToFrofileId = async ( id ) => {
     try {
@@ -94,7 +74,6 @@ const searchAnyId = async ( id ) => {
 }
 
 module.exports = {
-    postProfile,
     signIn,
     findUserToFrofileId,
     createUser,

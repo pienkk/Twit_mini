@@ -6,7 +6,7 @@ const { upload } = require("../util/multer")
 
 router.get("/", accessToken, profileController.getProfile);
 router.get("/tweets", accessToken, profileController.getMyTweets);
-
+router.patch('/modify', profileController.postProfile);
 
 router.post("/test", upload.single("image"), (req, res ) => {
     console.log("single",req.file);

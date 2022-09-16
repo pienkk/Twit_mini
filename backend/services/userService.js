@@ -5,11 +5,6 @@ const jwt = require('jsonwebtoken');
 const KEY = process.env.KEY;
 
 
-const postProfile = async (profile_nickname, profile_banner, profile_image, comment, users_id ) => {
-    const postProfile = await userDao.postProfile(profile_nickname, profile_banner, profile_image, comment , users_id);
-    return postProfile;
-
-}  
 
 const signIn = async ( id, password ) => {
     const user = await userDao.signIn(id);
@@ -68,6 +63,5 @@ const signUp = async ( id, password, birthday ) => {
 
 module.exports = {
     signIn,
-    signUp,
-    postProfile
+    signUp
 }
