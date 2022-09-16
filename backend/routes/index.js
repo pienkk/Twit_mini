@@ -7,8 +7,6 @@ const likeRouter = require("./likeRouter");
 const followRouter = require("./followRouter")
 const dmRouter = require("./dmRouter");
 const mainRouter = require("./mainRouter");
-const followRouter = require("./followRouter")
-const dmRouter = require("./dmRouter");
 const profileRouter = require("./profileRouter")
 
 router.use("/user", userRouter);
@@ -17,9 +15,6 @@ router.use("/like", likeRouter);
 router.use("/follow", followRouter);
 router.use("/dm", dmRouter);
 router.use("/main", mainRouter);
-
-router.use("/follow", followRouter);
-router.use("/dm", dmRouter);
 router.use("/profile", profileRouter);
 
 module.exports = router

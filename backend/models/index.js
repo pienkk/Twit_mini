@@ -4,8 +4,6 @@ const likeDao = require("./likeDao");
 const dmDao = require("./dmDao");
 const followDao = require("./followDao")
 const mainDao = require("./mainDao");
-const dmDao = require("./dmDao");
-const followDao = require("./followDao")
 const profileDao = require("./profileDao")
 const retweetDao = require("./retweetDao")
 
