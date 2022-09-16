@@ -29,10 +29,10 @@ function LoginModal() {
   // }, []);
 
   let LoginBtn = () => {
-    fetch('http://10.58.4.180:3000/users/signin', {
+    fetch('http://10.58.0.33:3000/user/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
-      body: JSON.stringify({ id: userId, password: userPw }),
+      body: JSON.stringify({ user_id: userId, password: userPw }),
     })
       .then(response => response.json())
       .then(result => {
@@ -59,24 +59,24 @@ function LoginModal() {
     // }
   };
 
-  let SignUpBtn = () => {
-    axios
-      .post('http://10.58.0.28:3000/auth/signup', {
-        email: userId,
-        password: userPw,
-      })
-      .then(response => console.log('회원가입테스트', response.data));
+  // let SignUpBtn = () => {
+  //   axios
+  //     .post('http://10.58.0.28:3000/auth/signup', {
+  //       email: userId,
+  //       password: userPw,
+  //     })
+  //     .then(response => console.log('회원가입테스트', response.data));
 
-    // try {
-    //   if (userInfo[0].email === userId && userInfo[0].password === userPw) {
-    //     console.log("로그인 정보가 일치합니다");
-    //   } else {
-    //     console.log("로그인 정보가 다릅니다");
-    //   }
-    // } catch (error) {
-    //   console.error(error);
-    // }
-  };
+  //   // try {
+  //   //   if (userInfo[0].email === userId && userInfo[0].password === userPw) {
+  //   //     console.log("로그인 정보가 일치합니다");
+  //   //   } else {
+  //   //     console.log("로그인 정보가 다릅니다");
+  //   //   }
+  //   // } catch (error) {
+  //   //   console.error(error);
+  //   // }
+  // };
 
   return (
     <div>
