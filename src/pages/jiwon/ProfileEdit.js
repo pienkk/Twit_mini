@@ -2,46 +2,41 @@ import { useState, useRef, useEffect } from 'react';
 import React from 'react';
 import './ProfileEdit.scss';
 const ProfileEdit = ({ user, profileEditModalClose }) => {
+  const [bgFiles, setBgFiles] = useState();
+  const [backgroundImage, setBackgroundImage] = useState(user.backgroundImg); // 기본 유저 이미지 넣기;
+  const backgroundImgFileInput = useRef(null);
+  const [profileFiles, setProfileFiles] = useState();
+  const [profileImage, setProfileImage] = useState(user.profile_image); // 기본 유저 이미지 넣기;
+  const profileImgFileInput = useRef(null);
+
+  const bgServerFile = new FormData();
+  const pfServerFile = new FormData();
+
   const profileEditSave = () => {
-    fetch('http://10.58.2.73:3000/profile/modfy', {
+    fetch('http://10.58.2.73:3000/profile/test2', {
       method: 'PATCH',
       headers: {
-        'Content-Type': 'application/json;charset=utf-8',
+        enctype: 'multipart/form-data',
         authorization:
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
       },
       body: JSON.stringify({
         profile_nickname: textInput.nickname,
-        profile_banner: backgroundImage,
-        profile_image: profileImage,
+        profile_banner: bgServerFile,
+        profile_image: pfServerFile,
         comment: textInput.comment,
       }),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      });
+    }).then(response => response.json());
+    profileEditModalClose();
   };
 
-  useEffect(() => {
-    console.log(profileImage); ////////////
-  });
-
-  const [bgFiles, setBgFiles] = useState();
-  const [backgroundImage, setBackgroundImage] = useState(user.backgroundImg); // 기본 유저 이미지 넣기;
-  const backgroundImgFileInput = useRef(null);
-  const [profileFiles, setProfileFiles] = useState();
-  const [profileImage, setProfileImage] = useState(user.profileImg); // 기본 유저 이미지 넣기;
-  const profileImgFileInput = useRef(null);
   const backgroundChange = e => {
     if (e.target.files[0]) {
       setBgFiles(e.target.files[0]);
     } else {
-      //업로드 취소할 시
       setBackgroundImage(user.backgroundImg);
       return;
     }
-    //화면에 프로필 사진 표시
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {
@@ -49,16 +44,20 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
       }
     };
     reader.readAsDataURL(e.target.files[0]);
+    bgServerFile.append('file', e.target.files[0]);
+    console.log(bgServerFile);
+    for (let value of bgServerFile.values()) {
+      console.log('bg', value);
+    }
   };
+
   const profileChange = e => {
     if (e.target.files[0]) {
       setProfileFiles(e.target.files[0]);
     } else {
-      //업로드 취소할 시
       setProfileImage(user.profileImg);
       return;
     }
-    //화면에 프로필 사진 표시
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {
@@ -66,24 +65,23 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
       }
     };
     reader.readAsDataURL(e.target.files[0]);
+    pfServerFile.append('file', e.target.files[0]);
+    console.log(pfServerFile);
+    for (let value of pfServerFile.values()) {
+      console.log('pf', value);
+    }
   };
-  // const [backgroundImg, setBackgroundImg] = useState();
-  // const [nickname, setNickname] = useState();
-  // const [introduce, setIntroduce] = useState();
 
-  const [textInput, setTextInput] = useState({ nickname: '', comment: '' });
+  const [textInput, setTextInput] = useState({
+    nickname: `${user.profile_nickname}`,
+    comment: `${user.introduce}`,
+  });
 
   const handleTextInput = e => {
     const { name, value } = e.target;
     setTextInput({ ...textInput, [name]: value });
   };
 
-  console.log(textInput);
-
-  // const profileImgEdit = () => {};
-  // const backgroundImgEdit = () => {};
-  // const nicknameEdit = () => {};
-  // const introduceEdit = () => {};
   const birthday = new Date(user.birthday);
   const birthYear = birthday.getFullYear();
   const birthMonth = birthday.getMonth() + 1;
@@ -91,7 +89,6 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
 
   return (
     <>
-      {/* <Overlay setProfileEditClicked={setProfileEditClicked} /> */}
       <div className="profile-edit-back" onClick={profileEditModalClose} />
       <div className="ProfileEdit">
         <div className="ProfileEditTop">

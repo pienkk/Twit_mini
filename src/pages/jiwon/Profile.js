@@ -13,25 +13,19 @@ import ModalPortal from '../seunghoon/MainFeed/Portal.js';
 
 const Profile = () => {
   useEffect(() => {
-    fetch('/data/profile.json')
-      .then(res => res.json())
-      .then(data => setUser(...data));
+    fetch('http://pienk.ddns.net:3000/profile', {
+      method: 'GET',
+      headers: {
+        authorization:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setUser(data.profile);
+      });
   }, []);
-
-  // useEffect(() => {
-  //   fetch('http://10.58.2.73:3000/profile/post', {
-  //     method: 'PATCH',
-  //     headers: {
-  //       authorization:
-  //         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
-  //     },
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data);
-  //       setUser(data.profile);
-  //     });
-  // }, []);
 
   const [user, setUser] = useState({});
 
@@ -92,12 +86,12 @@ const Profile = () => {
     <div className="profile">
       <img
         className="profile-background"
-        // src={user.backgroundImg}
+        src={user.backgroundImg}
         alt="유저 백그라운드 이미지"
       />
       <img
         className="profile-image"
-        // src={user.profileImg}
+        src={user.profile_image}
         alt="유저 프로필 이미지"
       />
       <button className="profile-edit-button" onClick={profileEditClick}>
@@ -106,11 +100,11 @@ const Profile = () => {
       <div className="profile-information">
         <div className="profile-text">
           <span className="profile-username">{user.profile_nickname}</span>
-          <span>{user.userid}</span> */}
+          <span>@{user.profile_id}</span>
           <span>{user.introduce}</span>
           <span className="profile-joined-day">
             <img src={ICONS.calendar} width="15px" alt="달력 아이콘" />
-            {'  '}가입일 : {user.joinDay}
+            {'  '}가입일 : {user.join_at}
           </span>
           <div className="profile-follow-info">
             <span className="profile-follow-info-num">{user.follow}</span>{' '}
