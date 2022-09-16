@@ -13,17 +13,21 @@
 .commentModal {
   height: 430px;
   width: 750px;
-  margin-top: 35px;
+  margin-top: 45px;
   border-radius: 20px;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .twitList {
     display: flex;
     margin-top: 65px;
-    margin-left: 25px;
-    margin-right: 35px;
+    margin-left: 20px;
+    border: none;
 
     .profileImg {
       img {
+        margin-top: 13px;
         height: 53px;
         width: 53px;
         border-radius: 50px;
@@ -31,12 +35,11 @@
     }
 
     .twitContent {
-      width: 100%;
       margin-left: 15px;
 
       .userInfo {
+        width: 400px;
         display: flex;
-        margin-top: 5px;
         margin-bottom: 15px;
 
         .nickname {
@@ -57,10 +60,11 @@
       .twitImg {
         img {
           width: 90%;
+          height: 300px;
         }
       }
 
-      .twit {
+      .twitText {
         margin-bottom: 15px;
         line-height: 130%;
       }
@@ -100,9 +104,15 @@
         }
 
         .like {
+          display: flex;
+          align-items: center;
+          margin-right: 30px;
+
           img {
             width: 20px;
             height: 20px;
+            margin-right: 5px;
+            margin-bottom: 2px;
           }
         }
       }
@@ -114,9 +124,11 @@
     margin-left: 92px;
     color: gray;
     font-size: 17px;
+    display: flex;
 
     .userId {
       color: #4393cd;
+      margin-left: 10px;
     }
   }
 
@@ -124,8 +136,6 @@
     height: 189px;
     display: flex;
     padding: 0px 16px;
-    margin-top: 5px;
-    margin-left: 10px;
 
     .writerProfileImg {
       img {
@@ -164,8 +174,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 85px;
-        // margin-bottom: 35px;
+        margin-bottom: 5px;
 
         .uploadContents {
           display: flex;
@@ -175,6 +184,10 @@
             width: 36px;
             padding: 6px;
             filter: opacity(0.4) drop-shadow(0 0 0 blue);
+
+            .inputForImg {
+              display: none;
+            }
           }
           .uploadGIF {
             height: 36px;
@@ -199,7 +212,6 @@
         }
 
         .twitBtn {
-          margin-top: 10px;
           font-size: 15px;
           color: white;
           height: 34px;
@@ -208,6 +220,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          border: none;
           border-radius: 45px;
         }
       }

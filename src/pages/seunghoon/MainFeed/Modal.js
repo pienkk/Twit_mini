@@ -22,15 +22,10 @@ function Modal({ commentHandler, feedForModal, isComment }) {
   return (
     <div className="modalContainer" onClick={commentHandler}>
       <div className="commentModal">
-        {isComment && (
-          <>
-            {' '}
-            <TwitElement feed={feedForModal} isModal={true} />
-            <div className="replyingTo">
-              Replying to <span className="userId">{feedForModal.userid}</span>
-            </div>
-          </>
-        )}
+        <TwitElement feed={feedForModal} isModal={true} />
+        <div className="replyingTo">
+          Replying to <span className="userId">@{feedForModal.profile_id}</span>
+        </div>
 
         <TwitInput isModal={true} />
       </div>
