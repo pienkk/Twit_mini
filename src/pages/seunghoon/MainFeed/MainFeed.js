@@ -13,23 +13,22 @@ const MainFeed = () => {
 
   const imgInput = document.getElementById('imgImportInput');
   const twitForm = document.getElementById('twitForm');
+  const accessToken = localStorage.getItem('token');
 
   console.log(feeds);
-
-  // useEffect(() => {
-  //   fetch('http://10.58.0.49:3000/main', {
-  //     method: 'GET',
-  //     headers: {
-  //       authorization:
-  //         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
-  //     },
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data);
-  //       setFeeds(data);
-  //     });
-  // }, []);
+  console.log(feedForModal);
+  useEffect(() => {
+    fetch('http://10.58.0.33:3000/main', {
+      method: 'GET',
+      headers: {
+        authorization: accessToken,
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        setFeeds(data);
+      });
+  }, []);
 
   const imgImport = event => {
     imgInput.click();
@@ -46,10 +45,11 @@ const MainFeed = () => {
     console.log(textValue);
     console.log(imgValue);
 
-    fetch('http://10.58.0.49:3000/profile/test2', {
+    fetch('http://10.58.0.33:3000/tweet', {
       method: 'POST',
       headers: {
         enctype: 'multipart/form-data',
+        authorization: accessToken,
       },
       body: new FormData(twitForm),
     }).then(response => console.log(response));
@@ -75,7 +75,10 @@ const MainFeed = () => {
   const commentHandler = event => {
     if (modalOn === false) {
       const selectedTwitId = event.nativeEvent.path[4].id;
-      const ModalInputFeed = feeds[selectedTwitId - 1];
+      let ModalInputFeed = [];
+      feeds.map(feed => {
+        if (feed.id === Number(selectedTwitId)) ModalInputFeed = feed;
+      });
       setModalOn(true);
       setFeedForModal({ ...ModalInputFeed });
     }

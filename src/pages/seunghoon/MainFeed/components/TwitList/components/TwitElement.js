@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 
 function TwitElement({
   feed: {
-    id,
-    nickname,
-    user_id,
-    profileImg,
-    time,
     content,
     content_img,
-    likeEx,
+    id,
     likeCount,
+    likeEx,
+    profile_id,
+    profile_nickname,
+    profile_img,
+    replyCount,
+    replyTF,
+    rtCount,
     create_at,
   },
   commentHandler,
@@ -41,12 +43,12 @@ function TwitElement({
   return (
     <div className="twitList" id={id}>
       <div className="profileImg">
-        <img src={profileImg} />
+        <img src={profile_img} />
       </div>
       <div className="twitContent">
         <div className="userInfo">
-          <div className="nickname">{nickname}</div>
-          <div className="userid">{user_id} ·</div>
+          <div className="nickname">{profile_nickname}</div>
+          <div className="userid">{profile_id} ·</div>
           <div className="time">{create_at}</div>
         </div>
         <div className="twitText">{content}</div>
@@ -68,7 +70,7 @@ function TwitElement({
                   onClick={commentHandler}
                 />
                 <div className="commentCount" onClick={commentHandler}>
-                  10
+                  {replyCount}
                 </div>
               </div>
 
@@ -79,7 +81,7 @@ function TwitElement({
                   alt="리트윗이미지"
                   onClick={reTwitHandler}
                 />
-                <div className="retweetCount">10</div>
+                <div className="retweetCount">{rtCount}</div>
               </div>
 
               <div className="like" onClick={likeHandler}>
