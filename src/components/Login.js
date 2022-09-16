@@ -1,9 +1,10 @@
 import React from "react";
+import LoginDaeho from "../pages/kimdaeho/LoginTest/LoginDaeho";
 
 function Login() {
   return (
     <div>
-      <h1>로그인 최종</h1>
+      <LoginDaeho></LoginDaeho>
     </div>
   );
 }
