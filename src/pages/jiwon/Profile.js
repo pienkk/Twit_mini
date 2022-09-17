@@ -82,6 +82,10 @@ const Profile = () => {
     setProfileEditClicked(true);
   };
 
+  const joinedDate = new Date(user.join_at);
+  const filteredJoinedDate =
+    joinedDate.getFullYear() + '년 ' + (joinedDate.getMonth() + 1) + '월';
+
   return (
     <div className="profile">
       <img
@@ -104,7 +108,8 @@ const Profile = () => {
           <span>{user.introduce}</span>
           <span className="profile-joined-day">
             <img src={ICONS.calendar} width="15px" alt="달력 아이콘" />
-            {'  '}가입일 : {user.join_at}
+            {'  '}
+            {filteredJoinedDate}에 가입함
           </span>
           <div className="profile-follow-info">
             <span className="profile-follow-info-num">{user.follow}</span>{' '}

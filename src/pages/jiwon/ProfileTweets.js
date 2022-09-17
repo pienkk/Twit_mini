@@ -5,6 +5,7 @@ import axios from 'axios';
 import TwitList from '../seunghoon/MainFeed/components/TwitList/TwitList';
 import WhoToFollow from './WhoToFollow';
 import TopicsToFollow from './TopicsToFollow';
+import NoTweets from './NoTweets';
 
 import './twitlist.scss';
 
@@ -25,11 +26,10 @@ const ProfileTweets = ({ user }) => {
   }, []);
 
   return (
-    <div>
-      <TwitList feeds={feeds} />
+    <>
+      {feeds.length ? <TwitList feeds={feeds} /> : <NoTweets />}
       <WhoToFollow />
-      {/* <TopicsToFollow /> */}
-    </div>
+    </>
   );
 };
 

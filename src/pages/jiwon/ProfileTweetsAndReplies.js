@@ -3,12 +3,13 @@ import React, { useEffect, useState } from 'react';
 import WhoToFollow from './WhoToFollow';
 
 import TwitList from '../seunghoon/MainFeed/components/TwitList/TwitList';
+import NoTweets from './NoTweets';
 
 const ProfileTweetsAndReplies = () => {
   const [feeds, setFeeds] = useState([]);
 
   useEffect(() => {
-    fetch('http://10.58.0.33:3000/main', {
+    fetch('http://pienk.ddns.net:3000/profile/reply', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -17,17 +18,13 @@ const ProfileTweetsAndReplies = () => {
       },
     })
       .then(res => res.json())
-      .then(data => setFeeds(data));
+      .then(data => setFeeds(data.tweets));
   }, []);
   return (
-    <div>
-      <TwitList feeds={feeds} />
+    <>
+      {feeds.length ? <TwitList feeds={feeds} /> : <NoTweets />}
       <WhoToFollow />
-      {/* 트윗 앤 리플라이스 트윗 앤 리플라이스 트윗 앤 리플라이스 트윗 앤
-      리플라이스
-      <WhoToFollow />
-      <TopicsToFollow /> */}
-    </div>
+    </>
   );
 };
 

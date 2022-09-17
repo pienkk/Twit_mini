@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 import TwitList from '../seunghoon/MainFeed/components/TwitList/TwitList';
+import NoTweets from './NoTweets';
 
 const ProfileLikes = () => {
   const [feeds, setFeeds] = useState([]);
   useEffect(() => {
-    fetch('http://10.58.0.33:3000/main', {
+    fetch('http://pienk.ddns.net:3000/profile/like', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
@@ -14,10 +15,10 @@ const ProfileLikes = () => {
       },
     })
       .then(res => res.json())
-      .then(data => setFeeds(data));
+      .then(data => setFeeds(data.tweets));
   }, []);
 
-  return <TwitList feeds={feeds} />;
+  return <>{feeds.length ? <TwitList feeds={feeds} /> : <NoTweets />}</>;
 };
 
 export default ProfileLikes;
