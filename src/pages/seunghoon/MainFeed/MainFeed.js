@@ -13,15 +13,16 @@ const MainFeed = () => {
 
   const imgInput = document.getElementById('imgImportInput');
   const twitForm = document.getElementById('twitForm');
-  // const accessToken = localStorage.getItem('token');
-  const accessToken =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE2NjMxOTk5NTV9.0iucwihABtSuKh08YuuRPR2H0S7I8hCg2P3uzmmLjv4';
-  const userId = localStorage.getItem('user_id');
-  const userNickname = localStorage.getItem('user_nick');
+  const accessToken = localStorage.getItem('token');
+  // const accessToken =
+  //   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE2NjMxOTk5NTV9.0iucwihABtSuKh08YuuRPR2H0S7I8hCg2P3uzmmLjv4';
+  const userId = localStorage.getItem('userId');
+  const userNickname = localStorage.getItem('userNickname');
+  const userProfileImg = localStorage.getItem('userProfileImg');
 
   console.log(feeds);
   useEffect(() => {
-    fetch('http://10.58.0.33:3000/main', {
+    fetch('http://pienk.ddns.net:3000/main', {
       method: 'GET',
       headers: {
         authorization: accessToken,
@@ -29,6 +30,7 @@ const MainFeed = () => {
     })
       .then(response => response.json())
       .then(data => {
+        console.log('겟 데이터', data);
         setFeeds(data);
       });
   }, []);
@@ -41,11 +43,10 @@ const MainFeed = () => {
     event.preventDefault();
 
     console.log(feeds);
-
     const textValue = event.target[0].value;
     const imgValue = event.target[1].value;
 
-    fetch('http://10.58.0.33:3000/tweet', {
+    fetch('http://pienk.ddns.net:3000/tweet', {
       method: 'POST',
       headers: {
         enctype: 'multipart/form-data',
@@ -53,7 +54,7 @@ const MainFeed = () => {
       },
       body: new FormData(twitForm),
     }).then(response => console.log(response));
-    // .then(data => console.log(data));
+    // .then(data => console.log('데이터', data));
 
     const submitData = {
       content: textValue,
@@ -63,7 +64,7 @@ const MainFeed = () => {
       likeEx: 0,
       profile_id: userId,
       profile_nickname: userNickname,
-      profile_img: '',
+      profile_img: userProfileImg,
       replyCount: 0,
       replyTF: 0,
       rtCount: 0,
@@ -72,6 +73,7 @@ const MainFeed = () => {
 
     feeds.unshift(submitData);
     setFeeds([...feeds]);
+    window.location.reload();
   };
 
   const commentHandler = event => {
@@ -113,9 +115,11 @@ const MainFeed = () => {
         setFeeds={setFeeds}
         twitSubmit={twitSubmit}
         imgImport={imgImport}
+        userProfileImg={userProfileImg}
       />
       <div className="twitFeeds">
         <TwitList
+          userProfileImg={userProfileImg}
           feeds={feeds}
           commentHandler={commentHandler}
           reTwitHandler={reTwitHandler}

@@ -21,7 +21,7 @@ function LoginModal() {
   };
 
   let LoginBtn = () => {
-    fetch('http://10.58.3.34:3000/user/signin', {
+    fetch('http://pienk.ddns.net:3000/user/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify({ user_id: userId, password: userPw }),

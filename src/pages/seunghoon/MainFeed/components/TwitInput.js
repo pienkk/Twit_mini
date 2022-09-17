@@ -1,10 +1,10 @@
 import React, { useRef } from 'react';
 
-function TwitInput({ isModal, feeds, setFeeds, twitSubmit, imgImport }) {
+function TwitInput({ isModal, twitSubmit, imgImport, userProfileImg }) {
   return (
     <form className="twitInput" onSubmit={twitSubmit} id="twitForm">
       <div className="writerProfileImg">
-        <img src="./images/boy.png" alt="프로필이미지" />
+        <img src={userProfileImg} alt="프로필이미지" />
       </div>
       <div className="inputContent">
         <div className="inputText">
