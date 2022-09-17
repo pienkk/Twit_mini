@@ -2,7 +2,8 @@ const database = require("./orm");
 
 const tweetPost = async (
   user_id,
-  text
+  text,
+  image
   
 ) => {
   try {
@@ -13,9 +14,9 @@ const tweetPost = async (
             content,
             content_img,
             tweet_for
-        ) VALUES (?,"0", ?, "123.jpg", "IPAD");
+        ) VALUES (?,"0", ?, ?,"IPAD");
 		`,
-      [user_id, text]
+      [user_id, text, image]
     );
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");

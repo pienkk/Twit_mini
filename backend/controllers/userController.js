@@ -5,6 +5,7 @@ const asyncWrap = require("../middleware/async-wrap");
 
 const signIn = asyncWrap(async (req, res) => {
     const { user_id, password } = req.body;
+    console.log(user_id, password)
     if ( !user_id || !password ) {
         const err = new Error("KEY_ERROR");
         err.statusCode = 400;

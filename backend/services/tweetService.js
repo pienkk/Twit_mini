@@ -6,10 +6,11 @@ const idSearch = async ( id ) => {
   return result;
 }
 
-const tweetPost = async (user_id, text) => {
+const tweetPost = async (user_id, text, image) => {
   const tweetPost = await tweetDao.tweetPost(
     user_id,
-    text
+    text,
+    image
   );
   return tweetPost;
 };

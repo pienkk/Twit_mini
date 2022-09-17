@@ -1,6 +1,7 @@
 const { tweetService } = require("../services");
 const asyncWrap = require("../middleware/async-wrap");
 
+
 const idSearch = asyncWrap(async (req, res) => {
   const { id } = req.body;
   if ( !id ) {
@@ -14,14 +15,16 @@ const idSearch = asyncWrap(async (req, res) => {
 
 const tweetPost = asyncWrap(async (req, res) => {
   const {user_id,text} = req.body;
-
-  if (!user_id || !text ) {
+  console.log(req.file)
+  const image = req.file.location
+    if (!user_id || !text ) {
     console.log("err")
     return res.status(400).json({ message: "KEY_ERROR" });
   }
   await tweetService.tweetPost(
     user_id,
-    text
+    text,
+    image
   );
   res.status(201).json({ message: "tweetCreated" });
 });
