@@ -2,13 +2,15 @@ const { tweetService } = require("../services");
 const asyncWrap = require("../middleware/async-wrap");
 
 const idSearch = asyncWrap(async (req, res) => {
-  const { id } = req.body;
-  if ( !id ) {
+  console.log(req.body)
+  const { text } = req.body;
+  if ( !text ) {
     const err = new Error("KEY_ERROR");
     err.statusCode = 400;
     throw err;
   }
-  const users = await tweetService.idSearch( id );
+  const users = await tweetService.idSearch( text );
+  console.log(users)
   return res.status(200).json({users});
 })
 
@@ -46,10 +48,7 @@ const tweetReply = asyncWrap(async (req, res) => {
     content,
     reply_at,
   } = req.body);
-  let contentImg = null;
-  if (req.file) {
-    contentImg = req.file.filename;
-  }
+  let contentImg = req.file;
 
   if (!user_id || !content || !reply_at) {
     return res.status(400).json({ message: "KEY_ERROR" });

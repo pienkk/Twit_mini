@@ -18,13 +18,13 @@ const followUp = async ( id, profileId ) => {
         err.statusCode = 400;
         throw err;
     }
-    const followStatus = await followDao.findFollow( id, profileId );
+    const followStatus = await followDao.findFollow( id, receiveUser.id );
     if (followStatus) {
         const err = new Error("이미 팔로우 된 유저입니다.");
         err.statusCode = 400;
         throw err;
     }
-    return await followDao.followUp( id, receiveUser )
+    return await followDao.followUp( id, receiveUser.id )
 }
 
 const followDown = async ( id, profileId ) => {
@@ -34,13 +34,13 @@ const followDown = async ( id, profileId ) => {
         err.statusCode = 400;
         throw err;
     }
-    const followStatus = await followDao.findFollow( id, profileId );
+    const followStatus = await followDao.findFollow( id, receiveUser.id );
     if (!followStatus) {
         const err = new Error("팔로우가 되어있지 않습니다.");
         err.statusCode = 400;
         throw err;
     }
-    return await followDao.followDown( id, receiveUser );
+    return await followDao.followDown( id, receiveUser.id );
 }
 
 module.exports = {

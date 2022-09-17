@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 const KEY = process.env.KEY;
 const HOST = process.env.HOST;
-
+const IMAGE = process.env.DEFAULTIMAGE;
 
 
 const signIn = async ( id, password ) => {
@@ -20,9 +20,6 @@ const signIn = async ( id, password ) => {
     }
     const userId = {
         user_id : user.id
-    }
-    if (user.profile_image != "null") {
-        user.profile_image = HOST+user.profile_image
     }
     const jwtToken = jwt.sign(userId, KEY);
     const result = {
@@ -67,7 +64,7 @@ const signUp = async ( id, nickname, password, birthday ) => {
         nickname,
         hashPassword,
         birthday,
-        nickname
+        IMAGE
     );
     return createUser;
 };

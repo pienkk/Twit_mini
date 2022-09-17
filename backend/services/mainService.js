@@ -86,8 +86,7 @@ const mainFeed = async (user_id) => {
 };
 
 const mainSearch = async (text) => {
-  const findId = mainDao.findId(text);
-  // const findTweets = mainDao.findTweets(text);
+  const findId = await mainDao.findId(text);
   return findId
 }
 

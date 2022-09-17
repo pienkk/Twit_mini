@@ -46,18 +46,18 @@ const tweetsList = async () => {
 const tweetReply = async (
   user_id,
   content,
-  contentImg,
-  reply_at
+  reply_at,
+  contentImg
 ) => {
   let imageUrl = null;
   if (contentImg != null) {
-    imageUrl = HOST+contentImg;
+    imageUrl = HOST+contentImg.filename;
   }
   const tweetReply = await tweetDao.tweetReply(
     user_id,
     content,
-    imageUrl,
-    reply_at
+    reply_at,
+    imageUrl
   );
   return tweetReply;
 };
@@ -65,7 +65,7 @@ const tweetReply = async (
 const tweetTrend = async() => {
   const tweet = await tweetDao.tweetHashTag()
   const hashArray = [];
-  const hashObject = tweet.reduce((accu, curr) => {
+  const hashObject = await tweet.reduce((accu, curr) => {
     accu[curr.hash] = (accu[curr.hash] || 0) + 1;
     return accu;
   }, {})

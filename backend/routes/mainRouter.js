@@ -4,6 +4,6 @@ const { mainController } = require("../controllers");
 const { accessToken } = require("../middleware/auth");
 
 router.get("/", accessToken, mainController.mainFeed);
-router.get("/search", mainController.mainSearch);
+router.post("/search", mainController.mainSearch);
 
 module.exports = router;
