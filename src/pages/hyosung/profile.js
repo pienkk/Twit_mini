@@ -8,6 +8,9 @@ function Profile({ profile, nickname, userid, profileImg }) {
   const modalBackClick = () => {
     setModal(false);
   };
+  const userId = window.localStorage.getItem('userId');
+  const userNickname = window.localStorage.getItem('userNickname');
+  const userProfileImg = window.localStorage.getItem('userProfileImg');
 
   return (
     <div>
@@ -17,10 +20,10 @@ function Profile({ profile, nickname, userid, profileImg }) {
         }}
         className="introduce"
       >
-        <img className="profileImage" src={profileImg} />
+        <img className="profileImage" src={userProfileImg} />
         <div className="userWrap">
-          <p className="ptag1">{nickname}</p>
-          <p className="ptag2">{userid}</p>
+          <p className="ptag1">{userNickname}</p>
+          <p className="ptag2">@{userId}</p>
         </div>
         <img src="./dotdotdot.png" width="20px" />
       </div>
