@@ -34,7 +34,13 @@ const getMediaTweets = asyncWrap(async (req, res) => {
 
 const postProfile = async (req, res) => {
     try{
-        const {profile_nickname, profile_banner, profile_image, comment, users_id  } = req.body;
+        const {profile_nickname, comment, users_id  } = req.body;
+        const {profile_banner, profile_image} = req.file;
+        let profileBanner = null;
+        let profileImage = null;
+        if (profile_banner){
+            profileBanner 
+        }
 
         if(!profile_nickname){
             return res.status(400).json({message : "profile_nickname은 필수값"});

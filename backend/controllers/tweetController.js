@@ -13,18 +13,15 @@ const idSearch = asyncWrap(async (req, res) => {
 })
 
 const tweetPost = asyncWrap(async (req, res) => {
-  const {user_id, content} = req.body;
-  let contentImg = null;
-  if (req.file) {
-    contentImg = req.file.filename;
+  const {user_id, text} = req.body;
+  let contentImg = req.file;
+  if (!user_id || !text ) {
+    const err = new Error("KEY_ERROR");
+    err.statusCode = 400;
+    throw err
   }
-  console.log(req.file)
-  if (!user_id || !content ) {
-    console.log("err")
-    return res.status(400).json({ message: "KEY_ERROR" });
-  }
-  await tweetService.tweetPost(user_id,content,contentImg);
-  res.status(201).json({ message: "tweetCreated" });
+  const result = await tweetService.tweetPost(user_id,text,contentImg);
+  res.status(201).json({ message: "tweetCreated", content_img: result.image });
 });
 
 const tweetDel = asyncWrap(async (req, res) => {
@@ -43,23 +40,25 @@ const tweetsList = asyncWrap(async (req, res) => {
 });
 
 const tweetReply = asyncWrap(async (req, res) => {
+
   let tweetReply = ({
     user_id,
     content,
-    content_img,
-    tweet_for,
     reply_at,
   } = req.body);
+  let contentImg = null;
+  if (req.file) {
+    contentImg = req.file.filename;
+  }
 
-  if (!user_id || !content || !tweet_for || !reply_at) {
+  if (!user_id || !content || !reply_at) {
     return res.status(400).json({ message: "KEY_ERROR" });
   }
   await tweetService.tweetReply(
     user_id,
     content,
-    content_img,
-    tweet_for,
-    reply_at
+    reply_at,
+    contentImg
   );
   res.status(201).json({ message: "replyCreated" });
 });

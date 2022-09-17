@@ -84,7 +84,6 @@ const tweetReply = async (
   user_id,
   content,
   content_img,
-  tweet_for,
   reply_at
 ) => {
   try {
@@ -139,4 +138,21 @@ const replyCount = async ( tweetId ) => {
   }
 }
 
-module.exports = { tweetPost, tweetDel, tweetEx, tweetsList, tweetReply, initReply, tweetHashTag, replyCount};
+const tweetImg = async ( tweetId ) => {
+  try {
+    const [img] = await database.query(
+      `SELECT 
+        content_img as image
+      FROM tweets
+      WHERE id = ?`,
+    [ tweetId ]
+    ) 
+    return img
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+}
+
+module.exports = { tweetPost, tweetDel, tweetEx, tweetsList, tweetReply, initReply, tweetHashTag, replyCount,tweetImg};

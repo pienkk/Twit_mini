@@ -23,7 +23,7 @@ const mainSearch = asyncWrap(async (req, res) => {
     throw err
   }
   const result = await mainService.mainSearch(text)
-  res.status(200).json({})
+  res.status(200).json({result})
 })
 
 module.exports = { mainFeed, mainSearch };

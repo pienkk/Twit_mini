@@ -10,10 +10,11 @@ const idSearch = async ( id ) => {
 const tweetPost = async (user_id, content, contentImg) => {
   let imageUrl = null;
   if (contentImg != null) {
-    imageUrl = HOST+contentImg;
+    imageUrl = HOST+contentImg.filename;
   }
-  const tweetPost = await tweetDao.tweetPost(user_id,content,imageUrl);
-  return tweetPost;
+  const tweet = await tweetDao.tweetPost(user_id,content,imageUrl);
+  const img = await tweetDao.tweetImg(tweet.insertId)
+  return img
 };
 
 const tweetDel = async (user_id, tweet_id) => {
@@ -45,15 +46,17 @@ const tweetsList = async () => {
 const tweetReply = async (
   user_id,
   content,
-  content_img,
-  tweet_for,
+  contentImg,
   reply_at
 ) => {
+  let imageUrl = null;
+  if (contentImg != null) {
+    imageUrl = HOST+contentImg;
+  }
   const tweetReply = await tweetDao.tweetReply(
     user_id,
     content,
-    content_img,
-    tweet_for,
+    imageUrl,
     reply_at
   );
   return tweetReply;

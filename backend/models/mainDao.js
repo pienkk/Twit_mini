@@ -29,7 +29,27 @@ const mainFeed = async (user_id) => {
 const findId = async (text) => {
   try {
     const result = await database.query(
-      `SELECT `
+      `SELECT
+        profile_id,
+        profile_nickname,
+        profile_image,
+        comment 
+      FROM users WHERE profile_id LIKE "%?%" OR profile_nickname LIKE "%?%" `,
+      [text, text]
+    )
+    return result;
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+}
+
+const findTweets = async (text) => {
+  try {
+    const result = await database.query(
+      `SELECT
+      `
     )
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");
