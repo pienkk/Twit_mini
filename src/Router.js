@@ -17,12 +17,13 @@ const Router = () => {
       <Routes>
         <Route path="/Login" element={<Login />} />
       </Routes>
-      {path === '/Login' || '/login' ? null : (
-        <>
-          <LeftSideBar />
-          <MainTrend />
-        </>
-      )}
+      {/* {/* {path === '/Login' || '/login' ? null : (
+        <> 
+      <MainTrend />
+      <LeftSideBar /> */}
+
+      {/* </> */}
+      {/* )} */}
 
       <Routes>
         <Route path="/Main" element={<Main />} />
