@@ -14,18 +14,10 @@ const Router = () => {
 
   return (
     <BrowserRouter>
+      <MainTrend />
+      <LeftSideBar />
       <Routes>
         <Route path="/Login" element={<Login />} />
-      </Routes>
-      {/* {/* {path === '/Login' || '/login' ? null : (
-        <> 
-      <MainTrend />
-      <LeftSideBar /> */}
-
-      {/* </> */}
-      {/* )} */}
-
-      <Routes>
         <Route path="/Main" element={<Main />} />
         {/* <Route path="/LoginDaeho" element={<LoginDaeho />} />
         <Route path="/MainTrend" element={<MainTrend />} /> */}

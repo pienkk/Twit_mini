@@ -12,12 +12,12 @@ import ProfileEdit from './ProfileEdit';
 import ModalPortal from '../seunghoon/MainFeed/Portal.js';
 
 const Profile = () => {
+  const accessToken = localStorage.getItem('token');
   useEffect(() => {
     fetch('http://pienk.ddns.net:3000/profile', {
       method: 'GET',
       headers: {
-        authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
+        authorization: accessToken,
       },
     })
       .then(response => response.json())
