@@ -82,8 +82,7 @@ const tweetsList = async () => {
 
 const tweetReply = async (
   user_id,
-  content,
-  content_img,
+  text,
   reply_at
 ) => {
   try {
@@ -95,9 +94,9 @@ const tweetReply = async (
             content_img,
             tweet_for,
             reply_at
-        ) VALUES (?,"1", ?, ?, "IPAD", ?);
+        ) VALUES (?,"1", ?,"sungwon.jpg", "IPAD", ?);
 		`,
-      [user_id, content, content_img, reply_at]
+      [user_id,text,reply_at]
     );
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");

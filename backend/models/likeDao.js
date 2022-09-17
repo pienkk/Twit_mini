@@ -51,4 +51,18 @@ const likeCount = async ( tweetId ) => {
   }
 }
 
-module.exports = { tweetLike, likeEx,likeCount };
+const delLike = async ( user_id, tweet_id) => {
+  try {
+      return await database.query(
+          `DELETE FROM likes
+          WHERE likes.user_id = ? AND tweet_id = ?`,
+          [ user_id, tweet_id ]
+      )
+  } catch (err) {
+      const error = new Error(`INVALID_DATA_INPUT`);
+      error.statusCode = 500;
+      throw error;
+  }
+}
+
+module.exports = { tweetLike, likeEx,likeCount,delLike };

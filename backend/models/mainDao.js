@@ -95,5 +95,7 @@ const rtCount = async (user_id) => {
 };
   
 
+
 module.exports = { mainFeed, findId, replyCount, likeCount, rtCount };
+
 
