@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './userInfoCard.scss';
-function UserInfoCard({ nickname, id, profileImg, userId }) {
+
+function UserInfoCard({ Img, userId, nickname }) {
   return (
     <>
       <div className="cardWrap">
         <div className="userCard">
-          <img className="userImg" alt="user" src={profileImg} />
+          <img className="userImg" alt="" src={Img} />
           <div className="user">
             <p className="userNickName">{nickname}</p>
             <p className="userId">{userId}</p>
