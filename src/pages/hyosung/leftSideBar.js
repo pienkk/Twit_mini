@@ -11,15 +11,15 @@ import Modal from '../seunghoon/MainFeed/Modal';
 import ModalPortal from '../seunghoon/MainFeed/Portal';
 
 function LeftSideBar({}) {
-  useEffect(() => {
-    fetch('/data/profile.json', {
-      method: 'GET',
-    })
-      .then(res => res.json())
-      .then(data => {
-        setProfile(...data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://pienk.ddns.net:3000/', {
+  //     method: 'GET',
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setProfile(...data);
+  //     });
+  // }, []);
   const [profile, setProfile] = useState({});
   return (
     <>

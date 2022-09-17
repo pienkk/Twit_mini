@@ -17,13 +17,9 @@ const Router = () => {
       <Routes>
         <Route path="/Login" element={<Login />} />
       </Routes>
-      {/* {/* {path === '/Login' || '/login' ? null : (
-        <> 
-      <MainTrend />
-      <LeftSideBar /> */}
 
-      {/* </> */}
-      {/* )} */}
+      <MainTrend />
+      <LeftSideBar />
 
       <Routes>
         <Route path="/Main" element={<Main />} />

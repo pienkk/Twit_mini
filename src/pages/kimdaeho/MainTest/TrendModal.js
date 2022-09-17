@@ -3,8 +3,19 @@ import './TrendModal.scss';
 import { useEffect } from 'react';
 
 import UserInfoCard from './userInfoCard';
-function TrendModal({ handleModal, userInput, userInfo }) {
-  const [search, setSearch] = useState([]);
+function TrendModal({ handleModal, userInput }) {
+  const [searchData, setSearchData] = useState([]);
+  useEffect(() => {
+    fetch('http://pienk.ddns.net:3000/main/search', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({ text: userInput }),
+    })
+      .then(Response => Response.json())
+      .then(result => setSearchData(result.result));
+  }, [userInput]);
 
   return (
     <div>
@@ -15,16 +26,16 @@ function TrendModal({ handleModal, userInput, userInfo }) {
             <p>사용자, 화제, 키워드를 검색해보세요</p>
           ) : (
             <>
-              {userInfo.map(user => {
-                return (
-                  <UserInfoCard
-                    nickname={user.nickname}
-                    id={user.id}
-                    userId={user.userid}
-                    profileImg={user.profileImg}
-                  />
-                );
-              })}
+              {searchData &&
+                searchData.map(user => {
+                  return (
+                    <UserInfoCard
+                      Img={user.profile_image}
+                      userId={user.profile_id}
+                      nickname={user.profile_nickname}
+                    />
+                  );
+                })}
             </>
           )}
         </div>
