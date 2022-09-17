@@ -1,10 +1,6 @@
 const database = require("./orm");
 
-const tweetPost = async (
-  user_id,
-  text
-  
-) => {
+const tweetPost = async (user_id,content,contentImg) => {
   try {
     return await database.query(
       `INSERT INTO tweets(
@@ -13,9 +9,9 @@ const tweetPost = async (
             content,
             content_img,
             tweet_for
-        ) VALUES (?,"0", ?, "123.jpg", "IPAD");
+        ) VALUES (?,"0", ?, ?, "MAC");
 		`,
-      [user_id, text]
+      [user_id, content, contentImg]
     );
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");
@@ -23,6 +19,7 @@ const tweetPost = async (
     throw error;
   }
 };
+
 const tweetEx = async (tweet_id) => {
   let tweetEx = await database.query(
   `SELECT user_id 
@@ -125,13 +122,14 @@ const tweetHashTag = async () => {
 
 const replyCount = async ( tweetId ) => {
   try {
-    const [count] =  await database.query(
+    const [ reply ] =  await database.query(
       `SELECT COUNT(reply_at) as count
       FROM tweets
       WHERE reply_at = ?`,
       [ tweetId ]
     )
-    return count;
+    const count = reply.count;
+    return +count;
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");
     error.statusCode = 500;
@@ -139,4 +137,21 @@ const replyCount = async ( tweetId ) => {
   }
 }
 
-module.exports = { tweetPost, tweetDel, tweetEx, tweetsList, tweetReply, initReply, tweetHashTag, replyCount};
+const tweetImg = async ( tweetId ) => {
+  try {
+    const [img] = await database.query(
+      `SELECT 
+        content_img as image
+      FROM tweets
+      WHERE id = ?`,
+    [ tweetId ]
+    ) 
+    return img
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+}
+
+module.exports = { tweetPost, tweetDel, tweetEx, tweetsList, tweetReply, initReply, tweetHashTag, replyCount,tweetImg};

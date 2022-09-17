@@ -19,13 +19,45 @@ const mainFeed = async (user_id) => {
       `,
       [user_id, user_id]
       );
+    } catch (err) {
+      const error = new Error("INVALID_DATA_INPUT");
+      error.statusCode = 500;
+      throw error;
+    }
+  };
+
+const findId = async (text) => {
+  try {
+    const result = await database.query(
+      `SELECT
+        profile_id,
+        profile_nickname,
+        profile_image,
+        comment 
+      FROM users WHERE profile_id LIKE "%?%" OR profile_nickname LIKE "%?%" `,
+      [text, text]
+    )
+    return result;
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");
     error.statusCode = 500;
     throw error;
   }
-};
+}
 
+const findTweets = async (text) => {
+  try {
+    const result = await database.query(
+      `SELECT
+      `
+    )
+  } catch (err) {
+    const error = new Error("INVALID_DATA_INPUT");
+    error.statusCode = 500;
+    throw error;
+  }
+}
+  
 const replyCount = async (user_id) => {
   try {
     return await database.query(`SELECT tweets.id
@@ -63,12 +95,7 @@ const rtCount = async (user_id) => {
 };
   
 
-module.exports = { mainFeed, replyCount, likeCount, rtCount };
+
+module.exports = { mainFeed, findId, replyCount, likeCount, rtCount };
 
 
-//팔로우 유저 조건만 보기 
-// left join likes on likes.tweet_id = tweets.id AND likes.user_id = ? WHERE follow_from = ?
-// `,
-// [user_id, user_id]
-
-// inner join follows on follows.follow_to = tweets.user_id 

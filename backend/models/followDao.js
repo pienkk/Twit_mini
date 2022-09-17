@@ -3,12 +3,13 @@ const appDataSource = require("./orm");
 const followCount = async ( userId ) => {
     try {
         const [ follow ] = await appDataSource.query(
-            `SELECT COUNT(follow_from) as follow
+            `SELECT COUNT(follow_from) as count
             FROM follows
             WHERE follow_from = ? `,
             [ userId ]
         )
-        return follow
+        const count = follow.count
+        return count
     } catch (err) {
         const error = new Error(`INVALID_DATA_INPUT`);
         error.statusCode = 500;
@@ -19,12 +20,13 @@ const followCount = async ( userId ) => {
 const followerCount = async ( userId ) => {
     try {
         const [ follower ] = await appDataSource.query(
-            `SELECT COUNT(follow_to) as follower
+            `SELECT COUNT(follow_to) as count
             FROM follows
             WHERE follow_to = ? `,
             [ userId ]
         )
-        return follower
+        const count = follower.count
+        return count
     } catch (err) {
         const error = new Error(`INVALID_DATA_INPUT`);
         error.statusCode = 500;

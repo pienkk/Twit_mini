@@ -22,8 +22,7 @@ const signIn = async ( id ) => {
     try {
         const [user] = await appDataSource.query(
             `SELECT
-                id,
-                password
+                *
             FROM users
             WHERE profile_id = ? `,
             [id]
@@ -37,17 +36,17 @@ const signIn = async ( id ) => {
 }
 
 
-const createUser = async (id,password,birthday,nickname) => {
+const createUser = async ( id, nickname, password, birthday) => {
     try {
         return await appDataSource.query(
             `INSERT INTO users(
                 profile_id,
+                profile_nickname,
                 password,
-                birthday,
-                profile_nickname
+                birthday
             ) VALUES (?, ?, ?, ?)
             `,
-            [id,password,birthday,nickname]
+            [ id, nickname, password, birthday ]
         );
     } catch (err) {
         const error = new Error(`INVALID_DATA_INPUT`);

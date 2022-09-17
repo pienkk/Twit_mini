@@ -85,4 +85,11 @@ const mainFeed = async (user_id) => {
   return await mf;
 };
 
-module.exports = { mainFeed };
+const mainSearch = async (text) => {
+  const findId = mainDao.findId(text);
+  // const findTweets = mainDao.findTweets(text);
+  return findId
+}
+
+
+module.exports = { mainFeed ,mainSearch};

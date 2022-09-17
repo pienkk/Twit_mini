@@ -15,4 +15,16 @@ const mainFeed = asyncWrap(async (req, res) => {
   await res.status(201).json(sortData);
 });
 
-module.exports = { mainFeed };
+const mainSearch = asyncWrap(async (req, res) => {
+  const {text} = req.body;
+  if( !text ) {
+    const err = new Error("KEY_ERROR");
+    err.statusCode = 400;
+    throw err
+  }
+  const result = await mainService.mainSearch(text)
+  res.status(200).json({result})
+})
+
+module.exports = { mainFeed, mainSearch };
+

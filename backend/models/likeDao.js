@@ -36,13 +36,14 @@ const tweetLike = async (user_id, post_id) => {
 
 const likeCount = async ( tweetId ) => {
   try {
-    const [count] = await database.query(
+    const [ like ] = await database.query(
       `SELECT COUNT(tweet_id) as count
       FROM likes
       WHERE tweet_id = ?`,
       [ tweetId ]
     )
-    return count
+    const count = like.count;
+    return +count
   } catch (err) {
     const error = new Error("INVALID_DATA_INPUT");
     error.statusCode = 500;
