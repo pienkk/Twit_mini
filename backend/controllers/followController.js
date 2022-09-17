@@ -14,27 +14,25 @@ const followerList = asyncWrap(async (req, res) => {
 })
 
 const followUp = asyncWrap(async (req, res) => {
-    const { user_id } = req.body;
-    const profileId = req.params.profileId;
-    if ( !profileId ) {
+    const { user_id, profile_id } = req.body;
+    if ( !profile_id ) {
         const err = new Error("KEY_ERROR");
         err.statusCode = 400;
         throw err;
     }
-    await followService.followUp( user_id, profileId );
-    return res.status(200).json({ message: "followSuccess"})
+    await followService.followUp( user_id, profile_id );
+    return res.status(200).json({ message: "팔로우 성공"})
 })
 
 const followDown = asyncWrap(async (req, res) => {
-    const { user_id } = req.body;
-    const profileId = req.params.profileId;
-    if ( !profileId ) {
+    const { user_id, profile_id } = req.body;
+    if ( !profile_id ) {
         const err = new Error("KEY_ERROR");
         err.statusCode = 400;
         throw err;
     }
-    await followService.followDown( user_id, profileId );
-    return res.status(204).json({ message: "Unfollow"})
+    await followService.followDown( user_id, profile_id );
+    return res.status(204).json({ message: "언팔로우 성공"})
 })
 
 module.exports = {

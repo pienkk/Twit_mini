@@ -1,9 +1,11 @@
 const express = require("express");
 const retweetController = require("../controllers/retweetController");
+const { accessToken } = require("../middleware/auth");
+
 
 const router = express.Router();
 
-router.post('/post', retweetController.postRetweet);
-router.delete('/remove', retweetController.removeRetweet)
+router.post('/', accessToken, retweetController.postRetweet);
+router.delete('/', accessToken, retweetController.removeRetweet)
 
 module.exports =    router

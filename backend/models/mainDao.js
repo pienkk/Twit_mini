@@ -34,8 +34,7 @@ const findId = async (text) => {
         profile_nickname,
         profile_image,
         comment 
-      FROM users WHERE profile_id LIKE "%?%" OR profile_nickname LIKE "%?%" `,
-      [text, text]
+      FROM users WHERE profile_id LIKE "%${text}%" OR profile_nickname LIKE "%${text}%" `,
     )
     return result;
   } catch (err) {

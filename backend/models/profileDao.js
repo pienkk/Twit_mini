@@ -131,8 +131,8 @@ const postProfile = async (profile_nickname, profile_banner, profile_image, comm
             UPDATE users
             SET
             profile_nickname = ?,
-            profile_banner = ?,
-            profile_image = ?,
+            profile_banner = CASE WHEN "${profile_banner}" = "NULL" THEN profile_banner ELSE ? END,
+            profile_image = CASE WHEN "${profile_image}" = "NULL" THEN profile_image ELSE ? END,
             comment = ?
             WHERE users.id = ${users_id}`,
             [profile_nickname, profile_banner, profile_image, comment]

@@ -55,7 +55,7 @@ const delLike = async ( user_id, tweet_id) => {
   try {
       return await database.query(
           `DELETE FROM likes
-          WHERE likes.user_id = ? AND tweet_id = ?`,
+          WHERE user_id = ? AND tweet_id = ?`,
           [ user_id, tweet_id ]
       )
   } catch (err) {

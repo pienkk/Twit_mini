@@ -6,10 +6,7 @@ const getProfile = async ( user_id ) => {
     const result = await profileDao.getProfile( user_id );
     result.follow = await followDao.followCount( user_id );
     result.follower = await followDao.followerCount( user_id );
-    if ( result.profile_image != "null" && result.backgroundImg != "null" ) {
-    result.profile_image = HOST+result.profile_image
-    result.backgroundImg = HOST+result.backgroundImg
-    }
+    
     return result
 }
 
@@ -43,23 +40,19 @@ const getMyTweets = async ( user_id ) => {
     // const bbb = await getMessage();
     // console.log(result)
 
-    return await result
+    return result
 }
 
 const getReplyTweets = async ( user_id ) => {
     const result = await profileDao.getMyTweets( user_id )
     for (el of result) {
         if (el.reply_at) {
-            // console.log(el.reply_at, user_id)
             result.push( await profileDao.getReplyTweets(el.reply_at, user_id))
         }
         el.replyCount = await tweetDao.replyCount(el.id);
         el.likeCount = await likeDao.likeCount(el.id);
         el.rtCount = await retweetDao.retweetCount(el.id);
     }
-    // const set = result.filter(async (el,index) => {
-    //     return await result.indexOf(el.id) == index;
-    // })
     return result;
 }
 
@@ -84,10 +77,18 @@ const getMediaTweets = async ( user_id ) => {
 }
 
 
-const postProfile = async (
-    profile_nickname, profile_banner, profile_image, comment, users_id ) => {
+const postProfile = async (profile_nickname, comment, user_id, images ) => {
+    let profile_image = null;
+    let profile_banner = null;
+    if (images && images.profile_img) {
+        profile_image = HOST+images.profile_img[0].filename;
+    }
+    if (images && images.backgroundImg) {
+        profile_banner = HOST+images.backgroundImg[0].filename;
+    }
     const postProfile = await profileDao.postProfile(
-        profile_nickname, profile_banner, profile_image, comment , users_id);
+        profile_nickname, profile_banner, profile_image, comment , user_id);
+        console.log(postProfile)
     return postProfile;
 }  
 

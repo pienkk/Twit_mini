@@ -43,7 +43,7 @@ const followList = async ( userId ) => {
                 users.comment
             FROM users INNER JOIN 
             follows on users.id = follows.follow_from
-            WHERE follows.follow_from = ? `,
+            WHERE follows.follow_to = ? `,
             [ userId ]
         )
     } catch (err) {
@@ -61,7 +61,7 @@ const followerList = async ( userId ) => {
                 users.profile_nickname as nickname,
                 users.comment
             FROM users INNER JOIN 
-            follows on users.id = follows.follow_to
+            follows on users.id = follows.follow_from
             WHERE follows.follow_to = ? `,
             [ userId ]
         )
@@ -74,13 +74,14 @@ const followerList = async ( userId ) => {
 
 const findFollow = async ( id, receiveId ) => {
     try {
-        return await appDataSource.query(
+        const [result] =  await appDataSource.query(
             `SELECT
                 *
             FROM follows
             WHERE follow_from = ? AND follow_to = ?`,
             [ id, receiveId ]
         )
+        return result
     } catch (err) {
         const error = new Error(`INVALID_DATA_INPUT`);
         error.statusCode = 500;

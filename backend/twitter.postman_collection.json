@@ -1,0 +1,2918 @@
+{
+	"info": {
+		"_postman_id": "110d2780-258e-4ae9-8238-2ccdeb10594e",
+		"name": "twitter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23349652"
+	},
+	"item": [
+		{
+			"name": "/profile",
+			"item": [
+				{
+					"name": "/   프로필 정보",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/profile",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/profile",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "353"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"161-jVlXw/+0+aunjySivaUwnl/PS8E\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 02:35:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"profile\": {\n        \"profile_id\": \"gisuk\",\n        \"profile_nickname\": \"ggisukk\",\n        \"introduce\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"backgroundImg\": \"http://pienk.ddns.net:3000/img/http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"join_at\": \"2022-09-15T06:31:33.000Z\",\n        \"follow\": \"0\",\n        \"follower\": \"0\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/tweets 내 트윗 리스트",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/profile/tweets",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"profile",
+								"tweets"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/profile/tweets",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"profile",
+										"tweets"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2587"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a1b-bwDU9PRE+6DYgOBuPa1m8NIsuiI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 02:36:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tweets\": [\n        {\n            \"id\": 26,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"ddd\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T12:06:22.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 27,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"집가기싫다 #코딩독학\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T12:54:35.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 28,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"집가기싫다1 #코딩독학2\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T12:54:42.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 29,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"집가기싫다3 #코딩독학2\",\n            \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"create_at\": \"2022-09-15T12:54:45.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 30,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"집가기1싫다3 #코딩독학2\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T12:54:49.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 1,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 31,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"위코드 좋아 #위코드\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T13:21:59.000Z\",\n            \"replyTF\": 1,\n            \"reply_at\": 30,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 32,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"사진 테스트 #사진\",\n            \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"create_at\": \"2022-09-16T03:11:33.000Z\",\n            \"replyTF\": 1,\n            \"reply_at\": 12,\n            \"likeEX\": 32,\n            \"replyCount\": 0,\n            \"likeCount\": 1,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 66,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"abcd\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-17T01:56:53.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/reply 내 트윗 + 답글단 트윗",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/profile/reply",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"profile",
+								"reply"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/profile/reply",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"profile",
+										"reply"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3186"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c72-dQiKyRWUSM2ZQED0dM4xkJk3lnQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 02:37:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tweets\": [\n        {\n            \"id\": 26,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"ddd\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T12:06:22.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 27,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"집가기싫다 #코딩독학\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T12:54:35.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 28,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"집가기싫다1 #코딩독학2\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T12:54:42.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 29,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"집가기싫다3 #코딩독학2\",\n            \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"create_at\": \"2022-09-15T12:54:45.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 30,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"집가기1싫다3 #코딩독학2\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T12:54:49.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 1,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 31,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"위코드 좋아 #위코드\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T13:21:59.000Z\",\n            \"replyTF\": 1,\n            \"reply_at\": 30,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 32,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"사진 테스트 #사진\",\n            \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"create_at\": \"2022-09-16T03:11:33.000Z\",\n            \"replyTF\": 1,\n            \"reply_at\": 12,\n            \"likeEX\": 32,\n            \"replyCount\": 0,\n            \"likeCount\": 1,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 66,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"abcd\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-17T01:56:53.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"likeEX\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 30,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"집가기1싫다3 #코딩독학2\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T12:54:49.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"replyCount\": 1,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 12,\n            \"profile_id\": \"ts_dasda\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"콘텐츠 #해시태그\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-14T12:13:03.000Z\",\n            \"replyTF\": 0,\n            \"reply_at\": null,\n            \"replyCount\": 1,\n            \"likeCount\": 3,\n            \"rtCount\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/like 좋아요 한 트윗",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/profile/like",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"profile",
+										"like"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1138"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"472-rtAtxoQTa8lpcI2WfcqXY3dSXLM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 02:38:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tweets\": [\n        {\n            \"id\": 1,\n            \"profile_id\": \"testt\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"콘텐츠\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-14T11:35:31.000Z\",\n            \"likeEX\": 1,\n            \"replyCount\": 0,\n            \"likeCount\": 2,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 5,\n            \"profile_id\": \"testt\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"콘텐츠\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-14T11:35:33.000Z\",\n            \"likeEX\": 5,\n            \"replyCount\": 0,\n            \"likeCount\": 1,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 20,\n            \"profile_id\": \"eogh7731\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"코딩잼따 #코딩\",\n            \"content_img\": null,\n            \"create_at\": \"2022-09-15T06:21:18.000Z\",\n            \"likeEX\": 20,\n            \"replyCount\": 0,\n            \"likeCount\": 2,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 32,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"사진 테스트 #사진\",\n            \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"create_at\": \"2022-09-16T03:11:33.000Z\",\n            \"likeEX\": 32,\n            \"replyCount\": 0,\n            \"likeCount\": 1,\n            \"rtCount\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/media 내 트윗 중 사진이 포함된 트윗",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/profile/media",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"profile",
+								"media"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/profile/media",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"profile",
+										"media"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "687"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2af-P/vCfHf0CdmrzwyTX7yuNJ/Tf/8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 02:39:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"tweets\": [\n        {\n            \"id\": 29,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"집가기싫다3 #코딩독학2\",\n            \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"create_at\": \"2022-09-15T12:54:45.000Z\",\n            \"likeEx\": null,\n            \"replyCount\": 0,\n            \"likeCount\": 0,\n            \"rtCount\": 0\n        },\n        {\n            \"id\": 32,\n            \"profile_id\": \"gisuk\",\n            \"profile_nickname\": \"ggisukk\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"content\": \"사진 테스트 #사진\",\n            \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"create_at\": \"2022-09-16T03:11:33.000Z\",\n            \"likeEx\": 32,\n            \"replyCount\": 0,\n            \"likeCount\": 1,\n            \"rtCount\": 0\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/modify 프로필 수정",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/user",
+			"item": [
+				{
+					"name": "/signup 회원가입",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"dayoung\",\n    \"nickname\": \"다찌\",\n    \"password\": \"qwer1234#\",\n    \"birthday\": \"1997-11-04\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/user/signup",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "가입 성공",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"eoeof344\",\n    \"nickname\": \"nickcol\",\n    \"password\": \"$dDasxx123\",\n    \"birthday\": \"1992-01-22\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/user/signup",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-XPKzF1VKpkBbUYj3UHU/ZvnbGhk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 02:58:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"userCreated\"\n}"
+						},
+						{
+							"name": "가입 실패(중복id)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"eoeof344\",\n    \"nickname\": \"nickcol\",\n    \"password\": \"$dDasxx123\",\n    \"birthday\": \"1992-01-22\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/user/signup",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-PIgwg0ebPRkNx1EDokpEym6Wk/g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 02:59:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"이미 가입된 아이디 입니다.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/signin 로그인",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": \"dayoung\",\n    \"password\": \"qwer1234#\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"signin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "로그인 성공",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"eoeof344\",\n    \"password\": \"$dDasxx123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "241"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f1-bpyXdKD//JG2VSkkOJyl3NjLBUI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:01:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozMiwiaWF0IjoxNjYzMzgzNzE1fQ.Nc7gADSqisaTusslDoJ_lvVlqZZMKwTPcJFzoFeAiOc\",\n    \"userId\": \"eoeof344\",\n    \"userNickname\": \"nickcol\",\n    \"userProfileImg\": \"http://pienk.ddns.net:3000/img/null\"\n}"
+						},
+						{
+							"name": "로그인 실패",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": \"eoeof344\",\n    \"password\": \"$dDasxx13\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/user/signin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signin"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-6zG6/TbpozL1clA6qhRglH8Kt3w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:02:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"유저 정보가 일치하지 않습니다.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/retweet",
+			"item": [
+				{
+					"name": "/ 리트윗 요청",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tweet_id\":\"20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/retweet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"retweet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "\b요청 성공",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tweet_id\":\"20\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/retweet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"retweet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-qf9yrTKP6bqyQQiHHBGdnNGY5EA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:14:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"리트윗 완료\"\n}"
+						},
+						{
+							"name": "요청 실패(이미 리트윗된 요청)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tweet_id\":\"20\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/retweet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"retweet"
+									]
+								}
+							},
+							"status": "I'm a Teapot",
+							"code": 418,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-wHUeEr/6Jg9Sd2lUoT0wNBIriXI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:14:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"이미 리트윗 된 글입니다\"\n}"
+						},
+						{
+							"name": "요청 실패(존재하지 않는 게시글)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tweet_id\":\"999\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/retweet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"retweet"
+									]
+								}
+							},
+							"status": "I'm a Teapot",
+							"code": 418,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-g7V2sL9rLDorBifrJRilNFH/Urw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:15:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"존재하지 않는 게시글입니다\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/ 리트윗 삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tweet_id\": \"35\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/retweet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"retweet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "삭제 성공",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tweet_id\": \"20\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/retweet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"retweet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-3bFy8GR1uEIL1RZXLxmTzCCDYCA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:17:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"리트윗 삭제 완료\"\n}"
+						},
+						{
+							"name": "삭제 실패(게시글 x)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tweet_id\": \"20\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/retweet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"retweet"
+									]
+								}
+							},
+							"status": "I'm a Teapot",
+							"code": 418,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-3gm2IAIMr8lPSf4i5nnz6VmQFMM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:17:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"삭제할 리트윗 게시글이 없습니다\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/follow",
+			"item": [
+				{
+					"name": "/follow 내가 팔로우한 유저",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/follow/follow",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"follow",
+								"follow"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/follow/follow",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"follow",
+										"follow"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"db-xfu8mF3tuqmxwT+/KUzr1hmNQi0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 10:28:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"id\": \"testt\",\n            \"nickname\": null,\n            \"comment\": null\n        },\n        {\n            \"id\": \"ts_dasda\",\n            \"nickname\": null,\n            \"comment\": null\n        },\n        {\n            \"id\": \"eogh7771\",\n            \"nickname\": \"개미는머호\",\n            \"comment\": null\n        },\n        {\n            \"id\": \"dayoung\",\n            \"nickname\": \"다찌\",\n            \"comment\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/follower 날 팔로우한 유저",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/follow/follower",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"follow",
+								"follower"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/follow/follower",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"follow",
+										"follower"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "219"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"db-xfu8mF3tuqmxwT+/KUzr1hmNQi0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 10:53:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"list\": [\n        {\n            \"id\": \"testt\",\n            \"nickname\": null,\n            \"comment\": null\n        },\n        {\n            \"id\": \"ts_dasda\",\n            \"nickname\": null,\n            \"comment\": null\n        },\n        {\n            \"id\": \"eogh7771\",\n            \"nickname\": \"개미는머호\",\n            \"comment\": null\n        },\n        {\n            \"id\": \"dayoung\",\n            \"nickname\": \"다찌\",\n            \"comment\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/ 팔로우 요청",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"profile_id\": \"test1409\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/follow",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"follow"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "요청 성공",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"profile_id\": \"test1409\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/follow",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"follow"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-98nEiPggvvf5Uzju8znYJl6cUYc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:45:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"팔로우 성공\"\n}"
+						},
+						{
+							"name": "요청 실패",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"profile_id\": \"test1409\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/follow",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"follow"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-qBryC2CwSBw124HGwo2vlEb27KY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:53:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"이미 팔로우 된 유저입니다.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/ 팔로우 삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"profile_id\": \"test1409\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/follow",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"follow"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "요청 실패",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"profile_id\": \"test1409\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/follow",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"follow"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-9GzctAvMnI7ldMWiu7Sp5GBVqbA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:52:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"팔로우가 되어있지 않습니다.\"\n}"
+						},
+						{
+							"name": "요청 성공",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"profile_id\": \"test1409\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/follow",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"follow"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-EVHElhzC+l/EmziqmpNbM5pU8BE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 03:55:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/like",
+			"item": [
+				{
+					"name": "/ 좋아요 요청",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tweet_id\":\"30\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/like",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"like"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "요청 성공",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tweet_id\":\"30\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/like",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"like"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-KYt9sNz4NWYwALoVHKgjXMFCjT8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 04:06:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"likeCreated\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/ 좋아요 삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tweet_id\":30\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/like",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"like"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "요청 성공",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tweet_id\":30\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/like",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"like"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-Eq6AbbBuYDm0oENjnyxASkv2yXg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 05:58:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"likeDeleted\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/main",
+			"item": [
+				{
+					"name": "/ 메인 피드 요청",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/main",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"main"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/main",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"main"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "45897"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b349-z/MO+fn/ltCBDTEOSxzKYUcc0X4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 05:59:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 143,\n        \"profile_id\": \"eogh7770\",\n        \"profile_nickname\": \"김대머\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n        \"replyTF\": 0,\n        \"content\": \"dsasd\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T05:51:01.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 142,\n        \"profile_id\": \"eogh7770\",\n        \"profile_nickname\": \"김대머\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsd\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T05:47:09.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 141,\n        \"profile_id\": \"eogh7770\",\n        \"profile_nickname\": \"김대머\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n        \"replyTF\": 0,\n        \"content\": \"sdads\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T05:47:07.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 140,\n        \"profile_id\": \"eogh7770\",\n        \"profile_nickname\": \"김대머\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadasd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663392625341.png\",\n        \"create_at\": \"2022-09-17T05:30:25.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 139,\n        \"profile_id\": \"eogh7770\",\n        \"profile_nickname\": \"김대머\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n        \"replyTF\": 0,\n        \"content\": \"sasd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/user-profileicon-1663391975031.png\",\n        \"create_at\": \"2022-09-17T05:19:35.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 138,\n        \"profile_id\": \"eogh7770\",\n        \"profile_nickname\": \"김대머\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n        \"replyTF\": 0,\n        \"content\": \"asdsadsd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663391841170.jpeg\",\n        \"create_at\": \"2022-09-17T05:17:21.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 137,\n        \"profile_id\": \"eogh7770\",\n        \"profile_nickname\": \"김대머\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n        \"replyTF\": 0,\n        \"content\": \"asdasd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663387336573.jpeg\",\n        \"create_at\": \"2022-09-17T04:02:16.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 136,\n        \"profile_id\": \"eogh7771\",\n        \"profile_nickname\": \"개미는머호\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadda\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663387184102.png\",\n        \"create_at\": \"2022-09-17T03:59:44.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 135,\n        \"profile_id\": \"eogh7771\",\n        \"profile_nickname\": \"개미는머호\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n        \"replyTF\": 0,\n        \"content\": \"weqqeww\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T03:59:21.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 134,\n        \"profile_id\": \"eogh0091\",\n        \"profile_nickname\": \"개미는뚠뚠\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n        \"replyTF\": 0,\n        \"content\": \"낌한결\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663386968698.jpeg\",\n        \"create_at\": \"2022-09-17T03:56:08.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 133,\n        \"profile_id\": \"eogh8800\",\n        \"profile_nickname\": \"김대호\",\n        \"profile_image\": null,\n        \"replyTF\": 0,\n        \"content\": \"테스트1\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385965122.jpeg\",\n        \"create_at\": \"2022-09-17T03:39:25.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 132,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㅁㄴㅁㄴㅇㄴㅇ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663385770725.png\",\n        \"create_at\": \"2022-09-17T03:36:10.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 131,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㅁㄴㄴㅁㅇㅁ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385765697.jpeg\",\n        \"create_at\": \"2022-09-17T03:36:05.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 130,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"안녕하세요!\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663385687254.png\",\n        \"create_at\": \"2022-09-17T03:34:47.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 129,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"얀ㄴㅇ해\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385678533.jpeg\",\n        \"create_at\": \"2022-09-17T03:34:38.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 128,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㅁㄴㅇㅇㅁㄴㅇㅁㄴ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385601444.jpeg\",\n        \"create_at\": \"2022-09-17T03:33:21.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 127,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㅁㄴㅇㅇㅁㄴㅇㅁㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T03:33:18.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 126,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"나는 바보다!\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663385587595.png\",\n        \"create_at\": \"2022-09-17T03:33:07.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 125,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅁㄴ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663385575072.png\",\n        \"create_at\": \"2022-09-17T03:32:55.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 124,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅁㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T03:32:50.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 123,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁassa\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385565658.jpeg\",\n        \"create_at\": \"2022-09-17T03:32:45.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 122,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁassa\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385489773.jpeg\",\n        \"create_at\": \"2022-09-17T03:31:29.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 121,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁassa\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T03:31:19.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 120,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ZaSasㅁㄴㅇㄴㅇㅁㅁㄴㅇ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385469742.jpeg\",\n        \"create_at\": \"2022-09-17T03:31:09.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 119,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ZaSas\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385453980.jpeg\",\n        \"create_at\": \"2022-09-17T03:30:53.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 118,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"Z\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385349409.jpeg\",\n        \"create_at\": \"2022-09-17T03:29:09.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 117,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"Z\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385299987.jpeg\",\n        \"create_at\": \"2022-09-17T03:28:19.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 116,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"Z\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663385223889.jpeg\",\n        \"create_at\": \"2022-09-17T03:27:03.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 114,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅇdsa\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663385136097.png\",\n        \"create_at\": \"2022-09-17T03:25:36.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 115,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅇdsa\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663385136136.png\",\n        \"create_at\": \"2022-09-17T03:25:36.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 112,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅇdsa\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663385135360.png\",\n        \"create_at\": \"2022-09-17T03:25:35.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 113,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅇdsa\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663385135572.png\",\n        \"create_at\": \"2022-09-17T03:25:35.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 111,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅇdsa\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663384959977.jpeg\",\n        \"create_at\": \"2022-09-17T03:22:39.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 110,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅇdsa\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663384783225.png\",\n        \"create_at\": \"2022-09-17T03:19:43.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 109,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅇdsa\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663384744178.jpeg\",\n        \"create_at\": \"2022-09-17T03:19:04.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 108,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅇ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663384519597.jpeg\",\n        \"create_at\": \"2022-09-17T03:15:19.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 107,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅇ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T03:15:13.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 106,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"테스트 2\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663384498269.jpeg\",\n        \"create_at\": \"2022-09-17T03:14:58.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 105,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"테스트 2\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663382139905.jpeg\",\n        \"create_at\": \"2022-09-17T02:35:39.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 104,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"테스트 2\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663382037582.png\",\n        \"create_at\": \"2022-09-17T02:33:57.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 103,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"테스트 1\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:33:43.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 102,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asds\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663381997027.png\",\n        \"create_at\": \"2022-09-17T02:33:17.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 101,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asds\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:32:22.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 100,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"dsdassads\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663381920981.jpeg\",\n        \"create_at\": \"2022-09-17T02:32:00.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 99,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"dsdassads\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663381918157.jpeg\",\n        \"create_at\": \"2022-09-17T02:31:58.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 98,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"dsdas\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663381897710.jpeg\",\n        \"create_at\": \"2022-09-17T02:31:37.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 97,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"dsdas\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:30:37.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 96,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"dasasdasd\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:29:24.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 95,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"dssdsa\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:27:42.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 94,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsa\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:26:58.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 93,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asdsdadasasdsaas\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:25:22.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 92,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asdsdadasasd\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:24:55.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 91,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asdadsasd\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:24:52.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 90,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"saas\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:24:28.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 89,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sasdads\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:24:03.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 88,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"saasss\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:23:51.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 87,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"saasss\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:23:45.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 86,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"saasss\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:23:44.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 85,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ss\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:19:30.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 84,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"saasd\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:16:39.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 83,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ZXsa\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:13:53.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 82,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asadsds\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663380790538.jpeg\",\n        \"create_at\": \"2022-09-17T02:13:10.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 80,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asadsds\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663380780121.jpeg\",\n        \"create_at\": \"2022-09-17T02:13:00.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 81,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asadsds\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663380780118.jpeg\",\n        \"create_at\": \"2022-09-17T02:13:00.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 79,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asadsds\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663380764157.jpeg\",\n        \"create_at\": \"2022-09-17T02:12:44.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 78,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asadsds\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663380759389.png\",\n        \"create_at\": \"2022-09-17T02:12:39.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 77,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asadsds\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663380748122.png\",\n        \"create_at\": \"2022-09-17T02:12:28.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 76,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asadsds\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663380450909.png\",\n        \"create_at\": \"2022-09-17T02:07:30.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 75,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"asadsds\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:05:59.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 74,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsdassd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663380326637.jpeg\",\n        \"create_at\": \"2022-09-17T02:05:26.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 73,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsdassd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663380275275.jpeg\",\n        \"create_at\": \"2022-09-17T02:04:35.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 72,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsdassd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663380249968.jpeg\",\n        \"create_at\": \"2022-09-17T02:04:09.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 71,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsdassd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663380237729.jpeg\",\n        \"create_at\": \"2022-09-17T02:03:57.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 70,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsdas\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663380215166.jpeg\",\n        \"create_at\": \"2022-09-17T02:03:35.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 69,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅈㅂㄷㅂㅈ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663380079744.png\",\n        \"create_at\": \"2022-09-17T02:01:19.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 68,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㅈㅂㄷㅂㅈ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T02:00:54.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 67,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:58:02.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 66,\n        \"profile_id\": \"gisuk\",\n        \"profile_nickname\": \"ggisukk\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"abcd\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:56:53.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 65,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:56:53.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 64,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:56:18.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 63,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅇㅁㅁㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:53:30.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 62,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㅇㄴㄴㅁㅇ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:52:26.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 61,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅇㅁㅁㄴㅇ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663379455964.jpeg\",\n        \"create_at\": \"2022-09-17T01:50:55.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 60,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㄴㅁㅇㄴ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663379440711.png\",\n        \"create_at\": \"2022-09-17T01:50:40.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 59,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㄴㅁㅇㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:49:49.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 58,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"김대호\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:48:30.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 57,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsadsads\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:47:53.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 56,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sads\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:47:17.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 55,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsd\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:47:14.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 54,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-17T01:44:44.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 53,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"낌대호\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-17T01:44:06.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 52,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㅋㅋㄴㅁ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-17T01:40:35.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 51,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"테스트 1\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-17T01:37:14.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 50,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"김대호\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-17T01:36:19.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 49,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㅇㄹㄴㅇㅇㄴㅇㅇㄴ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-17T01:36:02.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 48,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㅇㄹㄴㅇㅇ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-17T01:35:53.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 47,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㄴㅇ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-17T01:35:25.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 46,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-16T18:15:34.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 45,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-16T18:14:31.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 44,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-16T18:10:56.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 43,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-16T18:10:39.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 42,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㄴ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-16T18:10:32.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 41,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ss\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-16T18:04:58.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 40,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ewwe\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-16T17:52:51.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 39,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ssa\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-16T17:47:06.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 38,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㅅㄷㄴㅅ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-16T17:41:52.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 37,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"wqqw\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-16T17:40:56.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 36,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㄴㅁ\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-16T17:37:37.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 35,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ㄴㅁㄴㅁ\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/img_con03030100_01-1663340797648.jpeg\",\n        \"create_at\": \"2022-09-16T17:37:29.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 34,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"create_at\": \"2022-09-16T10:55:33.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 33,\n        \"profile_id\": \"eogh7799\",\n        \"profile_nickname\": \"진수바보\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"sadsd\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"create_at\": \"2022-09-16T10:55:05.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 32,\n        \"profile_id\": \"gisuk\",\n        \"profile_nickname\": \"ggisukk\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 1,\n        \"content\": \"사진 테스트 #사진\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"create_at\": \"2022-09-16T03:11:33.000Z\",\n        \"likeEx\": 1,\n        \"rtEx\": 0,\n        \"replyCount\": 1,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 31,\n        \"profile_id\": \"gisuk\",\n        \"profile_nickname\": \"ggisukk\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 1,\n        \"content\": \"위코드 좋아 #위코드\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-15T13:21:59.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 1,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 30,\n        \"profile_id\": \"gisuk\",\n        \"profile_nickname\": \"ggisukk\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"집가기1싫다3 #코딩독학2\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-15T12:54:49.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 29,\n        \"profile_id\": \"gisuk\",\n        \"profile_nickname\": \"ggisukk\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"집가기싫다3 #코딩독학2\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"create_at\": \"2022-09-15T12:54:45.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 28,\n        \"profile_id\": \"gisuk\",\n        \"profile_nickname\": \"ggisukk\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"집가기싫다1 #코딩독학2\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-15T12:54:42.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 27,\n        \"profile_id\": \"gisuk\",\n        \"profile_nickname\": \"ggisukk\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"집가기싫다 #코딩독학\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-15T12:54:35.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 26,\n        \"profile_id\": \"gisuk\",\n        \"profile_nickname\": \"ggisukk\",\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"ddd\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-15T12:06:22.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 25,\n        \"profile_id\": \"test143\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"코딩잼EK따 #코딩\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-15T06:21:42.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 24,\n        \"profile_id\": \"eogh77319\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"코딩잼EK따 #코딩\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-15T06:21:37.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 23,\n        \"profile_id\": \"wecodetest\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"코딩잼EK따 #코딩\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-15T06:21:35.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 22,\n        \"profile_id\": \"eogh773121\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"코딩잼EK따 #코딩\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"create_at\": \"2022-09-15T06:21:32.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 2,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 21,\n        \"profile_id\": \"eogh773121\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"코딩잼EK따 #코딩\",\n        \"content_img\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"create_at\": \"2022-09-15T06:21:24.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 20,\n        \"profile_id\": \"eogh7731\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"코딩잼따 #코딩\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-15T06:21:18.000Z\",\n        \"likeEx\": 1,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 2,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 19,\n        \"profile_id\": \"eogh7731\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"코딩잼따 #코딩\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-15T06:21:15.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 17,\n        \"profile_id\": \"testt\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"아아아 #해시태그\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T12:27:22.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 16,\n        \"profile_id\": \"ts_dasda\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠 #해시태그26\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T12:13:26.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 15,\n        \"profile_id\": \"ts_dasda\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠 #해시태그26\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T12:13:19.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 14,\n        \"profile_id\": \"ts_dasda\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠 #해시태그24\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T12:13:15.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 13,\n        \"profile_id\": \"ts_dasda\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠 #해시태그2\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T12:13:07.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 12,\n        \"profile_id\": \"ts_dasda\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠 #해시태그\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T12:13:03.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 3,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 11,\n        \"profile_id\": \"ts_dasda\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠 #해시태그\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T12:13:02.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 10,\n        \"profile_id\": \"ts_dasda\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘츠\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T11:36:06.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 3,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 9,\n        \"profile_id\": \"ts_dasda\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘츠\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T11:36:03.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 8,\n        \"profile_id\": \"ts_dasda\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘츠\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T11:36:00.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 7,\n        \"profile_id\": \"testt\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T11:35:36.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 6,\n        \"profile_id\": \"testt\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T11:35:34.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 4,\n        \"profile_id\": \"testt\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T11:35:33.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 5,\n        \"profile_id\": \"testt\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T11:35:33.000Z\",\n        \"likeEx\": 1,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 1,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 2,\n        \"profile_id\": \"testt\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T11:35:32.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 3,\n        \"profile_id\": \"testt\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T11:35:32.000Z\",\n        \"likeEx\": 0,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 0,\n        \"rtCount\": 0\n    },\n    {\n        \"id\": 1,\n        \"profile_id\": \"testt\",\n        \"profile_nickname\": null,\n        \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n        \"replyTF\": 0,\n        \"content\": \"콘텐츠\",\n        \"content_img\": null,\n        \"create_at\": \"2022-09-14T11:35:31.000Z\",\n        \"likeEx\": 1,\n        \"rtEx\": 0,\n        \"replyCount\": 0,\n        \"likeCount\": 2,\n        \"rtCount\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "/search 유저 검색",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"text\":\"eo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/main/search",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"main",
+								"search"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"text\": \"eo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/main/search",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"main",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2020"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7e4-/bMxOzAywmMHDzzbJvsBmZkvlxI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 06:08:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": [\n        {\n            \"profile_id\": \"eogh770\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh772\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh7731\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh773121\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh77319\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh77310\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh773\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh7739\",\n            \"profile_nickname\": null,\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh9999\",\n            \"profile_nickname\": \"엔트뚠뚠\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh7799\",\n            \"profile_nickname\": \"진수바보\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/image-1663325733908.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eoeof344\",\n            \"profile_nickname\": \"nickcol\",\n            \"profile_image\": null,\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh8800\",\n            \"profile_nickname\": \"김대호\",\n            \"profile_image\": null,\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh0091\",\n            \"profile_nickname\": \"개미는뚠뚠\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh7771\",\n            \"profile_nickname\": \"개미는머호\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh7770\",\n            \"profile_nickname\": \"김대머\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n            \"comment\": null\n        }\n    ]\n}"
+						},
+						{
+							"name": "\b예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"text\": \"개미\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/main/search",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"main",
+										"search"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "298"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12a-d8W2/cWXRO3Nr2wXA1EsSELSVpw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 06:51:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": [\n        {\n            \"profile_id\": \"eogh0091\",\n            \"profile_nickname\": \"개미는뚠뚠\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n            \"comment\": null\n        },\n        {\n            \"profile_id\": \"eogh7771\",\n            \"profile_nickname\": \"개미는머호\",\n            \"profile_image\": \"http://pienk.ddns.net:3000/img/defaultIcon.png\",\n            \"comment\": null\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/tweet",
+			"item": [
+				{
+					"name": "/ 트윗 생성",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/kisukjang/Desktop/wecode/Twit_mini/backend/uploads/637BC280-BCFC-49E0-91D7-799A1A333CB5-1663392891579-1663400521017-1663402224305.JPG"
+								},
+								{
+									"key": "text",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/tweet",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"tweet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "성공",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/kisukjang/Desktop/wecode/Twit_mini/backend/uploads/637BC280-BCFC-49E0-91D7-799A1A333CB5-1663392891579-1663400521017-1663402224305.JPG"
+										},
+										{
+											"key": "text",
+											"value": "트",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/tweet",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"tweet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"aa-SploWL11p5+EC+QxeZ7mIt5PZyA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 10:56:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"tweetCreated\",\n    \"content_img\": \"http://pienk.ddns.net:3000/img/637BC280-BCFC-49E0-91D7-799A1A333CB5-1663392891579-1663400521017-1663402224305-1663412217424.JPG\"\n}"
+						},
+						{
+							"name": "실패",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/kisukjang/Desktop/wecode/Twit_mini/backend/uploads/637BC280-BCFC-49E0-91D7-799A1A333CB5-1663392891579-1663400521017-1663402224305.JPG"
+										},
+										{
+											"key": "text",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/tweet",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"tweet"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-lIC/ViqaUmrGYXbLUmfQjM2im9w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 10:57:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"KEY_ERROR\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/ \b트윗 삭제",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tweet_id\":215\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/tweet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"tweet"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "성공",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tweet_id\":28\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/tweet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"tweet"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-i9t4wcKot+XPIJvpXWjmC3Uar18\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 10:58:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"tweetDeleted\"\n}"
+						},
+						{
+							"name": "실패 (존재하지 않는 트윗)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tweet_id\":28\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/tweet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"tweet"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"30-SlfdyuxOQQEtmQQteo5zr+/fx1k\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 10:59:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"트윗이 존재하지않습니다\"\n}"
+						},
+						{
+							"name": "실패 (다른 사람의 트윗)",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tweet_id\":215\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/tweet",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"tweet"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "60"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3c-HWeYY5/tML6wD5f1MU/AaBf5wMw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 10:59:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"본인의 트윗만 삭제할 수 있습니다\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/reply 트윗 댓글",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "content",
+									"value": "글글",
+									"type": "text"
+								},
+								{
+									"key": "reply_at",
+									"value": "399",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/kisukjang/Desktop/wecode/Twit_mini/backend/uploads/637BC280-BCFC-49E0-91D7-799A1A333CB5-1663392891579-1663400413838-1663409401059.JPG"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/tweet/reply",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"tweet",
+								"reply"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "성공",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "글글",
+											"type": "text"
+										},
+										{
+											"key": "reply_at",
+											"value": "215",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/tweet/reply",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"tweet",
+										"reply"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-przAzTZ0C8fNQhTtscqZ6rdhlCA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 11:11:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"replyCreated\"\n}"
+						},
+						{
+							"name": "성공(이미지 첨부)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "글글",
+											"type": "text"
+										},
+										{
+											"key": "reply_at",
+											"value": "215",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/kisukjang/Desktop/wecode/Twit_mini/backend/uploads/637BC280-BCFC-49E0-91D7-799A1A333CB5-1663392891579-1663400413838-1663409401059.JPG"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/tweet/reply",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"tweet",
+										"reply"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-przAzTZ0C8fNQhTtscqZ6rdhlCA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 11:12:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"replyCreated\"\n}"
+						},
+						{
+							"name": "실패",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "content",
+											"value": "글글",
+											"type": "text"
+										},
+										{
+											"key": "reply_at",
+											"value": "399",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/Users/kisukjang/Desktop/wecode/Twit_mini/backend/uploads/637BC280-BCFC-49E0-91D7-799A1A333CB5-1663392891579-1663400413838-1663409401059.JPG"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/tweet/reply",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"tweet",
+										"reply"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-YFa1oznPGlO9r5ec32dMrMRcIIY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 11:12:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"INVALID_DATA_INPUT\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/side 해쉬태그 상위 5개",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://pienk.ddns.net:3000/tweet/side",
+							"protocol": "http",
+							"host": [
+								"pienk",
+								"ddns",
+								"net"
+							],
+							"port": "3000",
+							"path": [
+								"tweet",
+								"side"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "예시",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://pienk.ddns.net:3000/tweet/side",
+									"protocol": "http",
+									"host": [
+										"pienk",
+										"ddns",
+										"net"
+									],
+									"port": "3000",
+									"path": [
+										"tweet",
+										"side"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "180"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b4-AhlM5bTs3PXZBXrqUKaz6a0VmLU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 17 Sep 2022 11:13:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": [\n        {\n            \"tag\": \"#코딩\",\n            \"count\": 7\n        },\n        {\n            \"tag\": \"#해시태그\",\n            \"count\": 3\n        },\n        {\n            \"tag\": \"#해시태그26\",\n            \"count\": 2\n        },\n        {\n            \"tag\": \"#코딩독학2\",\n            \"count\": 2\n        },\n        {\n            \"tag\": \"#해시태그2\",\n            \"count\": 1\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
