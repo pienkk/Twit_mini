@@ -15,8 +15,12 @@ const idSearch = asyncWrap(async (req, res) => {
 
 const tweetPost = asyncWrap(async (req, res) => {
   const {user_id,text} = req.body;
-  console.log(req.file)
-  const image = req.file.location
+
+  const image ="NULL"
+  //image ="NULL"값 혹은 기본값을 주지않으면 file이없을때 NULL로 넘어갈수가없음
+    
+
+  if (req.file) { image = req.file.location}
     if (!user_id || !text ) {
     console.log("err")
     return res.status(400).json({ message: "KEY_ERROR" });
@@ -27,7 +31,7 @@ const tweetPost = asyncWrap(async (req, res) => {
     image
   );
   res.status(201).json({ message: "tweetCreated" });
-});
+}); 
 
 const tweetDel = asyncWrap(async (req, res) => {
   let tweetDel = ({ user_id, tweet_id } = req.body);
