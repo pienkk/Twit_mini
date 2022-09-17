@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function TwitElement({
   feed: {
@@ -19,13 +19,15 @@ function TwitElement({
   isModal,
   reTwitHandler,
   accessToken,
+  userProfileImg,
 }) {
   const [likeStatus, setLikeStatus] = useState(likeEx);
   const [likeCountState, setLikeCountState] = useState(likeCount);
+  const curr = new Date(create_at);
 
   const likeHandler = event => {
     if (likeStatus === 0) {
-      fetch('http://10.58.0.33:3000/like', {
+      fetch('http://pienk.ddns.net:3000/like', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
@@ -36,10 +38,10 @@ function TwitElement({
         }),
       })
         .then(response => response.json())
-        .then(data => console.log(data));
+        .then(data => console.log('난 라이크', data));
       setLikeCountState(current => current + 1);
     } else if (likeStatus === 1) {
-      fetch('http://10.58.0.33:3000/like', {
+      fetch('http://pienk.ddns.net:3000/like', {
         method: 'delete',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
@@ -51,26 +53,22 @@ function TwitElement({
       })
         .then(response => response.json())
         .then(data => console.log(data));
-      setLikeCountState(current => current - 1);
+      setLikeCountState(current => (current = 0 ? 1 : 0));
     }
-
+    console.log(content_img);
     setLikeStatus(likeStatus === 0 ? 1 : 0);
   };
 
   return (
     <div className="twitList" id={id}>
       <div className="profileImg">
-        <img
-          src={
-            profile_image === null ? './user-profileicon.png' : profile_image
-          }
-        />
+        <img src={profile_image === null ? null : userProfileImg} />
       </div>
       <div className="twitContent">
         <div className="userInfo">
           <div className="nickname">{profile_nickname}</div>
           <div className="userid">{profile_id} ·</div>
-          <div className="time">{create_at}</div>
+          <div className="time">{curr.toLocaleString()}</div>
         </div>
         <div className="twitText">{content}</div>
 
