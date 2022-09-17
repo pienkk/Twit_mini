@@ -66,6 +66,7 @@ const rtCount = async (user_id) => {
 module.exports = { mainFeed, replyCount, likeCount, rtCount };
 
 
+//팔로우 유저 조건만 보기 
 // left join likes on likes.tweet_id = tweets.id AND likes.user_id = ? WHERE follow_from = ?
 // `,
 // [user_id, user_id]

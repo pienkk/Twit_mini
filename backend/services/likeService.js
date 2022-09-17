@@ -8,4 +8,13 @@ const tweetLike = async (user_id, tweet_id) => {
     return tweetLike;
   };
 
-  module.exports = { tweetLike }
+  const delLike = async (user_id, tweet_id) => {
+    const delLike = await likeDao.delLike(
+      user_id,
+      tweet_id
+    );
+    return delLike;
+  };
+
+
+  module.exports = { tweetLike, delLike }
