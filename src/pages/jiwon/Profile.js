@@ -83,6 +83,7 @@ const Profile = () => {
   };
 
   const joinedDate = new Date(user.join_at);
+  console.log('조인엣', joinedDate);
   const filteredJoinedDate =
     joinedDate.getFullYear() + '년 ' + (joinedDate.getMonth() + 1) + '월';
 

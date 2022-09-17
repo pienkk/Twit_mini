@@ -24,7 +24,6 @@ const ProfileTweets = ({ user }) => {
 
   return (
     <>
-      {console.log('트윗', feeds)}
       {feeds.length ? <TwitList feeds={feeds} /> : <NoTweets />}
       <WhoToFollow />
     </>
