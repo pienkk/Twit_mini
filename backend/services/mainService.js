@@ -12,13 +12,7 @@ const mainFeed = async (user_id) => {
   let lc = [];
   let rt = [];
   ///////////////////////
-  for (i in mf) {
-    if (mf[i].likeEx == null) {
-      mf[i].likeEx = 0;
-    } else {
-      mf[i].likeEx = 1;
-    }
-  }
+
   ///////////////////////
   for (i in mf) {
     if (mf[i].rtEx == null) {

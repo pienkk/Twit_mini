@@ -46,11 +46,10 @@ const tweetReply = asyncWrap(async (req, res) => {
     user_id,
     content,
     content_img,
-    tweet_for,
     reply_at,
   } = req.body);
 
-  if (!user_id || !content || !tweet_for || !reply_at) {
+  if (!user_id || !content || !reply_at) {
     return res.status(400).json({ message: "KEY_ERROR" });
   }
   await tweetService.tweetReply(
