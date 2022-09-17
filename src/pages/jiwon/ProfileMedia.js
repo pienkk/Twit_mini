@@ -6,13 +6,13 @@ import TwitList from '../seunghoon/MainFeed/components/TwitList/TwitList';
 
 const ProfileMedia = () => {
   const [feeds, setFeeds] = useState([]);
+  const accessToken = localStorage.getItem('token');
   useEffect(() => {
     fetch('http://pienk.ddns.net:3000/profile/media', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJpYXQiOjE2NjMyMTgzNTZ9.sy8yanZe0sNbduh1uPf6P-JkKGKadZkZRDZNC5I1CKY',
+        authorization: accessToken,
       },
     })
       .then(res => res.json())

@@ -14,6 +14,9 @@ const Router = () => {
 
   return (
     <BrowserRouter>
+      <MainTrend />
+      <LeftSideBar />
+
       <Routes>
         <Route path="/Login" element={<Login />} />
       </Routes>
@@ -22,6 +25,7 @@ const Router = () => {
       <LeftSideBar />
 
       <Routes>
+        <Route path="/Login" element={<Login />} />
         <Route path="/Main" element={<Main />} />
         {/* <Route path="/LoginDaeho" element={<LoginDaeho />} />
         <Route path="/MainTrend" element={<MainTrend />} /> */}

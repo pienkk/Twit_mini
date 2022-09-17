@@ -9,7 +9,7 @@
 }
 .modalWrapAll {
   display: flex;
-  position: fixed;
+  position: sticky;
   flex-direction: column;
   justify-content: center;
   border-radius: 10%;
@@ -17,10 +17,10 @@
   box-shadow: 1px 1px 10px 2px #e3e7ea;
   margin-bottom: 20px;
   background-color: white;
-  margin-left: 350px;
-  margin-top: 670px;
+  margin-left: inherit;
+  margin-top: 0px;
   left: 0;
-  top: 0;
+  bottom: 60%;
 }
 .modalWrap {
   display: flex;
