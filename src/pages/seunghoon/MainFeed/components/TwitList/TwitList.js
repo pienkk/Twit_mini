@@ -7,6 +7,7 @@ function TwitList({
   reTwitHandler,
   accessToken,
   userProfileImg,
+  inputImg,
 }) {
   console.log('피드스', feeds);
   return feeds.map(feed => {
@@ -19,6 +20,7 @@ function TwitList({
         reTwitHandler={reTwitHandler}
         isModal={false}
         accessToken={accessToken}
+        inputImg={inputImg}
       />
     );
   });

@@ -17,19 +17,4 @@ const Router = () => {
       <MainTrend />
       <LeftSideBar />
 
-      <Routes>
-        <Route path="/Login" element={<Login />} />
-        <Route path="/Main" element={<Main />} />
-        <Route path="/home" element={<Profile />} />
-        <Route path="/explore" element={<Profile />} />
-        <Route path="/notifications" element={<Profile />} />
-        <Route path="/messages" element={<Profile />} />
-        <Route path="/bookmarks" element={<Profile />} />
-        <Route path="/list" element={<Profile />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
-    </BrowserRouter>
-  );
-};
-
 export default Router;

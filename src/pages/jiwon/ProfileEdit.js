@@ -12,6 +12,7 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
   const [bgServerFile, setBgServerFile] = useState(new FormData());
   const [pfServerFile, setPfServerFile] = useState(new FormData());
   const editForm = document.getElementById('profileEditForm');
+  const accessToken = localStorage.getItem('token');
 
   const profileEditSave = e => {
     e.preventDefault();
@@ -21,8 +22,7 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
       headers: {
         enctype:
           'multipart/form-data; boundary=----WebKitFormBoundarydD5THZoXsb7pVLpu',
-        authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
+        authorization: accessToken,
       },
       body: new FormData(editForm),
     })

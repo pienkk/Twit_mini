@@ -20,6 +20,7 @@ function TwitElement({
   reTwitHandler,
   accessToken,
   userProfileImg,
+  inputImg,
 }) {
   const [likeStatus, setLikeStatus] = useState(likeEx);
   const [likeCountState, setLikeCountState] = useState(likeCount);
@@ -55,7 +56,6 @@ function TwitElement({
         .then(data => console.log(data));
       setLikeCountState(current => (current = 0 ? 1 : 0));
     }
-    console.log(content_img);
     setLikeStatus(likeStatus === 0 ? 1 : 0);
   };
 
@@ -74,7 +74,7 @@ function TwitElement({
 
         {!isModal && (
           <>
-            {content_img === '' ? null : (
+            {content_img === null ? null : (
               <div className="twitImg">
                 <img src={content_img} />
               </div>
