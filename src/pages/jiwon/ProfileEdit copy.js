@@ -11,24 +11,23 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
 
   const [bgServerFile, setBgServerFile] = useState(new FormData());
   const [pfServerFile, setPfServerFile] = useState(new FormData());
-  const editForm = document.getElementById('profileEditForm');
 
-  const profileEditSave = e => {
-    e.preventDefault();
-
+  const profileEditSave = () => {
     fetch('http://pienk.ddns.net:3000/profile/test2', {
-      method: 'POST',
+      method: 'PATCH',
       headers: {
-        enctype:
-          'multipart/form-data; boundary=----WebKitFormBoundarydD5THZoXsb7pVLpu',
+        'Content-Type': 'application/json;charset=utf-8',
+        enctype: 'multipart/form-data',
         authorization:
           'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyOCwiaWF0IjoxNjYzMjIzNTA0fQ.4ypXCBzPIv6lrERcw7AjVKR_hPCKGeEKfs-RLXski3E',
       },
-      body: new FormData(editForm),
-    })
-      .catch(error => console.log('에러', error.message))
-      .then(response => console.log(response));
-
+      body: JSON.stringify({
+        profile_nickname: textInput.nickname,
+        profile_banner: bgServerFile,
+        // profile_image: pfServerFile,
+        comment: textInput.comment,
+      }),
+    }).then(response => console.log(response));
     profileEditModalClose();
   };
 
@@ -52,6 +51,10 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
     }
   };
 
+  useEffect(() => {
+    console.log(bgServerFile);
+  });
+
   const profileChange = e => {
     if (e.target.files[0]) {
       setProfileFiles(e.target.files[0]);
@@ -67,10 +70,10 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
     };
     reader.readAsDataURL(e.target.files[0]);
     pfServerFile.append('file', e.target.files[0]);
-    // console.log(pfServerFile);
-    // for (let value of pfServerFile.values()) {
-    //   console.log('pf', value);
-    // }
+    console.log(pfServerFile);
+    for (let value of pfServerFile.values()) {
+      console.log('pf', value);
+    }
   };
 
   const [textInput, setTextInput] = useState({
@@ -91,7 +94,7 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
   return (
     <>
       <div className="profile-edit-back" onClick={profileEditModalClose} />
-      <form className="ProfileEdit" id="profileEditForm">
+      <div className="ProfileEdit">
         <div className="ProfileEditTop">
           <button
             className="profile-edit-x-button"
@@ -117,9 +120,9 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
             className="fileUploader"
             type="file"
             accept="image/*"
+            name="profile-image-uploader"
             onChange={backgroundChange}
             ref={backgroundImgFileInput}
-            name="backgroundImg"
           />
           <img
             className="profileImageEditCamera"
@@ -141,9 +144,9 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
             className="fileUploader2"
             type="file"
             accept="image/*"
+            name="profile-image-uploader"
             onChange={profileChange}
             ref={profileImgFileInput}
-            name="profile_img"
           />
           <img
             className="profileImageEditCamera2"
@@ -183,7 +186,7 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
             </span>
           </div>
         </div>
-      </form>
+      </div>
     </>
   );
 };
