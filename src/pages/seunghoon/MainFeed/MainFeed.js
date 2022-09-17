@@ -10,6 +10,7 @@ const MainFeed = () => {
   const [feeds, setFeeds] = useState([]);
   const [modalOn, setModalOn] = useState(false);
   const [feedForModal, setFeedForModal] = useState({});
+  const [inputImg, setInputImg] = useState('');
 
   const imgInput = document.getElementById('imgImportInput');
   const twitForm = document.getElementById('twitForm');
@@ -30,7 +31,7 @@ const MainFeed = () => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log('겟 데이터', data);
+        setInputImg(data[0].content_img);
         setFeeds(data);
       });
   }, []);
@@ -106,6 +107,7 @@ const MainFeed = () => {
       .then(response => response.json())
       .then(data => console.log(data));
   };
+
   return (
     <div className="mainFeed">
       <TwitHome />
@@ -124,6 +126,7 @@ const MainFeed = () => {
           commentHandler={commentHandler}
           reTwitHandler={reTwitHandler}
           accessToken={accessToken}
+          inputImg={inputImg}
         />
       </div>
       <ModalPortal>
