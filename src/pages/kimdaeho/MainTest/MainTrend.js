@@ -29,7 +29,7 @@ function MainTrend() {
   };
 
   let i = 0;
-
+  if (window.location.pathname === '/login') return null;
   return (
     <div className="MainRight">
       <div className="MainTrend">
@@ -42,13 +42,14 @@ function MainTrend() {
               setSuchModal(true);
             }}
           />
+
+          <ModalPortal>
+            {suchModal && (
+              <TrendModal userInput={userInput} handleModal={handleModal} />
+            )}
+          </ModalPortal>
+          <TrendForME />
         </div>
-        <ModalPortal>
-          {suchModal && (
-            <TrendModal userInput={userInput} handleModal={handleModal} />
-          )}
-        </ModalPortal>
-        <TrendForME />
       </div>
     </div>
   );

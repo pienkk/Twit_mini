@@ -1,9 +1,11 @@
+.MainRight {
+}
 .MainTrend {
-  position: relative;
+  position: fixed;
   width: 360px;
 
   .TrendSearch {
-    position: absolute;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;

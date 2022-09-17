@@ -10,17 +10,10 @@ import TwitModal from './twitModal';
 import Modal from '../seunghoon/MainFeed/Modal';
 import ModalPortal from '../seunghoon/MainFeed/Portal';
 
-function LeftSideBar({}) {
-  // useEffect(() => {
-  //   fetch('http://pienk.ddns.net:3000/', {
-  //     method: 'GET',
-  //   })
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setProfile(...data);
-  //     });
-  // }, []);
+const LeftSideBar = () => {
   const [profile, setProfile] = useState({});
+  if (window.location.pathname === '/login') return null;
+
   return (
     <>
       <div className="sideBarNav">
@@ -79,7 +72,6 @@ function LeftSideBar({}) {
 
           <TwitModal />
         </div>
-
         <Profile
           profile={profile}
           id={profile.id}
@@ -93,6 +85,6 @@ function LeftSideBar({}) {
       </div>
     </>
   );
-}
+};
 
 export default LeftSideBar;
