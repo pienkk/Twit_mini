@@ -4,6 +4,7 @@ import Modal from './Modal';
 import TwitHome from './components/TwitHome';
 import TwitInput from './components/TwitInput';
 import TwitList from './components/TwitList/TwitList';
+import LeftSideBar from '../../hyosung/leftSideBar';
 import './Mainfeed.scss';
 
 const MainFeed = () => {
@@ -20,8 +21,24 @@ const MainFeed = () => {
   const userId = localStorage.getItem('userId');
   const userNickname = localStorage.getItem('userNickname');
   const userProfileImg = localStorage.getItem('userProfileImg');
+  const [user, setUser] = useState({});
 
   console.log(feeds);
+
+  useEffect(() => {
+    fetch('http://pienk.ddns.net:3000/profile', {
+      method: 'GET',
+      headers: {
+        authorization: accessToken,
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setUser(data.profile);
+      });
+  }, []);
+
   useEffect(() => {
     fetch('http://pienk.ddns.net:3000/main', {
       method: 'GET',
@@ -117,8 +134,9 @@ const MainFeed = () => {
         setFeeds={setFeeds}
         twitSubmit={twitSubmit}
         imgImport={imgImport}
-        userProfileImg={userProfileImg}
+        userProfileImg={user.profile_image}
       />
+      {console.log(user)}
       <div className="twitFeeds">
         <TwitList
           userProfileImg={userProfileImg}

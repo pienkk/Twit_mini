@@ -26,7 +26,7 @@ function Profile({ profile, nickname, userid, profileImg }) {
           <p className="ptag1">{userNickname}</p>
           <p className="ptag2">@{userId}</p>
         </div>
-        <img src="./dotdotdot.png" width="20px" />
+        <img src="./images/dotdotdot.png" width="20px" />
       </div>
       <ModalPortal>
         {modal && (

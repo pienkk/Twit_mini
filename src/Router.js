@@ -10,9 +10,6 @@ import LeftSideBar from './pages/hyosung/leftSideBar';
 import MainFeed from './pages/seunghoon/MainFeed/MainFeed';
 
 const Router = () => {
-  const [path, setPath] = useState(window.location.pathname);
-  console.log(path);
-
   return (
     <BrowserRouter>
       <LeftSideBar />
