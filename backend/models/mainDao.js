@@ -44,19 +44,6 @@ const findId = async (text) => {
   }
 }
 
-const findTweets = async (text) => {
-  try {
-    const result = await database.query(
-      `SELECT
-      `
-    )
-  } catch (err) {
-    const error = new Error("INVALID_DATA_INPUT");
-    error.statusCode = 500;
-    throw error;
-  }
-}
-  
 const replyCount = async (user_id) => {
   try {
     return await database.query(`SELECT tweets.id

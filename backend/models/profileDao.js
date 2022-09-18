@@ -39,7 +39,7 @@ const getMyTweets = async ( userId ) => {
                 likes.tweet_id AS likeEX
             FROM users INNER JOIN tweets ON users.id = tweets.user_id
             LEFT JOIN likes on likes.tweet_id = tweets.id AND likes.user_id = ?
-            WHERE users.id = ? `,
+            WHERE users.id = ? ORDER BY tweets.create_at DESC`,
             [ userId , userId ]    
         )
         return tweets
@@ -64,7 +64,7 @@ const getReplyTweets = async ( reply_at , userId ) => {
                 tweets.replyTF,
                 tweets.reply_at
             FROM users INNER JOIN tweets ON users.id = tweets.user_id
-            WHERE tweets.id = ? `,
+            WHERE tweets.id = ? ORDER BY tweets.create_at DESC `,
             [ reply_at ]    
         )
         return tweets
@@ -89,7 +89,7 @@ const getLikeTweets = async ( userId ) => {
                 likes.tweet_id AS likeEX
             FROM tweets LEFT JOIN likes ON likes.tweet_id = tweets.id
             INNER JOIN users ON users.id = tweets.user_id
-            WHERE likes.user_id = ?; `,
+            WHERE likes.user_id = ? ORDER BY tweets.create_at DESC; `,
             [ userId ]    
         )
         return tweets
@@ -114,7 +114,8 @@ const getMediaTweets = async ( userId ) => {
                 likes.tweet_id AS likeEx
             FROM tweets INNER JOIN users ON users.id = tweets.user_id
             LEFT JOIN likes on likes.tweet_id = tweets.id AND likes.user_id = ?
-            WHERE tweets.content_img != "NULL" AND users.id = ?; `,
+            WHERE tweets.content_img != "NULL" AND users.id = ?
+            ORDER BY tweets.create_at DESC ; `,
             [ userId, userId ]    
         )
         return tweets
