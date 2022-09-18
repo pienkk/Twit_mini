@@ -2,6 +2,11 @@ import React from 'react';
 import './Footer.scss';
 
 function Footer() {
+  if (
+    window.location.pathname === './main' &&
+    window.location.pathname === './Main'
+  )
+    return null;
   return (
     <div>
       <ul className="FooterList">

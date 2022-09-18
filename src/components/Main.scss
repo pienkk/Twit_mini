@@ -1,9 +1,7 @@
 #root {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 
-  width: 100vw;
-  height: 100vh;
   .main {
     display: flex;
   }
@@ -22,13 +20,19 @@
     margin-top: 20px;
     order: 3;
     margin-left: 20px;
-    flex: 0.5;
+  }
+
+  .profile {
+    order: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 600px;
   }
 
   .mainFeed {
     order: 2;
-
-    // width: 600px;
+    width: 600px;
     height: 100%;
   }
 }
