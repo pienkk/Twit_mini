@@ -20,7 +20,7 @@ const LeftSideBar = () => {
         <div className="sideBarNav">
           <div className="sideBarWrap">
             <img
-              src="./bluebird.png"
+              src="./images/bluebird.png"
               className="birdImage"
               alt="bluebird"
               width="30px"
@@ -28,43 +28,43 @@ const LeftSideBar = () => {
 
             <Link className="linkTag" to={'/main'}>
               <div className="categories home">
-                <img src="./homeicon.png" />
+                <img src="./images/homeicon.png" />
                 <span className="categoriesWord">홈</span>
               </div>
             </Link>
             <Link className="linkTag" to={'/explore'}>
               <div className="categories">
-                <img src="./hastagicon.png" />
+                <img src="./images/hastagicon.png" />
                 <span className="categoriesWord">탐색하기</span>
               </div>
             </Link>
             <Link className="linkTag" to={'/notifications'}>
               <div className="categories">
-                <img src="./notificationicon.png" />
+                <img src="./images/notificationicon.png" />
                 <span className="categoriesWord">알림</span>
               </div>
             </Link>
             <Link className="linkTag" to={'/messages'}>
               <div className="categories">
-                <img src="./emailicon.png" />
+                <img src="./images/emailicon.png" />
                 <span className="categoriesWord">쪽지</span>
               </div>
             </Link>
             <Link className="linkTag" to={'/bookmark'}>
               <div className="categories">
-                <img src="./bookmarkicon.png" />
+                <img src="./images/bookmarkicon.png" />
                 <span className="categoriesWord">북마크</span>
               </div>
             </Link>
             {/* <Link className="linkTag" to={`/${profile.nickname}/lists`}> */}
             <div className="categories">
-              <img src="./listicon.png" />
+              <img src="./images/listicon.png" />
               <span className="categoriesWord">리스트</span>
             </div>
             {/* </Link> */}
             <Link className="linkTag" to={'/profile'}>
               <div className="categories">
-                <img src="./user-profileicon.png" />
+                <img src="./images/user-profileicon.png" />
                 <span className="categoriesWord">프로필</span>
               </div>
             </Link>
