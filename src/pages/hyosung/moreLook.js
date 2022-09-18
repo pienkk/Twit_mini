@@ -17,7 +17,7 @@ function MoreLook() {
         }}
         className="categories"
       >
-        <img src="./moreicon.png" />
+        <img src="./images/moreicon.png" />
         <span className="categoriesWord">더보기</span>
       </div>
       <ModalPortal>
