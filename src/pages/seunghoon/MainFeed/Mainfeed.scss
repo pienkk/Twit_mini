@@ -4,10 +4,11 @@
   height: 100%;
   // border-left: 1px solid #f1f2f3;
   // border-right: 1px solid #f1f2f3;
-  border-left: 1px solid #e2e2e2;
-  border-right: 1px solid #e2e2e2;
+  // border-left: 1px solid #e2e2e2;
+  // border-right: 1px solid #e2e2e2;
 
   .twitHome {
+    border: 1px solid #e2e2e2;
     .homeContainer {
       display: flex;
       justify-content: space-between;
@@ -35,8 +36,10 @@
     height: 189px;
     display: flex;
     padding: 0px 16px;
-    margin-top: 5px;
+    // margin-top: 5px;
     border-bottom: 1px solid #e2e2e2;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
 
     .writerProfileImg {
       img {
@@ -130,12 +133,15 @@
   }
 
   .twitFeeds {
-    margin-right: 15px;
-    margin-left: 10px;
+    // padding-right: 15px;
+    // padding-left: 10px;
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
 
     .twitList {
       display: flex;
-      margin-top: 15px;
+      padding-top: 15px;
+      margin-top: 0;
       border-bottom: 1px solid #e2e2e2;
 
       .profileImg {
