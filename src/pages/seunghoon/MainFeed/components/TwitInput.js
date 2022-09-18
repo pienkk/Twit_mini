@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 
-function TwitInput({ isModal, twitSubmit, imgImport, userProfileImg }) {
+function TwitInput({ isModal, twitSubmit, imgImport }) {
+  const userProfileImg = localStorage.getItem('userProfileImg');
+
   return (
     <form className="twitInput" onSubmit={twitSubmit} id="twitForm">
       <div className="writerProfileImg">

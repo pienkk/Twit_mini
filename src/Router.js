@@ -7,18 +7,16 @@ import MainTrend from './pages/kimdaeho/MainTest/MainTrend';
 import Footer from './components/Footer';
 import Profile from './pages/jiwon/Profile';
 import LeftSideBar from './pages/hyosung/leftSideBar';
+import MainFeed from './pages/seunghoon/MainFeed/MainFeed';
 
 const Router = () => {
-  const [path, setPath] = useState(window.location.pathname);
-  console.log(path);
-
   return (
     <BrowserRouter>
       <MainTrend />
       <LeftSideBar />
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/Main" element={<Main />} />
+        <Route path="/Main" element={<MainFeed />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>

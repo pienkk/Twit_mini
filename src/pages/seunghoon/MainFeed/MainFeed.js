@@ -4,6 +4,7 @@ import Modal from './Modal';
 import TwitHome from './components/TwitHome';
 import TwitInput from './components/TwitInput';
 import TwitList from './components/TwitList/TwitList';
+import LeftSideBar from '../../hyosung/leftSideBar';
 import './Mainfeed.scss';
 
 const MainFeed = () => {
