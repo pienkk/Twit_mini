@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './moreLookModal.scss';
 function MoreLookModal({ modalBackClick }) {
   return (
     <>

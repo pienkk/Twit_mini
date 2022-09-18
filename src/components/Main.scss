@@ -13,6 +13,7 @@
     width: 300px;
     height: 100vh;
     order: 0;
+    flex: 1;
   }
 
   .MainRight {
@@ -33,9 +34,5 @@
     order: 2;
     width: 600px;
     height: 100%;
-    // border-left: 1px solid #f1f2f3;
-    // border-right: 1px solid #f1f2f3;
-    border-left: 1px solid #e2e2e2;
-    border-right: 1px solid #e2e2e2;
   }
 }

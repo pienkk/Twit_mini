@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MoreLookModal from './moreLookModal';
-import './moreLook.scss';
+
 import ModalPortal from '../seunghoon/MainFeed/Portal';
 
 function MoreLook() {
