@@ -15,7 +15,7 @@ const showDm = asyncWrap(async (req, res) => {
 })
 
 const postDm = asyncWrap(async (req, res) => {
-    const { user_id, message } = req.body; // 토큰에서 id 빼옴
+    const { user_id, message } = req.body; 
     const profileId = req.params.profileId;
     if ( !message || !profileId ) {
         const err = new Error("KEY_ERROR");

@@ -12,34 +12,11 @@ const getProfile = async ( user_id ) => {
 
 const getMyTweets = async ( user_id ) => {
     const result = await profileDao.getMyTweets( user_id );
-    // const getMessage = async () =>  {
-        // const result2 = await Promise.all(
-        //     result.map(async el => {
-                // const comments = await tweetDao.replyCount(el.id);
-                // const like = await likeDao.likeCount(el.id);
-                // const retweet = await retweetDao.retweetCount(el.id);
-                // el.commentsNum = comments.count;
-                // el.likesNum = like.count;
-                // el.retweetNum = retweet.count;
-        //     // console.log(el)
-        //     })
-        // )
         for (el of result) {
             el.replyCount = await tweetDao.replyCount(el.id);
             el.likeCount = await likeDao.likeCount(el.id);
             el.rtCount = await retweetDao.retweetCount(el.id);
-                // const comments = await tweetDao.replyCount(el.id);
-                // const like = await likeDao.likeCount(el.id);
-                // const retweet = await retweetDao.retweetCount(el.id);
-                // // el.commentsNum = comments.count;
-                // el.likesNum = like.count;
-                // el.retweetNum = retweet.count;
         }
-    //     return result2
-    // }
-    // const bbb = await getMessage();
-    // console.log(result)
-
     return result
 }
 
@@ -88,7 +65,6 @@ const postProfile = async (profile_nickname, comment, user_id, images ) => {
     }
     const postProfile = await profileDao.postProfile(
         profile_nickname, profile_banner, profile_image, comment , user_id);
-        console.log(postProfile)
     return postProfile;
 }  
 

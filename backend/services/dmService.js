@@ -4,7 +4,6 @@ const {userDao} = require("../models");
 const dmList = async ( id ) => {
     const dmList = await dmDao.showDmList( id );
     return dmList
-
 }
 
 const showDm = async ( id, profileId ) => {
@@ -16,7 +15,6 @@ const showDm = async ( id, profileId ) => {
     }
     const mainUser = await dmDao.showDm( id, receiveUser.id );
     const subUser = await dmDao.showDm( receiveUser.id, id );
-
     return [ mainUser, subUser ]
 }
 
@@ -27,7 +25,6 @@ const dmPost = async ( id, message, profileId ) => {
         err.statusCode = 400;
         throw err;
     }
-
     const result = await dmDao.postDm(id, message, receiveUser)
     return result
 }
