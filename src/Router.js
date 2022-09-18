@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Swithch } from 'react-router-dom';
 import Login from './components/Login';
-import Main from './components/Main';
+
 import LoginDaeho from './pages/kimdaeho/LoginTest/LoginDaeho';
 import MainTrend from './pages/kimdaeho/MainTest/MainTrend';
 import Footer from './components/Footer';
 import Profile from './pages/jiwon/Profile';
 import LeftSideBar from './pages/hyosung/leftSideBar';
+import MainFeed from './pages/seunghoon/MainFeed/MainFeed';
 
 const Router = () => {
   const [path, setPath] = useState(window.location.pathname);
@@ -14,11 +15,12 @@ const Router = () => {
 
   return (
     <BrowserRouter>
-      <MainTrend />
       <LeftSideBar />
+      <MainTrend />
+
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/Main" element={<Main />} />
+        <Route path="/Main" element={<MainFeed />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
