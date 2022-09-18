@@ -16,5 +16,12 @@ const Router = () => {
     <BrowserRouter>
       <MainTrend />
       <LeftSideBar />
-
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/Main" element={<Main />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
+  );
+};
 export default Router;

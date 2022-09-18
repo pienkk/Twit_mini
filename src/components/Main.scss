@@ -1,9 +1,7 @@
 #root {
   display: flex;
+  justify-content: space-between;
 
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
   .main {
     display: flex;
   }
@@ -27,14 +25,12 @@
     order: 2;
     display: flex;
     flex-direction: column;
-
     padding: 10px;
     width: 600px;
   }
 
   .mainFeed {
     order: 2;
-
     width: 600px;
     height: 100%;
     // border-left: 1px solid #f1f2f3;

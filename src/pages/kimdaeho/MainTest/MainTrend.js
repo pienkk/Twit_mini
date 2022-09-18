@@ -29,7 +29,7 @@ function MainTrend() {
   };
 
   let i = 0;
-  if (window.location.pathname === '/login') return null;
+  if (window.location.pathname === '/') return null;
   return (
     <div className="MainRight">
       <div className="MainTrend">

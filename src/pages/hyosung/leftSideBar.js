@@ -12,7 +12,7 @@ import ModalPortal from '../seunghoon/MainFeed/Portal';
 
 const LeftSideBar = () => {
   const [profile, setProfile] = useState({});
-  if (window.location.pathname === '/login') return null;
+  if (window.location.pathname === '/') return null;
 
   return (
     <>
