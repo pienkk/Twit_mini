@@ -1,10 +1,13 @@
+.leftSideBar {
+}
+
 .sideBarNav {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 300px;
+  width: 80%;
   height: 100vh;
-  position: fixed;
+
   left: 350px;
 }
 .linkTag {
@@ -70,47 +73,4 @@ span {
 .twit:hover {
   background-color: #318cd8;
   transition: 0.3s;
-}
-.introduce {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 270px;
-  border: none;
-  background-color: white;
-  cursor: pointer;
-  border-radius: 50px;
-  padding: 10px;
-}
-.introduce:hover {
-  background-color: #eaeaea;
-  transition: 0.3s;
-}
-.profileImage {
-  object-fit: cover;
-  width: 40px;
-  height: 40px;
-  border-radius: 30px;
-}
-.userWrap {
-  position: absolute;
-  left: 50px;
-  font-size: 15px;
-  p {
-    padding: 2px;
-    margin-left: 10px;
-  }
-}
-.ptag1 {
-  font-weight: bold;
-}
-.ptag2 {
-  color: #909aa2;
-}
-.categories:hover {
-  background-color: #eaeaea;
-  transition: 0.3s;
-  font-weight: bold;
-  cursor: pointer;
 }

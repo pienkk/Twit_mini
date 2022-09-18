@@ -2,6 +2,7 @@ import { click } from '@testing-library/user-event/dist/click';
 import React, { useState } from 'react';
 import Modal from './modal';
 import ModalPortal from '../seunghoon/MainFeed/Portal';
+import './profile.scss';
 function Profile({ profile, nickname, userid, profileImg }) {
   const [modal, setModal] = useState(false);
 
