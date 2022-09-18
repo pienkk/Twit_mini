@@ -17,8 +17,8 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
   const profileEditSave = e => {
     e.preventDefault();
 
-    fetch('http://pienk.ddns.net:3000/profile/test2', {
-      method: 'POST',
+    fetch('http://pienk.ddns.net:3000/profile/modify', {
+      method: 'PATCH',
       headers: {
         enctype:
           'multipart/form-data; boundary=----WebKitFormBoundarydD5THZoXsb7pVLpu',
@@ -27,9 +27,9 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
       body: new FormData(editForm),
     })
       .catch(error => console.log('에러', error.message))
-      .then(response => console.log(response));
-
-    profileEditModalClose();
+      .then(response => console.log(response))
+      .then(() => profileEditModalClose())
+      .then(() => window.location.reload());
   };
 
   const backgroundChange = e => {
@@ -83,10 +83,10 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
     setTextInput({ ...textInput, [name]: value });
   };
 
-  const birthday = new Date(user.birthday);
-  const birthYear = birthday.getFullYear();
-  const birthMonth = birthday.getMonth() + 1;
-  const birthDate = birthday.getDate();
+  // const birthday = new Date(user.birthday);
+  // const birthYear = birthday.getFullYear();
+  // const birthMonth = birthday.getMonth() + 1;
+  // const birthDate = birthday.getDate();
 
   return (
     <>
@@ -163,8 +163,8 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
           <div className="profile-edit-input-wrap">
             <span>이름</span>
             <input
-              name="nickname"
-              value={textInput.nickname}
+              name="profile_nickname"
+              value={textInput.nickname && textInput.nickname}
               onChange={handleTextInput}
             />
           </div>
@@ -172,16 +172,16 @@ const ProfileEdit = ({ user, profileEditModalClose }) => {
             <span>자기소개</span>
             <textarea
               name="comment"
-              value={textInput.comment}
+              value={textInput.comment && textInput.comment}
               onChange={handleTextInput}
             />
           </div>
-          <div className="birthday">
+          {/* <div className="birthday">
             <span className="birthdayTitle">생년월일</span>
             <span className="birthdayInfo">
               {birthYear + '년 ' + birthMonth + '월 ' + birthDate + '일'}
             </span>
-          </div>
+          </div> */}
         </div>
       </form>
     </>

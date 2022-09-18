@@ -27,24 +27,12 @@ function TwitElement({
   const curr = new Date(create_at);
 
   const accessToken = localStorage.getItem('token');
+  console.log('PROFILE FEED: ', feed);
+  console.log('PROFILE LIKE STATUS: ', likeEx);
+  console.log('PROFILE content: ', content);
 
-  const likeHandler = () => {
-    if (likeStatus) {
-      fetch('http://pienk.ddns.net:3000/like', {
-        method: 'delete',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8',
-          authorization: accessToken,
-        },
-        body: JSON.stringify({
-          tweet_id: id,
-        }),
-      })
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .then(() => setLikeCountState(current => current - 1))
-        .then(() => setLikeStatus(null));
-    } else if (!likeStatus) {
+  const likeHandler = event => {
+    if (likeStatus === null) {
       fetch('http://pienk.ddns.net:3000/like', {
         method: 'POST',
         headers: {
@@ -56,10 +44,24 @@ function TwitElement({
         }),
       })
         .then(response => response.json())
-        .then(data => console.log('난 라이크', data))
-        .then(() => setLikeCountState(current => current + 1))
-        .then(() => setLikeStatus(id));
+        .then(data => console.log('난 라이크', data));
+      setLikeCountState(current => current + 1);
+    } else if (likeStatus !== null) {
+      fetch('http://pienk.ddns.net:3000/like', {
+        method: 'delete',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+          authorization: accessToken,
+        },
+        body: JSON.stringify({
+          tweet_id: id,
+        }),
+      })
+        .then(response => response.json())
+        .then(data => console.log(data));
+      setLikeCountState(current => current - 1);
     }
+    setLikeStatus(likeStatus === null ? id : null);
   };
 
   return (
