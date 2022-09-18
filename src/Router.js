@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route, Swithch } from 'react-router-dom';
 import Login from './components/Login';
-import Main from './components/Main';
+
 import LoginDaeho from './pages/kimdaeho/LoginTest/LoginDaeho';
 import MainTrend from './pages/kimdaeho/MainTest/MainTrend';
 import Footer from './components/Footer';
@@ -12,8 +12,9 @@ import MainFeed from './pages/seunghoon/MainFeed/MainFeed';
 const Router = () => {
   return (
     <BrowserRouter>
-      <MainTrend />
       <LeftSideBar />
+      <MainTrend />
+
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Main" element={<MainFeed />} />
