@@ -9,7 +9,6 @@ function TwitList({
   userProfileImg,
   inputImg,
 }) {
-  console.log('피드스', feeds);
   return feeds.map(feed => {
     return (
       <TwitElement

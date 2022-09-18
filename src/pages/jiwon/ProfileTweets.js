@@ -22,6 +22,8 @@ const ProfileTweets = ({ user }) => {
       .then(data => setFeeds(data.tweets));
   }, []);
 
+  console.log('프로필 피드: ', feeds);
+
   return (
     <>
       {feeds.length ? <TwitList feeds={feeds} /> : <NoTweets />}
